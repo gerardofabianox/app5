@@ -1,0 +1,313 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+
+<div id="jpedal" style="width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load47();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_47{left:312px;top:115px;}
+#t2_47{left:309px;top:136px;}
+#t3_47{left:65px;top:203px;}
+#t4_47{left:65px;top:221px;}
+#t5_47{left:65px;top:240px;}
+#t6_47{left:65px;top:259px;}
+#t7_47{left:65px;top:277px;}
+#t8_47{left:65px;top:317px;}
+#t9_47{left:538px;top:317px;}
+#ta_47{left:396px;top:355px;}
+#tb_47{left:333px;top:395px;}
+#tc_47{left:65px;top:435px;}
+#td_47{left:198px;top:435px;}
+#te_47{left:65px;top:453px;}
+#tf_47{left:65px;top:494px;}
+#tg_47{left:65px;top:512px;}
+#th_47{left:65px;top:552px;}
+#ti_47{left:538px;top:552px;}
+#tj_47{left:65px;top:590px;}
+#tk_47{left:188px;top:590px;}
+#tl_47{left:65px;top:609px;}
+#tm_47{left:65px;top:649px;}
+#tn_47{left:65px;top:687px;}
+#to_47{left:192px;top:687px;}
+#tp_47{left:65px;top:705px;}
+#tq_47{left:65px;top:745px;}
+#tr_47{left:65px;top:784px;}
+#ts_47{left:190px;top:784px;}
+#tt_47{left:65px;top:802px;}
+#tu_47{left:65px;top:842px;}
+#tv_47{left:65px;top:861px;}
+#tw_47{left:65px;top:879px;}
+#tx_47{left:65px;top:919px;}
+#ty_47{left:65px;top:938px;}
+#tz_47{left:65px;top:978px;}
+#t10_47{left:65px;top:996px;}
+#t11_47{left:65px;top:1015px;}
+#t12_47{left:65px;top:1055px;}
+#t13_47{left:95px;top:1055px;}
+#t14_47{left:119px;top:1055px;}
+#t15_47{left:168px;top:1055px;}
+#t16_47{left:213px;top:1055px;}
+#t17_47{left:239px;top:1055px;}
+#t18_47{left:372px;top:1055px;}
+#t19_47{left:433px;top:1055px;}
+#t1a_47{left:497px;top:1055px;}
+#t1b_47{left:552px;top:1055px;}
+#t1c_47{left:608px;top:1055px;}
+#t1d_47{left:647px;top:1055px;}
+#t1e_47{left:731px;top:1055px;}
+#t1f_47{left:799px;top:1055px;}
+#t1g_47{left:831px;top:1055px;}
+#t1h_47{left:65px;top:1073px;}
+#t1i_47{left:65px;top:1113px;}
+#t1j_47{left:538px;top:1113px;}
+
+.s1_47{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s6_47{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-BoldItalic47;
+	color: rgb(0,0,0);
+}
+
+.s4_47{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana47;
+	color: rgb(0,0,0);
+}
+
+.s5_47{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Bold47;
+	color: rgb(0,0,0);
+}
+
+.s3_47{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic47;
+	color: rgb(0,0,0);
+}
+
+.s2_47{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana47;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts47" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Verdana47;
+	src :url("47/fonts/ABCDEE-Verdana.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-BoldItalic47;
+	src :url("47/fonts/ABCDEE-Verdana-BoldItalic.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Bold47;
+	src :url("47/fonts/ABCDEE-Verdana-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Italic47;
+	src :url("47/fonts/ABCDEE-Verdana-Italic.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_47" class="t s1_47">PODER JUDICIAL DE LA NACIÓN </div>
+<div id="t2_47" class="t s1_47">CÁMARA NACIONAL ELECTORAL </div>
+<div id="t3_47" class="t s2_47">Resultarán electos los dos titulares correspondientes a la lista del partido o alianza electoral que </div>
+<div id="t4_47" class="t s2_47">obtuviere la mayoría de los votos emitidos y el primero de la lista siguiente en cantidad de votos. El </div>
+<div id="t5_47" class="t s2_47">segundo titular de esta última lista será el primer suplente del Senador que por ella resultó elegido. </div>
+<div id="t6_47" class="t s2_47">Los suplentes sucederán al titular por su orden en el caso previsto por el artículo 62 de la </div>
+<div id="t7_47" class="t s2_47">Constitución Nacional. </div>
+<div id="t8_47" class="t s3_47">(Artículo sustituido por art. 2 de la Ley N° 24.444 B.O. 19/01/1995)</div>
+<div id="t9_47" class="t s4_47">. </div>
+<div id="ta_47" class="t s5_47">CAPITULO III </div>
+<div id="tb_47" class="t s6_47">De los Diputados Nacionales </div>
+<div id="tc_47" class="t s5_47">Artículo 158.- </div>
+<div id="td_47" class="t s2_47">Los Diputados Nacionales se elegirán en forma directa por el pueblo de cada </div>
+<div id="te_47" class="t s2_47">provincia y de la Capital Federal que se considerarán a este fin como distritos electorales. </div>
+<div id="tf_47" class="t s2_47">Cada elector votará solamente por una lista de candidatos oficializada cuyo número será igual al de </div>
+<div id="tg_47" class="t s2_47">los cargos a cubrir con más los suplentes previstos en el artículo 163 de la presente ley. </div>
+<div id="th_47" class="t s3_47">(Artículo sustituido por art. 2 de la Ley N° 24.444 B.O. 19/01/1995)</div>
+<div id="ti_47" class="t s4_47">. </div>
+<div id="tj_47" class="t s5_47">Artículo 159.- </div>
+<div id="tk_47" class="t s2_47">El escrutinio de cada elección se practicará por lista sin tomar en cuenta las tachas o </div>
+<div id="tl_47" class="t s2_47">sustituciones que hubiere efectuado el votante. </div>
+<div id="tm_47" class="t s3_47">(Artículo sustituido por art. 2 de la Ley N° 24.444 B.O. 19/01/1995) </div>
+<div id="tn_47" class="t s5_47">Artículo 160.- </div>
+<div id="to_47" class="t s2_47">No participarán en la asignación de cargos las listas que no logren un mínimo del </div>
+<div id="tp_47" class="t s2_47">tres por ciento (3 %) del padrón electoral del distrito. </div>
+<div id="tq_47" class="t s3_47">(Artículo sustituido  por art. 2 de la Ley N° 24.444 B.O. 19/01/1995) </div>
+<div id="tr_47" class="t s5_47">Artículo 161.- </div>
+<div id="ts_47" class="t s2_47">Los cargos a cubrir se asignarán conforme al orden establecido por cada lista y con </div>
+<div id="tt_47" class="t s2_47">arreglo al siguiente procedimiento: </div>
+<div id="tu_47" class="t s2_47">a) El total de los votos obtenidos por cada lista que haya alcanzado como mínimo el tres por ciento </div>
+<div id="tv_47" class="t s2_47">(3 %) del padrón electoral del distrito será dividido por uno (1), por dos (2), por tres (3) y así </div>
+<div id="tw_47" class="t s2_47">sucesivamente hasta llegar al número igual al de los cargos a cubrir;  </div>
+<div id="tx_47" class="t s2_47">b) Los cocientes resultantes, con independencia de la lista de que provengan, serán ordenados de </div>
+<div id="ty_47" class="t s2_47">mayor a menor en número igual al de los cargos a cubrir; </div>
+<div id="tz_47" class="t s2_47">c) Si hubiere dos o más cocientes iguales se los ordenará en relación directa con el total de los votos </div>
+<div id="t10_47" class="t s2_47">obtenidos por las respectivas listas y si éstos hubieren logrado igual número de votos el </div>
+<div id="t11_47" class="t s2_47">ordenamiento resultará de un sorteo que a tal fin deberá practicar la Junta Electoral competente; </div>
+<div id="t12_47" class="t s2_47">d) </div>
+<div id="t13_47" class="t s2_47">A </div>
+<div id="t14_47" class="t s2_47">cada </div>
+<div id="t15_47" class="t s2_47">lista </div>
+<div id="t16_47" class="t s2_47">le </div>
+<div id="t17_47" class="t s2_47">corresponderán </div>
+<div id="t18_47" class="t s2_47">tantos </div>
+<div id="t19_47" class="t s2_47">cargos </div>
+<div id="t1a_47" class="t s2_47">como </div>
+<div id="t1b_47" class="t s2_47">veces </div>
+<div id="t1c_47" class="t s2_47">sus </div>
+<div id="t1d_47" class="t s2_47">cocientes </div>
+<div id="t1e_47" class="t s2_47">figuren </div>
+<div id="t1f_47" class="t s2_47">en </div>
+<div id="t1g_47" class="t s2_47">el </div>
+<div id="t1h_47" class="t s2_47">ordenamiento indicado en el inciso b). </div>
+<div id="t1i_47" class="t s3_47">(Artículo sustituido por art. 2 de la Ley N° 24.444 B.O. 19/01/1995)</div>
+<div id="t1j_47" class="t s4_47">. </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg47Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg47"><object width="909" height="1286" data="47/47.svg" type="image/svg+xml" id="pdf47" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld47" type="text/javascript">
+
+var isIE = false;
+var f47 = [['t1_47',1144],['t2_47',1166],['t3_47',3118],['t4_47',3118],['t5_47',3117],['t6_47',3118],['t7_47',682],['t8_47',1892],['ta_47',473],['tb_47',973],['tc_47',489],['td_47',2587],['te_47',2763],['tf_47',3118],['tg_47',2718],['th_47',1892],['tj_47',471],['tk_47',2624],['tl_47',1460],['tm_47',1892],['tn_47',478],['to_47',2610],['tp_47',1654],['tq_47',1912],['tr_47',474],['ts_47',2619],['tt_47',1077],['tu_47',3118],['tv_47',3118],['tw_47',2146],['tx_47',3118],['ty_47',1782],['tz_47',3118],['t10_47',3118],['t11_47',3002],['t1h_47',1176],['t1i_47',1892]];
+function load47(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f47);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 56;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_47");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>

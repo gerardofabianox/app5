@@ -1,0 +1,308 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+
+<div id="jpedal" style="width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load35();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_35{left:312px;top:115px;}
+#t2_35{left:309px;top:136px;}
+#t3_35{left:65px;top:203px;}
+#t4_35{left:65px;top:221px;}
+#t5_35{left:65px;top:261px;}
+#t6_35{left:65px;top:280px;}
+#t7_35{left:142px;top:280px;}
+#t8_35{left:176px;top:280px;}
+#t9_35{left:267px;top:280px;}
+#ta_35{left:310px;top:280px;}
+#tb_35{left:339px;top:280px;}
+#tc_35{left:387px;top:280px;}
+#td_35{left:422px;top:280px;}
+#te_35{left:518px;top:280px;}
+#tf_35{left:548px;top:280px;}
+#tg_35{left:621px;top:280px;}
+#th_35{left:662px;top:280px;}
+#ti_35{left:691px;top:280px;}
+#tj_35{left:766px;top:280px;}
+#tk_35{left:65px;top:298px;}
+#tl_35{left:65px;top:317px;}
+#tm_35{left:65px;top:336px;}
+#tn_35{left:65px;top:376px;}
+#to_35{left:65px;top:394px;}
+#tp_35{left:65px;top:434px;}
+#tq_35{left:65px;top:453px;}
+#tr_35{left:134px;top:454px;}
+#ts_35{left:65px;top:493px;}
+#tt_35{left:197px;top:493px;}
+#tu_35{left:536px;top:493px;}
+#tv_35{left:65px;top:511px;}
+#tw_35{left:65px;top:530px;}
+#tx_35{left:65px;top:548px;}
+#ty_35{left:65px;top:567px;}
+#tz_35{left:65px;top:607px;}
+#t10_35{left:65px;top:625px;}
+#t11_35{left:65px;top:644px;}
+#t12_35{left:65px;top:662px;}
+#t13_35{left:65px;top:703px;}
+#t14_35{left:65px;top:721px;}
+#t15_35{left:400px;top:761px;}
+#t16_35{left:373px;top:801px;}
+#t17_35{left:65px;top:841px;}
+#t18_35{left:202px;top:841px;}
+#t19_35{left:268px;top:841px;}
+#t1a_35{left:65px;top:859px;}
+#t1b_35{left:65px;top:900px;}
+#t1c_35{left:193px;top:900px;}
+#t1d_35{left:388px;top:900px;}
+#t1e_35{left:65px;top:918px;}
+#t1f_35{left:65px;top:937px;}
+#t1g_35{left:65px;top:977px;}
+#t1h_35{left:65px;top:995px;}
+#t1i_35{left:65px;top:1014px;}
+#t1j_35{left:65px;top:1033px;}
+#t1k_35{left:65px;top:1051px;}
+#t1l_35{left:65px;top:1069px;}
+#t1m_35{left:65px;top:1109px;}
+
+.s1_35{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s5_35{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic35;
+	color: rgb(0,0,0);
+}
+
+.s4_35{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Bold35;
+	color: rgb(0,0,0);
+}
+
+.s3_35{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic35;
+	color: rgb(0,0,0);
+}
+
+.s2_35{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana35;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts35" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Verdana35;
+	src :url("35/fonts/ABCDEE-Verdana.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Bold35;
+	src :url("35/fonts/ABCDEE-Verdana-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Italic35;
+	src :url("35/fonts/ABCDEE-Verdana-Italic.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_35" class="t s1_35">PODER JUDICIAL DE LA NACIÓN </div>
+<div id="t2_35" class="t s1_35">CÁMARA NACIONAL ELECTORAL </div>
+<div id="t3_35" class="t s2_35">resultado del escrutinio, debiendo también consignarse el número de mesa y circuito a que </div>
+<div id="t4_35" class="t s2_35">pertenece. </div>
+<div id="t5_35" class="t s2_35">Luego de efectuado un estricto control de su texto que realizará confrontando, con los suplentes y </div>
+<div id="t6_35" class="t s2_35">fiscales, </div>
+<div id="t7_35" class="t s2_35">su </div>
+<div id="t8_35" class="t s2_35">contenido </div>
+<div id="t9_35" class="t s2_35">con </div>
+<div id="ta_35" class="t s2_35">el </div>
+<div id="tb_35" class="t s2_35">acta </div>
+<div id="tc_35" class="t s2_35">de </div>
+<div id="td_35" class="t s2_35">escrutinio, </div>
+<div id="te_35" class="t s2_35">lo </div>
+<div id="tf_35" class="t s2_35">cursará </div>
+<div id="tg_35" class="t s2_35">por </div>
+<div id="th_35" class="t s2_35">el </div>
+<div id="ti_35" class="t s2_35">servicio </div>
+<div id="tj_35" class="t s2_35">oficial de </div>
+<div id="tk_35" class="t s2_35">telecomunicaciones, con destino a la Junta Electoral Nacional de Distrito que corresponda, para lo </div>
+<div id="tl_35" class="t s2_35">cual entregará el telegrama al empleado que recibe la urna. Dicho servicio deberá conceder </div>
+<div id="tm_35" class="t s2_35">preferentemente prioridad al despacho telegráfico.  </div>
+<div id="tn_35" class="t s2_35">En todos los casos el empleado de correos solicitará al presidente del comicio, la entrega del </div>
+<div id="to_35" class="t s2_35">telegrama para su inmediata remisión. </div>
+<div id="tp_35" class="t s2_35">El Presidente remitirá una copia del telegrama a la Dirección Nacional Electoral del Ministerio del </div>
+<div id="tq_35" class="t s2_35">Interior. </div>
+<div id="tr_35" class="t s3_35">(Párrafo incorporado por art. 7 de la Ley N° 25.610 B.O.08/07/2002). </div>
+<div id="ts_35" class="t s4_35">Artículo 106.- </div>
+<div id="tt_35" class="t s5_35">Custodia de las urnas y documentación.</div>
+<div id="tu_35" class="t s2_35">Los partidos políticos podrán vigilar y </div>
+<div id="tv_35" class="t s2_35">custodiar las urnas y su documentación desde el momento en que se entregan al correo hasta que </div>
+<div id="tw_35" class="t s2_35">son recibidas en la Junta Electoral. A este efecto los fiscales acompañarán al funcionario, cualquiera </div>
+<div id="tx_35" class="t s2_35">sea el medio de locomoción empleado por éste. Si lo hace en vehículo particular por lo menos dos </div>
+<div id="ty_35" class="t s2_35">fiscales irán con él. Si hubiese más fiscales, podrán acompañarlo en otro vehículo. </div>
+<div id="tz_35" class="t s2_35">Cuando las urnas y documentos deban permanecer en la oficina de correos se colocarán en un </div>
+<div id="t10_35" class="t s2_35">cuarto y las puertas, ventanas y cualquiera otra abertura serán cerradas y selladas en presencia de </div>
+<div id="t11_35" class="t s2_35">los fiscales, quienes podrán custodiar las puertas de entrada durante el tiempo que las urnas </div>
+<div id="t12_35" class="t s2_35">permanezcan en él. </div>
+<div id="t13_35" class="t s2_35">El transporte y entrega de las urnas retiradas de los comicios a las respectivas juntas electorales se </div>
+<div id="t14_35" class="t s2_35">hará sin demora alguna en relación a los medios de movilidad disponibles.  </div>
+<div id="t15_35" class="t s4_35">CAPITULO II </div>
+<div id="t16_35" class="t s5_35">Escrutinio de la Junta </div>
+<div id="t17_35" class="t s4_35">Artículo 107.- </div>
+<div id="t18_35" class="t s5_35">Plazos.</div>
+<div id="t19_35" class="t s2_35">La Junta Electoral de Distrito efectuará con la mayor celeridad las </div>
+<div id="t1a_35" class="t s2_35">operaciones que se indican en esta ley. A tal fin, todos los plazos se computarán en días corridos. </div>
+<div id="t1b_35" class="t s4_35">Artículo 108.- </div>
+<div id="t1c_35" class="t s5_35">Designación de fiscales.</div>
+<div id="t1d_35" class="t s2_35">Los partidos que hubiesen oficializado lista de candidatos </div>
+<div id="t1e_35" class="t s2_35">podrán designar fiscales con derecho a asistir a todas las operaciones del escrutinio a cargo de la </div>
+<div id="t1f_35" class="t s2_35">Junta, así como a examinar la documentación correspondiente. </div>
+<div id="t1g_35" class="t s2_35">El control del comicio por los partidos políticos comprenderá, además, la recolección y transmisión </div>
+<div id="t1h_35" class="t s2_35">de los datos del escrutinio provisorio de y a los centros establecidos para su cómputo, y el </div>
+<div id="t1i_35" class="t s2_35">procesamiento informático de los resultados provisorios y definitivos, incluyendo el programa </div>
+<div id="t1j_35" class="t s2_35">(software) utilizado. Este último será verificado por la Justicia Electoral que mantendrá una copia </div>
+<div id="t1k_35" class="t s2_35">bajo resguardo y permitirá a los partidos las comprobaciones que requieran del sistema empleado, </div>
+<div id="t1l_35" class="t s2_35">que deberá estar disponible, a esos fines, con suficiente antelación. </div>
+<div id="t1m_35" class="t s3_35">(Artículo sustituido por art. 1 de la Ley N° 24.444 B.O. 19/01/1995). </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg35Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg35"><object width="909" height="1286" data="35/35.svg" type="image/svg+xml" id="pdf35" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld35" type="text/javascript">
+
+var isIE = false;
+var f35 = [['t1_35',1144],['t2_35',1166],['t3_35',3117],['t5_35',3118],['tj_35',316],['tk_35',3117],['tl_35',3117],['tm_35',1582],['tn_35',3118],['to_35',1194],['tp_35',3118],['tr_35',1941],['ts_35',488],['tt_35',1315],['tu_35',1235],['tv_35',3118],['tw_35',3117],['tx_35',3117],['ty_35',2536],['tz_35',3118],['t10_35',3118],['t11_35',3118],['t12_35',604],['t13_35',3118],['t14_35',2314],['t15_35',439],['t16_35',658],['t17_35',499],['t19_35',2306],['t1a_35',3013],['t1b_35',480],['t1c_35',751],['t1d_35',1825],['t1e_35',3117],['t1f_35',1948],['t1g_35',3118],['t1h_35',3118],['t1i_35',3118],['t1j_35',3117],['t1k_35',3117],['t1l_35',2082],['t1m_35',1912]];
+function load35(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f35);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 59;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_35");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+
+<div id="jpedal" style="width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load32();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_32{left:312px;top:115px;}
+#t2_32{left:309px;top:136px;}
+#t3_32{left:65px;top:203px;}
+#t4_32{left:65px;top:221px;}
+#t5_32{left:414px;top:261px;}
+#t6_32{left:412px;top:301px;}
+#t7_32{left:404px;top:341px;}
+#t8_32{left:373px;top:381px;}
+#t9_32{left:65px;top:421px;}
+#ta_32{left:191px;top:421px;}
+#tb_32{left:539px;top:421px;}
+#tc_32{left:65px;top:440px;}
+#td_32{left:65px;top:458px;}
+#te_32{left:65px;top:477px;}
+#tf_32{left:65px;top:517px;}
+#tg_32{left:65px;top:535px;}
+#th_32{left:65px;top:575px;}
+#ti_32{left:65px;top:594px;}
+#tj_32{left:65px;top:634px;}
+#tk_32{left:65px;top:674px;}
+#tl_32{left:65px;top:714px;}
+#tm_32{left:65px;top:733px;}
+#tn_32{left:65px;top:751px;}
+#to_32{left:65px;top:769px;}
+#tp_32{left:65px;top:809px;}
+#tq_32{left:65px;top:849px;}
+#tr_32{left:65px;top:868px;}
+#ts_32{left:65px;top:908px;}
+#tt_32{left:65px;top:926px;}
+#tu_32{left:65px;top:967px;}
+#tv_32{left:65px;top:1007px;}
+#tw_32{left:65px;top:1025px;}
+#tx_32{left:65px;top:1065px;}
+#ty_32{left:65px;top:1105px;}
+#tz_32{left:65px;top:1123px;}
+
+.s1_32{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s3_32{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Bold32;
+	color: rgb(0,0,0);
+}
+
+.s4_32{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic32;
+	color: rgb(0,0,0);
+}
+
+.s2_32{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana32;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts32" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Verdana32;
+	src :url("32/fonts/ABCDEE-Verdana.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Bold32;
+	src :url("32/fonts/ABCDEE-Verdana-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Italic32;
+	src :url("32/fonts/ABCDEE-Verdana-Italic.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_32" class="t s1_32">PODER JUDICIAL DE LA NACIÓN </div>
+<div id="t2_32" class="t s1_32">CÁMARA NACIONAL ELECTORAL </div>
+<div id="t3_32" class="t s2_32">En el caso previsto en los artículos 58 y 74 se dejará constancia del o de los votos emitidos en esas </div>
+<div id="t4_32" class="t s2_32">condiciones. </div>
+<div id="t5_32" class="t s3_32">TITULO V </div>
+<div id="t6_32" class="t s3_32">Escrutinio </div>
+<div id="t7_32" class="t s3_32">CAPITULO I </div>
+<div id="t8_32" class="t s4_32">Escrutinio de la mesa </div>
+<div id="t9_32" class="t s3_32">Artículo 101.- </div>
+<div id="ta_32" class="t s4_32">Procedimiento. Calificación de los sufragios.</div>
+<div id="tb_32" class="t s2_32">Acto seguido el presidente del comicio, </div>
+<div id="tc_32" class="t s2_32">auxiliado por los suplentes, con vigilancia policial o militar en el acceso y ante la sola presencia de </div>
+<div id="td_32" class="t s2_32">los fiscales acreditados, apoderados y candidatos que lo soliciten, hará el escrutinio ajustándose al </div>
+<div id="te_32" class="t s2_32">siguiente procedimiento: </div>
+<div id="tf_32" class="t s2_32">1. Abrirá la urna, de la que extraerá todos los sobres y los contará confrontando su número con el </div>
+<div id="tg_32" class="t s2_32">de los sufragantes consignados al pie de la lista electoral. </div>
+<div id="th_32" class="t s2_32">2. Examinará los sobres, separando los que estén en forma legal y los que correspondan a votos </div>
+<div id="ti_32" class="t s2_32">impugnados. </div>
+<div id="tj_32" class="t s2_32">3. Practicadas tales operaciones procederá a la apertura de los sobres.  </div>
+<div id="tk_32" class="t s2_32">4. Luego separará los sufragios para su recuento en las siguientes categorías. </div>
+<div id="tl_32" class="t s2_32">I. Votos válidos: son los emitidos mediante boleta oficializada, aun cuando tuvieren tachaduras de </div>
+<div id="tm_32" class="t s2_32">candidatos, agregados o sustituciones (borratina). Si en un sobre aparecieren dos o más boletas </div>
+<div id="tn_32" class="t s2_32">oficializadas correspondientes al mismo partido y categoría de candidatos, sólo se computará una de </div>
+<div id="to_32" class="t s2_32">ellas destruyéndose las restantes. </div>
+<div id="tp_32" class="t s2_32">II. Votos nulos: son aquellos emitidos: </div>
+<div id="tq_32" class="t s2_32">a) Mediante boleta no oficializada, o con papel de cualquier color con inscripciones o imágenes de </div>
+<div id="tr_32" class="t s2_32">cualquier naturaleza; </div>
+<div id="ts_32" class="t s2_32">b) Mediante boleta oficializada que contengan inscripciones y/o leyendas de cualquier tipo, salvo los </div>
+<div id="tt_32" class="t s2_32">supuestos del apartado I anterior; </div>
+<div id="tu_32" class="t s2_32">c) Mediante dos o más boletas de distinto partido para la misma categoría de candidatos; </div>
+<div id="tv_32" class="t s2_32">d) Mediante boleta oficializada que por destrucción parcial, defecto o tachaduras, no contenga, por </div>
+<div id="tw_32" class="t s2_32">lo menos sin rotura o tachadura, el nombre del partido y la categoría de candidatos a elegir; </div>
+<div id="tx_32" class="t s2_32">e) Cuando en el sobre juntamente con la boleta electoral se hayan incluido objetos extraños a ella. </div>
+<div id="ty_32" class="t s2_32">III. Votos en blanco: cuando el sobre estuviere vacío o con papel de cualquier color sin inscripciones </div>
+<div id="tz_32" class="t s2_32">ni imagen alguna. </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg32Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg32"><object width="909" height="1286" data="32/32.svg" type="image/svg+xml" id="pdf32" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld32" type="text/javascript">
+
+var isIE = false;
+var f32 = [['t1_32',1144],['t2_32',1166],['t3_32',3118],['t5_32',324],['t7_32',406],['t8_32',657],['t9_32',475],['ta_32',1366],['tb_32',1222],['tc_32',3118],['td_32',3117],['te_32',764],['tf_32',3118],['tg_32',1774],['th_32',3118],['tj_32',2201],['tk_32',2399],['tl_32',3118],['tm_32',3117],['tn_32',3117],['to_32',1046],['tp_32',1192],['tq_32',3118],['tr_32',652],['ts_32',3117],['tt_32',1054],['tu_32',2763],['tv_32',3118],['tw_32',2854],['tx_32',3052],['ty_32',3118],['tz_32',552]];
+function load32(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f32);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 36;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_32");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>

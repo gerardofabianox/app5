@@ -1,0 +1,295 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title> 22.838</title>
+<link rel="stylesheet" type="text/css" href="assets/IDRViewer.css">
+<script type="text/javascript">
+var extLoaded = false;
+var intLoaded = false;
+function idrLoad() {
+	idrLoaded = true;
+	var bounds;
+	var heights = new Array(200,200,200);
+	IDRViewer.makeNavBar(3,1,935,1210,0,heights,'.jpg',bounds, true);
+}
+</script>
+<script src="assets/IDRViewer.js" type="text/javascript"></script>
+</head>
+
+<!-- Background pattern courtesy of http://subtlepatterns.com/grey-washed-wall/ -->
+<body style="background:url('assets/bg.png') repeat scroll 0 0 transparent;">
+
+<div id="left">
+<div id="leftNav">
+	<div id="btnThumbnails" onclick="IDRViewer.toggleOutlines(false)" title="Thumbnails" class="navBtn inactive"></div>
+	<div id="btnOutlines" onclick="IDRViewer.toggleOutlines(true)" title="Bookmarks" class="navBtn inactive"></div>
+</div>
+<div id="leftContent">
+	<div id="thumbnailPanel"></div>
+	<div id="outlinePanel"></div>
+</div>
+</div>
+
+<div id="main">
+
+<div id="mainNav">
+	<div id="btnSideToggle" onclick="IDRViewer.toggleThumbnails();" class="navBtn"><div title="Sidebar"></div></div>
+
+	<div id="btnPrev" title="Pagina anterior" onclick="IDRViewer.prev()" class="navBtn"></div>
+	<select id="goBtn" onchange="IDRViewer.goToPage(0)">
+
+	</select>
+	<span id="pgCount"></span>
+	<div id="btnNext" title="Pagina siguiente" onclick="IDRViewer.next()" class="navBtn"></div>
+
+	<div id="btnSelect" title="Seleccionar" onclick="IDRViewer.setSelectMode(0)" class="navBtn"></div>
+	<div id="btnMove" title="Pan" onclick="IDRViewer.setSelectMode(1)" class="navBtn"></div>
+
+	<div id="btnZoomOut" title="Zoom Alejar" onclick="IDRViewer.zoomOut()" class="navBtn"></div>
+	<select id="zoomBtn" onchange="IDRViewer.zoomUpdate()">
+		<option value="0">100%</option>
+		<option value="1">Tamano Real</option>
+		<option value="2">Ajustar ancho</option>
+		<option value="3">Ajustar altura</option>
+		<option value="4">Ajustar a la pagina</option>
+		<option value="5">Automatico</option>
+
+	</select>
+	<div id="btnZoomIn" title="Zoom Acercar" onclick="IDRViewer.zoomIn()" class="navBtn"></div>
+	<div id="btnFullscreen" title="Pantalla completa" onclick="IDRViewer.toggleFullScreen();" class="navBtn closed"></div>
+</div>
+
+<div id="mainContent">
+
+<div id="contentContainer">
+
+
+
+<div id="jpedal" style="position:relative; width: 935px; height: 1210px; overflow: hidden; margin: 0 auto; box-shadow: 0 2px 6px rgba(100, 100, 100, 0.5);">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load1();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_1{left:328px;top:128px;}
+#t2_1{left:326px;top:147px;}
+#t3_1{left:101px;top:207px;}
+#t4_1{left:101px;top:251px;}
+#t5_1{left:101px;top:294px;}
+#t6_1{left:101px;top:316px;}
+#t7_1{left:101px;top:338px;}
+#t8_1{left:101px;top:382px;}
+#t9_1{left:101px;top:425px;}
+#ta_1{left:101px;top:447px;}
+#tb_1{left:101px;top:490px;}
+#tc_1{left:101px;top:534px;}
+#td_1{left:101px;top:577px;}
+#te_1{left:254px;top:577px;}
+#tf_1{left:101px;top:599px;}
+#tg_1{left:101px;top:621px;}
+#th_1{left:101px;top:665px;}
+#ti_1{left:246px;top:665px;}
+#tj_1{left:101px;top:687px;}
+#tk_1{left:101px;top:708px;}
+#tl_1{left:101px;top:752px;}
+#tm_1{left:246px;top:752px;}
+#tn_1{left:101px;top:774px;}
+#to_1{left:101px;top:817px;}
+#tp_1{left:251px;top:817px;}
+#tq_1{left:101px;top:839px;}
+#tr_1{left:101px;top:883px;}
+#ts_1{left:254px;top:883px;}
+#tt_1{left:101px;top:905px;}
+#tu_1{left:101px;top:948px;}
+#tv_1{left:101px;top:970px;}
+#tw_1{left:101px;top:992px;}
+#tx_1{left:101px;top:1035px;}
+#ty_1{left:101px;top:1057px;}
+
+.s1_1{
+	FONT-SIZE: 68px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s3_1{
+	FONT-SIZE: 63px;
+	FONT-FAMILY: Verdana, Geneva, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s2_1{
+	FONT-SIZE: 63px;
+	FONT-FAMILY: Verdana, Geneva, sans-serif;
+	color: rgb(0,0,0);
+	FONT-WEIGHT: bold;
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_1" class="t s1_1">PODER JUDICIAL DE LA NACIÓN </div>
+<div id="t2_1" class="t s1_1">CÁMARA NACIONAL ELECTORAL </div>
+<div id="t3_1" class="t s2_1">LEY ELECTORAL </div>
+<div id="t4_1" class="t s2_1">LEY Nº 22.838 </div>
+<div id="t5_1" class="t s2_1">Sistema a aplicar en las elecciones de diputados nacionales, de electores de </div>
+<div id="t6_1" class="t s2_1">presidente y vicepresidente de la Nación y de electores de senadores por la </div>
+<div id="t7_1" class="t s2_1">Capital Federal. </div>
+<div id="t8_1" class="t s3_1">Buenos Aires, 23 de junio de 1983. </div>
+<div id="t9_1" class="t s3_1">EN uso de las atribuciones conferidas por el artículo 5º del Estatuto para el Proceso de </div>
+<div id="ta_1" class="t s3_1">Reorganización Nacional, </div>
+<div id="tb_1" class="t s3_1">EL PRESIDENTE DE LA NACIÓN ARGENTINA </div>
+<div id="tc_1" class="t s3_1">SANCIONA Y PROMULGA CON FUERZA DE LEY: </div>
+<div id="td_1" class="t s2_1">ARTICULO 1º —</div>
+<div id="te_1" class="t s3_1">La presente ley será de aplicación para las elecciones de diputados </div>
+<div id="tf_1" class="t s3_1">nacionales, de electores de presidente y vicepresidente de la Nación y de electores de </div>
+<div id="tg_1" class="t s3_1">senadores por la Capital Federal. </div>
+<div id="th_1" class="t s2_1">ARTICULO 2º —</div>
+<div id="ti_1" class="t s3_1">El sufragante votará solamente por una lista de candidatos oficializada, </div>
+<div id="tj_1" class="t s3_1">cuyo número será igual al de los cargos a cubrir con más los suplentes previstos en el </div>
+<div id="tk_1" class="t s3_1">artículo 5º. </div>
+<div id="tl_1" class="t s2_1">ARTICULO 3º —</div>
+<div id="tm_1" class="t s3_1">El escrutinio de cada elección se practicará por lista sin tomar en cuenta </div>
+<div id="tn_1" class="t s3_1">las tachas o sustituciones que hubiere efectuado el votante. </div>
+<div id="to_1" class="t s2_1">ARTICULO 4º —</div>
+<div id="tp_1" class="t s3_1">No participarán en la asignación de cargos las listas que no logren un </div>
+<div id="tq_1" class="t s3_1">mínimo del tres por ciento (3 %) del padrón electoral del distrito. </div>
+<div id="tr_1" class="t s2_1">ARTICULO 5º —</div>
+<div id="ts_1" class="t s3_1">Los cargos a cubrir se asignarán conforme al orden establecido por </div>
+<div id="tt_1" class="t s3_1">cada lista y con arreglo al siguiente procedimiento: </div>
+<div id="tu_1" class="t s3_1">a) el total de los votos obtenidos por cada lista que haya alcanzado como mínimo el tres </div>
+<div id="tv_1" class="t s3_1">por ciento (3 %) del padrón electoral del distrito será dividido por uno (1), por dos (2), </div>
+<div id="tw_1" class="t s3_1">por tres (3) y así sucesivamente hasta llegar al número total de los cargos a cubrir; </div>
+<div id="tx_1" class="t s3_1">b) los cocientes resultantes, con independencia de la lista de que provengan serán </div>
+<div id="ty_1" class="t s3_1">ordenados de mayor a menor en número igual al de los cargos a cubrir; </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg1Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg1"><object width="935" height="1210" data="index/1.svg" type="image/svg+xml" id="pdf1" style="width:935px; height:1210px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script type="text/javascript">
+var isIE = false;
+var f1 = [['t1_1',1076],['t2_1',1094],['t3_1',559],['t4_1',511],['t5_1',2859],['t6_1',2859],['t7_1',555],['t8_1',1119],['t9_1',2858],['ta_1',794],['tb_1',1395],['tc_1',1499],['td_1',580],['te_1',2244],['tf_1',2859],['tg_1',1046],['th_1',558],['ti_1',2277],['tj_1',2859],['tk_1',355],['tl_1',558],['tm_1',2311],['tn_1',1905],['to_1',571],['tp_1',2292],['tq_1',2080],['tr_1',580],['ts_1',2248],['tt_1',1626],['tu_1',2897],['tv_1',2898],['tw_1',2665],['tx_1',2898],['ty_1',2290]];
+function load1(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f1);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 35;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_1");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	if (extLoaded) { idrLoad(); } else { intLoaded = true; }
+</script>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>rent_decreto_935_10 Page2</title>
+<link rel="stylesheet" type="text/css" href="assets/IDRViewer.css">
+<script type="text/javascript">
+var extLoaded = false;
+var intLoaded = false;
+function idrLoad() {
+	idrLoaded = true;
+	var bounds;
+	var heights = new Array(200,200);
+	IDRViewer.makeNavBar(2,2,935,1540,0,heights,'.jpg',bounds, true);
+}
+</script>
+<script src="assets/IDRViewer.js" type="text/javascript"></script>
+</head>
+
+<!-- Background pattern courtesy of http://subtlepatterns.com/grey-washed-wall/ -->
+<body style="background:url('assets/bg.png') repeat scroll 0 0 transparent;">
+
+<div id="left">
+<div id="leftNav">
+	<div id="btnThumbnails" onclick="IDRViewer.toggleOutlines(false)" title="Thumbnails" class="navBtn inactive"></div>
+	<div id="btnOutlines" onclick="IDRViewer.toggleOutlines(true)" title="Bookmarks" class="navBtn inactive"></div>
+</div>
+<div id="leftContent">
+	<div id="thumbnailPanel"></div>
+	<div id="outlinePanel"></div>
+</div>
+</div>
+
+<div id="main">
+
+<div id="mainNav">
+	<div id="btnSideToggle" onclick="IDRViewer.toggleThumbnails();" class="navBtn"><div title="Sidebar"></div></div>
+
+	<div id="btnPrev" title="Pagina anterior" onclick="IDRViewer.prev()" class="navBtn"></div>
+	<select id="goBtn" onchange="IDRViewer.goToPage(0)">
+
+	</select>
+	<span id="pgCount"></span>
+	<div id="btnNext" title="Pagina siguiente" onclick="IDRViewer.next()" class="navBtn"></div>
+
+	<div id="btnSelect" title="Seleccionar" onclick="IDRViewer.setSelectMode(0)" class="navBtn"></div>
+	<div id="btnMove" title="Pan" onclick="IDRViewer.setSelectMode(1)" class="navBtn"></div>
+
+	<div id="btnZoomOut" title="Zoom Alejar" onclick="IDRViewer.zoomOut()" class="navBtn"></div>
+	<select id="zoomBtn" onchange="IDRViewer.zoomUpdate()">
+		<option value="0">100%</option>
+		<option value="1">Tamano Real</option>
+		<option value="2">Ajustar ancho</option>
+		<option value="3">Ajustar altura</option>
+		<option value="4">Ajustar a la pagina</option>
+		<option value="5">Automatico</option>
+
+	</select>
+	<div id="btnZoomIn" title="Zoom Acercar" onclick="IDRViewer.zoomIn()" class="navBtn"></div>
+	<div id="btnFullscreen" title="Pantalla completa" onclick="IDRViewer.toggleFullScreen();" class="navBtn closed"></div>
+</div>
+
+<div id="mainContent">
+
+<div id="contentContainer">
+
+
+
+<div id="jpedal" style="position:relative; width: 935px; height: 1540px; overflow: hidden; margin: 0 auto; box-shadow: 0 2px 6px rgba(100, 100, 100, 0.5);">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load2();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_2{left:87px;top:130px;}
+#t2_2{left:153px;top:130px;}
+#t3_2{left:87px;top:149px;}
+#t4_2{left:87px;top:167px;}
+#t5_2{left:87px;top:186px;}
+#t6_2{left:87px;top:213px;}
+#t7_2{left:87px;top:232px;}
+#t8_2{left:87px;top:260px;}
+#t9_2{left:150px;top:260px;}
+#ta_2{left:87px;top:278px;}
+#tb_2{left:87px;top:297px;}
+#tc_2{left:87px;top:325px;}
+#td_2{left:87px;top:343px;}
+#te_2{left:87px;top:362px;}
+#tf_2{left:87px;top:380px;}
+#tg_2{left:87px;top:399px;}
+#th_2{left:87px;top:417px;}
+#ti_2{left:87px;top:436px;}
+#tj_2{left:87px;top:464px;}
+#tk_2{left:158px;top:464px;}
+#tl_2{left:87px;top:482px;}
+#tm_2{left:87px;top:501px;}
+#tn_2{left:87px;top:519px;}
+#to_2{left:87px;top:547px;}
+#tp_2{left:153px;top:547px;}
+#tq_2{left:87px;top:566px;}
+#tr_2{left:87px;top:584px;}
+#ts_2{left:87px;top:603px;}
+#tt_2{left:87px;top:621px;}
+#tu_2{left:87px;top:640px;}
+#tv_2{left:87px;top:659px;}
+#tw_2{left:87px;top:686px;}
+#tx_2{left:151px;top:686px;}
+#ty_2{left:87px;top:705px;}
+#tz_2{left:87px;top:723px;}
+#t10_2{left:87px;top:742px;}
+#t11_2{left:87px;top:770px;}
+#t12_2{left:175px;top:770px;}
+#t13_2{left:87px;top:788px;}
+#t14_2{left:87px;top:807px;}
+#t15_2{left:87px;top:835px;}
+#t16_2{left:186px;top:835px;}
+#t17_2{left:87px;top:853px;}
+#t18_2{left:87px;top:872px;}
+
+.s2_2{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: Verdana, Geneva, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s1_2{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: Verdana, Geneva, sans-serif;
+	color: rgb(0,0,0);
+	FONT-WEIGHT: bold;
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_2" class="t s1_2">Art. 5º </div>
+<div id="t2_2" class="t s2_2">— En el registro informatizado se incluirán, por cada elector, los siguientes datos: </div>
+<div id="t3_2" class="t s2_2">apellidos y nombres, sexo, lugar y fecha de nacimiento, domicilio, profesión, tipo y número </div>
+<div id="t4_2" class="t s2_2">de documento cívico especificando de qué ejemplar se trata, fecha de identificación y datos </div>
+<div id="t5_2" class="t s2_2">filiatorios. </div>
+<div id="t6_2" class="t s2_2">Los electores ausentes por desaparición forzada se incorporarán al aludido registro en las </div>
+<div id="t7_2" class="t s2_2">condiciones establecidas en el artículo 9º de la presente reglamentación. </div>
+<div id="t8_2" class="t s1_2">Art. 6º </div>
+<div id="t9_2" class="t s2_2">— El REGISTRO NACIONAL DE ELECTORES deberá consignar la condición de "elector </div>
+<div id="ta_2" class="t s2_2">ausente por desaparición forzada" en los casos en que hayan sido declarados tales según lo </div>
+<div id="tb_2" class="t s2_2">dispuesto por la Ley Nº 24.321. </div>
+<div id="tc_2" class="t s2_2">La SECRETARIA DE DERECHOS HUMANOS del MINISTERIO DE JUSTICIA, SEGURIDAD Y </div>
+<div id="td_2" class="t s2_2">DERECHOS HUMANOS deberá remitir, en un plazo de NOVENTA (90) días, a la CAMARA </div>
+<div id="te_2" class="t s2_2">NACIONAL ELECTORAL la información que constara en sus registros sobre los ciudadanos </div>
+<div id="tf_2" class="t s2_2">que han sido declarados ausentes por desaparición forzada, consignando apellido y nombre, </div>
+<div id="tg_2" class="t s2_2">sexo, fecha de nacimiento, tipo y número de documento cívico, juzgado y fecha de la </div>
+<div id="th_2" class="t s2_2">sentencia que declaró la ausencia por desaparición forzada, para su cotejo con los registros </div>
+<div id="ti_2" class="t s2_2">que posea la DIRECCION NACIONAL DEL REGISTRO NACIONAL DE LAS PERSONAS. </div>
+<div id="tj_2" class="t s1_2">Art. 7º </div>
+<div id="tk_2" class="t s2_2">— Si la Justicia Nacional Electoral detectara electores que no constaran como </div>
+<div id="tl_2" class="t s2_2">declarados ausentes por desaparición forzada en el REGISTRO NACIONAL DE ELECTORES, </div>
+<div id="tm_2" class="t s2_2">deberá solicitar copia de la sentencia al juzgado interviniente para su asiento en dicho </div>
+<div id="tn_2" class="t s2_2">Registro y en la DIRECCION NACIONAL DEL REGISTRO NACIONAL DE LAS PERSONAS. </div>
+<div id="to_2" class="t s1_2">Art. 8º </div>
+<div id="tp_2" class="t s2_2">— Los casos de ciudadanos declarados ausentes por desaparición forzada, que no </div>
+<div id="tq_2" class="t s2_2">figurasen en el REGISTRO NACIONAL DE ELECTORES y sean detectados con posterioridad </div>
+<div id="tr_2" class="t s2_2">por la SECRETARIA DE DERECHOS HUMANOS del MINISTERIO DE JUSTICIA, SEGURIDAD Y </div>
+<div id="ts_2" class="t s2_2">DERECHOS HUMANOS o por organizaciones no gubernamentales reconocidas por aquélla, </div>
+<div id="tt_2" class="t s2_2">deberán ser denunciados por dicha Secretaría ante la Justicia Electoral para la modificación </div>
+<div id="tu_2" class="t s2_2">del registro respectivo, acompañando copia de la sentencia declaratoria de la ausencia por </div>
+<div id="tv_2" class="t s2_2">desaparición forzada. </div>
+<div id="tw_2" class="t s1_2">Art. 9º </div>
+<div id="tx_2" class="t s2_2">— En las hojas impresas del padrón electoral, los electores declarados ausentes por </div>
+<div id="ty_2" class="t s2_2">desaparición forzada deberán visualizarse con un sombreado que los resalte. Al pie de cada </div>
+<div id="tz_2" class="t s2_2">hoja figurará la leyenda "Elector ausente por desaparición forzada, artículo 15 del Código </div>
+<div id="t10_2" class="t s2_2">Electoral Nacional". </div>
+<div id="t11_2" class="t s1_2">Art. 10 — </div>
+<div id="t12_2" class="t s2_2">La DIRECCION NACIONAL DEL REGISTRO NACIONAL DE LAS PERSONAS deberá </div>
+<div id="t13_2" class="t s2_2">arbitrar los medios a fin de que la Justicia Electoral fiscalice la exactitud de los datos </div>
+<div id="t14_2" class="t s2_2">remitidos por dicho organismo. </div>
+<div id="t15_2" class="t s1_2">Art. 11 — </div>
+<div id="t16_2" class="t s2_2">Comuníquese, publíquese, dése a la DIRECCION NACIONAL DEL REGISTRO </div>
+<div id="t17_2" class="t s2_2">OFICIAL y archívese. — FERNANDEZ DE KIRCHNER. — Aníbal D. Fernández. — Aníbal F. </div>
+<div id="t18_2" class="t s2_2">Randazzo. </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg2Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg2"><object width="935" height="1540" data="2/2.svg" type="image/svg+xml" id="pdf2" style="width:935px; height:1540px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script type="text/javascript">
+var isIE = false;
+var f2 = [['t1_2',235],['t2_2',2610],['t3_2',2874],['t4_2',2874],['t6_2',2874],['t7_2',2245],['t8_2',230],['t9_2',2622],['ta_2',2874],['tb_2',980],['tc_2',2875],['td_2',2874],['te_2',2874],['tf_2',2875],['tg_2',2874],['th_2',2874],['ti_2',2578],['tj_2',247],['tk_2',2587],['tl_2',2874],['tm_2',2874],['tn_2',2670],['to_2',237],['tp_2',2608],['tq_2',2874],['tr_2',2874],['ts_2',2874],['tt_2',2874],['tu_2',2874],['tv_2',657],['tw_2',232],['tx_2',2619],['ty_2',2874],['tz_2',2874],['t10_2',595],['t11_2',328],['t12_2',2519],['t13_2',2875],['t14_2',959],['t15_2',356],['t16_2',2477],['t17_2',2874]];
+function load2(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f2);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 45;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_2");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	if (extLoaded) { idrLoad(); } else { intLoaded = true; }
+</script>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>

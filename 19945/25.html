@@ -1,0 +1,298 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+
+<div id="jpedal" style="width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load25();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_25{left:312px;top:115px;}
+#t2_25{left:309px;top:136px;}
+#t3_25{left:65px;top:203px;}
+#t4_25{left:65px;top:219px;}
+#t5_25{left:65px;top:258px;}
+#t6_25{left:184px;top:258px;}
+#t7_25{left:528px;top:258px;}
+#t8_25{left:65px;top:276px;}
+#t9_25{left:65px;top:295px;}
+#ta_25{left:65px;top:313px;}
+#tb_25{left:65px;top:353px;}
+#tc_25{left:65px;top:391px;}
+#td_25{left:179px;top:391px;}
+#te_25{left:371px;top:391px;}
+#tf_25{left:65px;top:410px;}
+#tg_25{left:65px;top:429px;}
+#th_25{left:65px;top:447px;}
+#ti_25{left:65px;top:487px;}
+#tj_25{left:65px;top:506px;}
+#tk_25{left:65px;top:524px;}
+#tl_25{left:65px;top:564px;}
+#tm_25{left:65px;top:583px;}
+#tn_25{left:65px;top:601px;}
+#to_25{left:65px;top:620px;}
+#tp_25{left:65px;top:638px;}
+#tq_25{left:65px;top:678px;}
+#tr_25{left:84px;top:678px;}
+#ts_25{left:65px;top:717px;}
+#tt_25{left:65px;top:735px;}
+#tu_25{left:65px;top:775px;}
+#tv_25{left:188px;top:775px;}
+#tw_25{left:293px;top:775px;}
+#tx_25{left:65px;top:794px;}
+#ty_25{left:65px;top:812px;}
+#tz_25{left:65px;top:852px;}
+#t10_25{left:186px;top:852px;}
+#t11_25{left:376px;top:852px;}
+#t12_25{left:65px;top:871px;}
+#t13_25{left:65px;top:911px;}
+#t14_25{left:184px;top:911px;}
+#t15_25{left:671px;top:911px;}
+#t16_25{left:65px;top:929px;}
+#t17_25{left:65px;top:948px;}
+#t18_25{left:65px;top:966px;}
+#t19_25{left:65px;top:1006px;}
+#t1a_25{left:65px;top:1025px;}
+#t1b_25{left:65px;top:1043px;}
+#t1c_25{left:65px;top:1083px;}
+#t1d_25{left:65px;top:1102px;}
+#t1e_25{left:65px;top:1120px;}
+
+.s1_25{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s4_25{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic25;
+	color: rgb(0,0,0);
+}
+
+.s5_25{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana25;
+	color: rgb(0,0,0);
+}
+
+.s6_25{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana25;
+	color: rgb(0,0,0);
+}
+
+.s3_25{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Bold25;
+	color: rgb(0,0,0);
+}
+
+.s2_25{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic25;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts25" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Verdana25;
+	src :url("25/fonts/ABCDEE-Verdana.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Bold25;
+	src :url("25/fonts/ABCDEE-Verdana-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Italic25;
+	src :url("25/fonts/ABCDEE-Verdana-Italic.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_25" class="t s1_25">PODER JUDICIAL DE LA NACIÓN </div>
+<div id="t2_25" class="t s1_25">CÁMARA NACIONAL ELECTORAL </div>
+<div id="t3_25" class="t s2_25">(Artículo incorporado por art. 99 de la Ley N° 26.571 B.O. 14/12/2009 y modificado por art. 3° de la Ley N° </div>
+<div id="t4_25" class="t s2_25">26.774 B.O. 02/11/2012) </div>
+<div id="t5_25" class="t s3_25">Artículo 76.- </div>
+<div id="t6_25" class="t s4_25">Obligaciones de las autoridades de mesa.</div>
+<div id="t7_25" class="t s5_25">El presidente de la mesa y el suplente </div>
+<div id="t8_25" class="t s5_25">deberán estar presentes en el momento de la apertura y clausura del acto electoral, siendo su </div>
+<div id="t9_25" class="t s5_25">misión especial velar por el correcto y normal desarrollo del mismo. Al reemplazarse entre sí, los </div>
+<div id="ta_25" class="t s5_25">funcionarios dejarán constancia escrita de la hora en que toman y dejan el cargo. </div>
+<div id="tb_25" class="t s2_25">(Artículo modificado por art. 6 de la Ley N° 25.610 B.O. 08/07/2002) </div>
+<div id="tc_25" class="t s3_25">Artículo 77.- </div>
+<div id="td_25" class="t s4_25">Ubicación de las mesas.</div>
+<div id="te_25" class="t s5_25">Los jueces electorales designarán con más de treinta días de </div>
+<div id="tf_25" class="t s5_25">anticipación a la fecha del comicio los lugares donde funcionarán las mesas. Para ubicarlas podrán </div>
+<div id="tg_25" class="t s5_25">habilitar dependencias oficiales, locales de entidades de bien público, salas de espectáculos y otras </div>
+<div id="th_25" class="t s5_25">que reúnan las condiciones indispensables. </div>
+<div id="ti_25" class="t s5_25">1. A los efectos del cumplimiento de esta disposición requerirán la cooperación de las policías de la </div>
+<div id="tj_25" class="t s5_25">Nación o de las provincias y, de ser menester, de cualquier otra autoridad, sea nacional, provincial o </div>
+<div id="tk_25" class="t s5_25">municipal. </div>
+<div id="tl_25" class="t s5_25">2. Los jefes, dueños y encargados de los locales indicados en el primer párrafo tendrán la obligación </div>
+<div id="tm_25" class="t s5_25">de averiguar si han sido destinados para la ubicación de mesas receptoras de votos. En caso </div>
+<div id="tn_25" class="t s5_25">afirmativo adoptarán todas las medidas tendientes a facilitar el funcionamiento del comicio, desde la </div>
+<div id="to_25" class="t s5_25">hora señalada por la ley, proveyendo las mesas y sillas que necesiten sus autoridades. Esta </div>
+<div id="tp_25" class="t s5_25">obligación no exime a la Junta Electoral de formalizar la notificación en tiempo. </div>
+<div id="tq_25" class="t s6_25">3. </div>
+<div id="tr_25" class="t s2_25">(Inciso derogado por art. 103 de la Ley N° 26.571 B.O. 14/12/2009) </div>
+<div id="ts_25" class="t s5_25">4. Si no existiesen en el lugar locales apropiados para la ubicación de las mesas, el juez podrá </div>
+<div id="tt_25" class="t s5_25">designar el domicilio del presidente del comicio para que la misma funcione. </div>
+<div id="tu_25" class="t s3_25">Artículo 78.- </div>
+<div id="tv_25" class="t s4_25">Notificación.</div>
+<div id="tw_25" class="t s5_25">La designación de los lugares en que funcionarán las mesas y la </div>
+<div id="tx_25" class="t s5_25">propuesta de nombramiento de sus autoridades serán notificadas por el juez a la Junta Electoral de </div>
+<div id="ty_25" class="t s5_25">distrito y al Ministerio del Interior, dentro de los cinco días de efectuada. </div>
+<div id="tz_25" class="t s3_25">Artículo 79.- </div>
+<div id="t10_25" class="t s4_25">Cambios de ubicación.</div>
+<div id="t11_25" class="t s5_25">En caso de fuerza mayor ocurrida con posterioridad a la </div>
+<div id="t12_25" class="t s5_25">determinación de los locales de funcionamiento de las mesas, la Junta podrá variar su ubicación. </div>
+<div id="t13_25" class="t s3_25">Artículo 80.- </div>
+<div id="t14_25" class="t s4_25">Publicidad de la ubicación de las mesas y sus autoridades.</div>
+<div id="t15_25" class="t s5_25">La designación de los </div>
+<div id="t16_25" class="t s5_25">presidentes y suplentes de las mesas y del lugar en que éstas hayan de funcionar, se hará conocer, </div>
+<div id="t17_25" class="t s5_25">por lo menos quince días antes de la fecha de la elección, por medio de carteles fijados en parajes </div>
+<div id="t18_25" class="t s5_25">públicos de las secciones respectivas.  </div>
+<div id="t19_25" class="t s5_25">La publicación estará a cargo de la Junta, que también la pondrá en conocimiento del Poder </div>
+<div id="t1a_25" class="t s5_25">Ejecutivo Nacional, de los gobernadores de provincias y territorio, distritos militares, oficinas de </div>
+<div id="t1b_25" class="t s5_25">correos, policías locales y de los apoderados de los partidos políticos concurrentes al acto electoral. </div>
+<div id="t1c_25" class="t s5_25">Las policías de cada distrito o sección, serán las encargadas de hacer fijar los carteles con las </div>
+<div id="t1d_25" class="t s5_25">constancias de designación de autoridades de comicio y de ubicación de mesas en los parajes </div>
+<div id="t1e_25" class="t s5_25">públicos de sus respectivas localidades. </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg25Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg25"><object width="909" height="1286" data="25/25.svg" type="image/svg+xml" id="pdf25" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld25" type="text/javascript">
+
+var isIE = false;
+var f25 = [['t1_25',1144],['t2_25',1166],['t3_25',3117],['t4_25',709],['t5_25',440],['t6_25',1343],['t7_25',1265],['t8_25',3118],['t9_25',3117],['ta_25',2516],['tb_25',1924],['tc_25',430],['td_25',743],['te_25',1896],['tf_25',3118],['tg_25',3117],['th_25',1323],['ti_25',3118],['tj_25',3117],['tl_25',3118],['tm_25',3118],['tn_25',3117],['to_25',3117],['tp_25',2441],['tr_25',1907],['ts_25',3118],['tt_25',2350],['tu_25',448],['tw_25',2207],['tx_25',3118],['ty_25',2240],['tz_25',444],['t10_25',721],['t11_25',1874],['t12_25',2983],['t13_25',440],['t14_25',1910],['t15_25',695],['t16_25',3117],['t17_25',3117],['t18_25',1177],['t19_25',3117],['t1a_25',3118],['t1b_25',3060],['t1c_25',3118],['t1d_25',3118],['t1e_25',1217]];
+function load25(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f25);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 51;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_25");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>

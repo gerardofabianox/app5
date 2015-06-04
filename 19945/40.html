@@ -1,0 +1,328 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+
+<div id="jpedal" style="width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load40();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_40{left:312px;top:115px;}
+#t2_40{left:309px;top:136px;}
+#t3_40{left:65px;top:203px;}
+#t4_40{left:198px;top:203px;}
+#t5_40{left:382px;top:203px;}
+#t6_40{left:65px;top:221px;}
+#t7_40{left:65px;top:240px;}
+#t8_40{left:65px;top:259px;}
+#t9_40{left:65px;top:277px;}
+#ta_40{left:65px;top:296px;}
+#tb_40{left:65px;top:314px;}
+#tc_40{left:65px;top:333px;}
+#td_40{left:65px;top:351px;}
+#te_40{left:65px;top:370px;}
+#tf_40{left:65px;top:410px;}
+#tg_40{left:65px;top:429px;}
+#th_40{left:65px;top:447px;}
+#ti_40{left:65px;top:466px;}
+#tj_40{left:65px;top:506px;}
+#tk_40{left:65px;top:522px;}
+#tl_40{left:65px;top:561px;}
+#tm_40{left:197px;top:561px;}
+#tn_40{left:354px;top:561px;}
+#to_40{left:65px;top:579px;}
+#tp_40{left:65px;top:619px;}
+#tq_40{left:65px;top:638px;}
+#tr_40{left:168px;top:638px;}
+#ts_40{left:250px;top:638px;}
+#tt_40{left:350px;top:638px;}
+#tu_40{left:460px;top:638px;}
+#tv_40{left:493px;top:638px;}
+#tw_40{left:521px;top:638px;}
+#tx_40{left:588px;top:638px;}
+#ty_40{left:680px;top:638px;}
+#tz_40{left:712px;top:638px;}
+#t10_40{left:783px;top:638px;}
+#t11_40{left:835px;top:638px;}
+#t12_40{left:65px;top:656px;}
+#t13_40{left:65px;top:675px;}
+#t14_40{left:65px;top:715px;}
+#t15_40{left:65px;top:753px;}
+#t16_40{left:146px;top:753px;}
+#t17_40{left:206px;top:753px;}
+#t18_40{left:304px;top:753px;}
+#t19_40{left:337px;top:753px;}
+#t1a_40{left:443px;top:753px;}
+#t1b_40{left:572px;top:753px;}
+#t1c_40{left:699px;top:753px;}
+#t1d_40{left:739px;top:753px;}
+#t1e_40{left:790px;top:753px;}
+#t1f_40{left:823px;top:753px;}
+#t1g_40{left:65px;top:771px;}
+#t1h_40{left:65px;top:790px;}
+#t1i_40{left:65px;top:808px;}
+#t1j_40{left:65px;top:827px;}
+#t1k_40{left:65px;top:867px;}
+#t1l_40{left:65px;top:886px;}
+#t1m_40{left:65px;top:904px;}
+#t1n_40{left:65px;top:923px;}
+#t1o_40{left:65px;top:941px;}
+#t1p_40{left:65px;top:960px;}
+#t1q_40{left:65px;top:1000px;}
+#t1r_40{left:65px;top:1018px;}
+#t1s_40{left:65px;top:1037px;}
+#t1t_40{left:65px;top:1077px;}
+#t1u_40{left:65px;top:1096px;}
+#t1v_40{left:65px;top:1114px;}
+#t1w_40{left:65px;top:1132px;}
+
+.s1_40{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s3_40{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic40;
+	color: rgb(0,0,0);
+}
+
+.s4_40{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana40;
+	color: rgb(0,0,0);
+}
+
+.s5_40{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic40;
+	color: rgb(0,0,0);
+}
+
+.s2_40{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Bold40;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts40" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Verdana40;
+	src :url("40/fonts/ABCDEE-Verdana.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Bold40;
+	src :url("40/fonts/ABCDEE-Verdana-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Italic40;
+	src :url("40/fonts/ABCDEE-Verdana-Italic.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_40" class="t s1_40">PODER JUDICIAL DE LA NACIÓN </div>
+<div id="t2_40" class="t s1_40">CÁMARA NACIONAL ELECTORAL </div>
+<div id="t3_40" class="t s2_40">Artículo 125.- </div>
+<div id="t4_40" class="t s3_40">No emisión del voto. </div>
+<div id="t5_40" class="t s4_40">Se impondrá multa de pesos cincuenta ($ 50) a pesos </div>
+<div id="t6_40" class="t s4_40">quinientos ($ 500) al elector mayor de dieciocho (18) años y menor de setenta (70) años de edad </div>
+<div id="t7_40" class="t s4_40">que dejare de emitir su voto y no se justificare ante la justicia nacional electoral dentro de los </div>
+<div id="t8_40" class="t s4_40">sesenta (60) días de la respectiva elección. Cuando se acreditare la no emisión por alguna de las </div>
+<div id="t9_40" class="t s4_40">causales que prevé el artículo 12, se entregará una constancia al efecto. El infractor incluido en el </div>
+<div id="ta_40" class="t s4_40">Registro de infractores al deber de votar establecido en el artículo 18 no podrá ser designado para </div>
+<div id="tb_40" class="t s4_40">desempeñar funciones o empleos públicos durante tres (3) años a partir de la elección. El juez </div>
+<div id="tc_40" class="t s4_40">electoral de distrito, si no fuere el del domicilio del infractor a la fecha prevista en el artículo 25, </div>
+<div id="td_40" class="t s4_40">comunicará la justificación o pago de la multa al juez electoral donde se encontraba inscripto el </div>
+<div id="te_40" class="t s4_40">elector. </div>
+<div id="tf_40" class="t s4_40">Será causa suficiente para la aplicación de la multa, la constatación objetiva de la omisión no </div>
+<div id="tg_40" class="t s4_40">justificada. Los procesos y las resoluciones judiciales que se originen respecto de los electores que </div>
+<div id="th_40" class="t s4_40">no consientan la aplicación de la multa, podrán comprender a un infractor o a un grupo de </div>
+<div id="ti_40" class="t s4_40">infractores. Las resoluciones serán apelables ante la alzada de la justicia nacional electoral. </div>
+<div id="tj_40" class="t s5_40">(Artículo sustituido por art. 6° de la Ley 26.744 B.O. 11/06/2012 y modificado por art. 3° de la Ley N° 26.774 </div>
+<div id="tk_40" class="t s5_40">B.O. 02/11/2012) </div>
+<div id="tl_40" class="t s2_40">Artículo 126.- </div>
+<div id="tm_40" class="t s3_40">Pago de la multa. </div>
+<div id="tn_40" class="t s4_40">El pago de la multa se acreditará mediante una constancia </div>
+<div id="to_40" class="t s4_40">expedida por el juez electoral, el secretario o el juez de paz. </div>
+<div id="tp_40" class="t s4_40">El infractor que no la oblare no podrá realizar gestiones o trámites durante un (1) año ante los </div>
+<div id="tq_40" class="t s4_40">organismos </div>
+<div id="tr_40" class="t s4_40">estatales </div>
+<div id="ts_40" class="t s4_40">nacionales, </div>
+<div id="tt_40" class="t s4_40">provinciales, </div>
+<div id="tu_40" class="t s4_40">de </div>
+<div id="tv_40" class="t s4_40">la </div>
+<div id="tw_40" class="t s4_40">Ciudad </div>
+<div id="tx_40" class="t s4_40">Autónoma </div>
+<div id="ty_40" class="t s4_40">de </div>
+<div id="tz_40" class="t s4_40">Buenos </div>
+<div id="t10_40" class="t s4_40">Aires </div>
+<div id="t11_40" class="t s4_40">o </div>
+<div id="t12_40" class="t s4_40">municipales. Este plazo comenzará a correr a partir del vencimiento de sesenta (60) días establecido </div>
+<div id="t13_40" class="t s4_40">en el primer párrafo del artículo 125. </div>
+<div id="t14_40" class="t s5_40">(Artículo sustituido por art. 7° de la Ley 26.744 B.O. 11/06/2012)</div>
+<div id="t15_40" class="t s2_40">Artículo </div>
+<div id="t16_40" class="t s2_40">127.- </div>
+<div id="t17_40" class="t s3_40">Constancia </div>
+<div id="t18_40" class="t s3_40">de </div>
+<div id="t19_40" class="t s3_40">justificación </div>
+<div id="t1a_40" class="t s3_40">administrativa. </div>
+<div id="t1b_40" class="t s3_40">Comunicación. </div>
+<div id="t1c_40" class="t s4_40">Los </div>
+<div id="t1d_40" class="t s4_40">jefes </div>
+<div id="t1e_40" class="t s4_40">de </div>
+<div id="t1f_40" class="t s4_40">los </div>
+<div id="t1g_40" class="t s4_40">organismos nacionales, provinciales, de la Ciudad Autónoma de Buenos Aires o municipales </div>
+<div id="t1h_40" class="t s4_40">expedirán una constancia, según el modelo que establezca la reglamentación, que acredite el motivo </div>
+<div id="t1i_40" class="t s4_40">de la omisión del sufragio de los subordinados, aclarando cuando la misma haya sido originada por </div>
+<div id="t1j_40" class="t s4_40">actos de servicio por disposición legal, siendo suficiente constancia para tenerlo como no infractor. </div>
+<div id="t1k_40" class="t s4_40">Los empleados de la administración pública nacional, provincial, de la Ciudad Autónoma de Buenos </div>
+<div id="t1l_40" class="t s4_40">Aires o municipal, que sean mayores de dieciocho (18) años y menores de setenta (70) años de </div>
+<div id="t1m_40" class="t s4_40">edad, presentarán a sus superiores inmediatos la constancia de emisión del voto, el día siguiente a </div>
+<div id="t1n_40" class="t s4_40">la elección, para permitir la fiscalización del cumplimiento de su deber de votar. Si no lo hicieren </div>
+<div id="t1o_40" class="t s4_40">serán sancionados con suspensión de hasta seis (6) meses y en caso de reincidencia, podrán llegar </div>
+<div id="t1p_40" class="t s4_40">a la cesantía. </div>
+<div id="t1q_40" class="t s4_40">Los jefes a su vez darán cuenta a sus superiores, por escrito y de inmediato, de las omisiones en </div>
+<div id="t1r_40" class="t s4_40">que sus subalternos hubieren incurrido. La omisión o inexactitud en tales comunicaciones también </div>
+<div id="t1s_40" class="t s4_40">se sancionará con suspensión de hasta seis (6) meses. </div>
+<div id="t1t_40" class="t s4_40">De las constancias que expidan darán cuenta a la justicia nacional electoral dentro de los diez (10) </div>
+<div id="t1u_40" class="t s4_40">días de realizada una elección nacional. Estas comunicaciones tendrán que establecer el nombre del </div>
+<div id="t1v_40" class="t s4_40">empleado, último domicilio que figure en su documento, clase, distrito electoral, sección, circuito y </div>
+<div id="t1w_40" class="t s4_40">número de mesa en que debía votar y causa por la cual no lo hizo. </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg40Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg40"><object width="909" height="1286" data="40/40.svg" type="image/svg+xml" id="pdf40" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld40" type="text/javascript">
+
+var isIE = false;
+var f40 = [['t1_40',1144],['t2_40',1166],['t3_40',491],['t4_40',692],['t5_40',1848],['t6_40',3115],['t7_40',3114],['t8_40',3115],['t9_40',3115],['ta_40',3117],['tb_40',3114],['tc_40',3114],['td_40',3116],['tf_40',3115],['tg_40',3118],['th_40',3115],['ti_40',2817],['tj_40',3117],['tk_40',495],['tl_40',488],['tm_40',591],['tn_40',1959],['to_40',1858],['tp_40',3115],['t12_40',3118],['t13_40',1140],['t14_40',1831],['t1g_40',3117],['t1h_40',3115],['t1i_40',3115],['t1j_40',3043],['t1k_40',3115],['t1l_40',3118],['t1m_40',3115],['t1n_40',3114],['t1o_40',3117],['t1p_40',408],['t1q_40',3115],['t1r_40',3118],['t1s_40',1691],['t1t_40',3115],['t1u_40',3118],['t1v_40',3115],['t1w_40',2058]];
+function load40(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f40);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 69;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_40");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>

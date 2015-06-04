@@ -1,0 +1,327 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>dto760_13 Page7</title>
+<link rel="stylesheet" type="text/css" href="assets/IDRViewer.css">
+<script type="text/javascript">
+var extLoaded = false;
+var intLoaded = false;
+function idrLoad() {
+	idrLoaded = true;
+	var bounds;
+	var heights = new Array(200,200,200,200,200,200,200,200);
+	IDRViewer.makeNavBar(8,7,935,1210,0,heights,'.jpg',bounds, true);
+}
+</script>
+<script src="assets/IDRViewer.js" type="text/javascript"></script>
+</head>
+
+<!-- Background pattern courtesy of http://subtlepatterns.com/grey-washed-wall/ -->
+<body style="background:url('assets/bg.png') repeat scroll 0 0 transparent;">
+
+<div id="left">
+<div id="leftNav">
+	<div id="btnThumbnails" onclick="IDRViewer.toggleOutlines(false)" title="Thumbnails" class="navBtn inactive"></div>
+	<div id="btnOutlines" onclick="IDRViewer.toggleOutlines(true)" title="Bookmarks" class="navBtn inactive"></div>
+</div>
+<div id="leftContent">
+	<div id="thumbnailPanel"></div>
+	<div id="outlinePanel"></div>
+</div>
+</div>
+
+<div id="main">
+
+<div id="mainNav">
+	<div id="btnSideToggle" onclick="IDRViewer.toggleThumbnails();" class="navBtn"><div title="Sidebar"></div></div>
+
+	<div id="btnPrev" title="Pagina anterior" onclick="IDRViewer.prev()" class="navBtn"></div>
+	<select id="goBtn" onchange="IDRViewer.goToPage(0)">
+
+	</select>
+	<span id="pgCount"></span>
+	<div id="btnNext" title="Pagina siguiente" onclick="IDRViewer.next()" class="navBtn"></div>
+
+	<div id="btnSelect" title="Seleccionar" onclick="IDRViewer.setSelectMode(0)" class="navBtn"></div>
+	<div id="btnMove" title="Pan" onclick="IDRViewer.setSelectMode(1)" class="navBtn"></div>
+
+	<div id="btnZoomOut" title="Zoom Alejar" onclick="IDRViewer.zoomOut()" class="navBtn"></div>
+	<select id="zoomBtn" onchange="IDRViewer.zoomUpdate()">
+		<option value="0">100%</option>
+		<option value="1">Tamano Real</option>
+		<option value="2">Ajustar ancho</option>
+		<option value="3">Ajustar altura</option>
+		<option value="4">Ajustar a la pagina</option>
+		<option value="5">Automatico</option>
+
+	</select>
+	<div id="btnZoomIn" title="Zoom Acercar" onclick="IDRViewer.zoomIn()" class="navBtn"></div>
+	<div id="btnFullscreen" title="Pantalla completa" onclick="IDRViewer.toggleFullScreen();" class="navBtn closed"></div>
+</div>
+
+<div id="mainContent">
+
+<div id="contentContainer">
+
+
+
+<div id="jpedal" style="position:relative; width: 935px; height: 1210px; overflow: hidden; margin: 0 auto; box-shadow: 0 2px 6px rgba(100, 100, 100, 0.5);">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load7();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_7{left:333px;top:108px;}
+#t2_7{left:331px;top:128px;}
+#t3_7{left:101px;top:191px;}
+#t4_7{left:101px;top:208px;}
+#t5_7{left:101px;top:226px;}
+#t6_7{left:101px;top:263px;}
+#t7_7{left:203px;top:263px;}
+#t8_7{left:101px;top:281px;}
+#t9_7{left:101px;top:298px;}
+#ta_7{left:101px;top:316px;}
+#tb_7{left:101px;top:333px;}
+#tc_7{left:101px;top:351px;}
+#td_7{left:101px;top:368px;}
+#te_7{left:101px;top:406px;}
+#tf_7{left:188px;top:406px;}
+#tg_7{left:101px;top:423px;}
+#th_7{left:101px;top:441px;}
+#ti_7{left:101px;top:458px;}
+#tj_7{left:101px;top:475px;}
+#tk_7{left:101px;top:513px;}
+#tl_7{left:101px;top:531px;}
+#tm_7{left:101px;top:548px;}
+#tn_7{left:101px;top:565px;}
+#to_7{left:101px;top:603px;}
+#tp_7{left:101px;top:620px;}
+#tq_7{left:101px;top:638px;}
+#tr_7{left:101px;top:655px;}
+#ts_7{left:101px;top:693px;}
+#tt_7{left:101px;top:711px;}
+#tu_7{left:101px;top:728px;}
+#tv_7{left:101px;top:766px;}
+#tw_7{left:192px;top:766px;}
+#tx_7{left:101px;top:783px;}
+#ty_7{left:101px;top:801px;}
+#tz_7{left:101px;top:838px;}
+#t10_7{left:188px;top:838px;}
+#t11_7{left:101px;top:856px;}
+#t12_7{left:101px;top:873px;}
+#t13_7{left:101px;top:911px;}
+#t14_7{left:186px;top:911px;}
+#t15_7{left:101px;top:928px;}
+#t16_7{left:101px;top:946px;}
+#t17_7{left:101px;top:963px;}
+#t18_7{left:101px;top:981px;}
+#t19_7{left:101px;top:1018px;}
+#t1a_7{left:192px;top:1018px;}
+#t1b_7{left:101px;top:1036px;}
+#t1c_7{left:101px;top:1053px;}
+#t1d_7{left:101px;top:1071px;}
+#t1e_7{left:101px;top:1088px;}
+
+.s1_7{
+	FONT-SIZE: 68px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s3_7{
+	FONT-SIZE: 57px;
+	FONT-FAMILY: Verdana, Geneva, sans-serif;
+	color: rgb(0,0,0);
+	FONT-WEIGHT: bold;
+}
+
+.s2_7{
+	FONT-SIZE: 57px;
+	FONT-FAMILY: Verdana, Geneva, sans-serif;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_7" class="t s1_7">PODER JUDICIAL DE LA NACIÓN </div>
+<div id="t2_7" class="t s1_7">CÁMARA NACIONAL ELECTORAL </div>
+<div id="t3_7" class="t s2_7">La emisión de un mensaje electoral en una franja horaria distinta de la asignada será considerada </div>
+<div id="t4_7" class="t s2_7">omisión a estos efectos, será pasible del mismo tratamiento y generará responsabilidad del servicio </div>
+<div id="t5_7" class="t s2_7">de comunicación audiovisual. </div>
+<div id="t6_7" class="t s3_7">Art. 33. —</div>
+<div id="t7_7" class="t s2_7">Ante el requerimiento judicial o de la AUTORIDAD FEDERAL DE SERVICIOS DE </div>
+<div id="t8_7" class="t s2_7">COMUNICACION AUDIOVISUAL (AFSCA), los servicios de comunicación audiovisual deberán entregar </div>
+<div id="t9_7" class="t s2_7">dentro de las OCHO (8) horas de notificado y por la vía que se indique en el requerimiento, copia </div>
+<div id="ta_7" class="t s2_7">certificada del Libro de Registro de Transmisiones. Asimismo, se deberán adjuntar los comprobantes </div>
+<div id="tb_7" class="t s2_7">oportunamente presentados por las agrupaciones políticas, los que serán elementos probatorios </div>
+<div id="tc_7" class="t s2_7">ante denuncias de incumplimiento de obligaciones de emisión o violación de las prohibiciones </div>
+<div id="td_7" class="t s2_7">establecidas en la legislación vigente. </div>
+<div id="te_7" class="t s3_7">Art. 34. —</div>
+<div id="tf_7" class="t s2_7">En el caso de las elecciones Primarias, Abiertas, Simultáneas y Obligatorias, los tiempos </div>
+<div id="tg_7" class="t s2_7">de asignación de espacios para mensajes de campaña electoral efectuados de acuerdo al presente </div>
+<div id="th_7" class="t s2_7">procedimiento se asignarán a la agrupación de que se trate, cuya Junta Electoral deberá proceder a </div>
+<div id="ti_7" class="t s2_7">distribuirlos en forma igualitaria entre las listas de precandidatos oficializadas para cada categoría de </div>
+<div id="tj_7" class="t s2_7">cargos a elegir. </div>
+<div id="tk_7" class="t s2_7">La distribución prevista en el párrafo anterior deberá hacerse alternando entre las listas y fórmulas </div>
+<div id="tl_7" class="t s2_7">de precandidatos los días y horarios de emisión, decidiendo la asignación inicial por sorteo en la </div>
+<div id="tm_7" class="t s2_7">Junta Electoral, notificándose en forma fehaciente a todos sus miembros y a los representantes de </div>
+<div id="tn_7" class="t s2_7">las listas de precandidatos bajo sanción de nulidad. </div>
+<div id="to_7" class="t s2_7">El sorteo debe realizarse de manera de asegurar espacios, de duración igual, y distribuidos en el </div>
+<div id="tp_7" class="t s2_7">transcurso del período de campaña para todos los participantes. El resultado del sorteo se </div>
+<div id="tq_7" class="t s2_7">comunicará a la Justicia Nacional Electoral y a la DIRECCION NACIONAL ELECTORAL del MINISTERIO </div>
+<div id="tr_7" class="t s2_7">DEL INTERIOR Y TRANSPORTE. </div>
+<div id="ts_7" class="t s2_7">Corresponde a la Junta Electoral de la agrupación política la tarea de cursar ante los servicios de </div>
+<div id="tt_7" class="t s2_7">comunicación audiovisual obligados y en los términos del presente acto la emisión de mensajes de la </div>
+<div id="tu_7" class="t s2_7">totalidad de las listas de precandidatos de la agrupación. </div>
+<div id="tv_7" class="t s3_7">Art. 35. —</div>
+<div id="tw_7" class="t s2_7">La DIRECCION NACIONAL ELECTORAL del MINISTERIO DEL INTERIOR Y TRANSPORTE </div>
+<div id="tx_7" class="t s2_7">será la Autoridad de Aplicación del presente régimen, en cuyo carácter podrán realizar las </div>
+<div id="ty_7" class="t s2_7">verificaciones necesarias del cumplimiento del régimen que por el presente se instituye. </div>
+<div id="tz_7" class="t s3_7">Art. 36. —</div>
+<div id="t10_7" class="t s2_7">Establécese como página web oficial de las elecciones nacionales y del proceso electoral </div>
+<div id="t11_7" class="t s2_7">a todos los efectos www.elecciones.gob.ar. Dicha página web será administrada por la DIRECCION </div>
+<div id="t12_7" class="t s2_7">NACIONAL ELECTORAL del MINISTERIO DEL INTERIOR Y TRANSPORTE. </div>
+<div id="t13_7" class="t s3_7">Art. 37. — </div>
+<div id="t14_7" class="t s2_7">La DIRECCION NACIONAL ELECTORAL del MINISTERIO DEL INTERIOR Y TRANSPORTE, la </div>
+<div id="t15_7" class="t s2_7">AUTORIDAD FEDERAL DE SERVICIOS DE COMUNICACION AUDIOVISUAL (AFSCA) y la SECRETARIA </div>
+<div id="t16_7" class="t s2_7">DE COMUNICACION PUBLICA de la JEFATURA DE GABINETE DE MINISTROS, en forma individual o </div>
+<div id="t17_7" class="t s2_7">conjunta, según su competencia, dictarán las normas aclaratorias y complementarias </div>
+<div id="t18_7" class="t s2_7">correspondientes. </div>
+<div id="t19_7" class="t s3_7">Art. 38. —</div>
+<div id="t1a_7" class="t s2_7">A los fines de la presente normativa, los plazos deberán computarse en días y horas </div>
+<div id="t1b_7" class="t s2_7">corridos. Las publicaciones en el Boletín Oficial de la REPUBLICA ARGENTINA, la página web de la </div>
+<div id="t1c_7" class="t s2_7">DIRECCION NACIONAL ELECTORAL del MINISTERIO DEL INTERIOR Y TRANSPORTE, y las </div>
+<div id="t1d_7" class="t s2_7">notificaciones del Sistema de Administración de Campañas Electorales serán consideradas </div>
+<div id="t1e_7" class="t s2_7">notificaciones suficientes a los efectos del presente. </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg7Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg7"><object width="935" height="1210" data="7/7.svg" type="image/svg+xml" id="pdf7" style="width:935px; height:1210px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script type="text/javascript">
+var isIE = false;
+var f7 = [['t1_7',1076],['t2_7',1095],['t3_7',2934],['t4_7',2933],['t5_7',845],['t6_7',365],['t7_7',2525],['t8_7',2933],['t9_7',2934],['ta_7',2933],['tb_7',2933],['tc_7',2933],['td_7',1088],['te_7',324],['tf_7',2586],['tg_7',2933],['th_7',2934],['ti_7',2934],['tj_7',445],['tk_7',2934],['tl_7',2933],['tm_7',2934],['tn_7',1490],['to_7',2934],['tp_7',2933],['tq_7',2933],['tr_7',906],['ts_7',2933],['tt_7',2934],['tu_7',1648],['tv_7',335],['tw_7',2570],['tx_7',2934],['ty_7',2551],['tz_7',325],['t10_7',2586],['t11_7',2934],['t12_7',2076],['t13_7',320],['t14_7',2593],['t15_7',2933],['t16_7',2933],['t17_7',2934],['t19_7',337],['t1a_7',2568],['t1b_7',2934],['t1c_7',2933],['t1d_7',2933],['t1e_7',1499]];
+function load7(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f7);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 51;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_7");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	if (extLoaded) { idrLoad(); } else { intLoaded = true; }
+</script>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+
+<div id="jpedal" style="width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load1();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_1{left:312px;top:115px;}
+#t2_1{left:309px;top:136px;}
+#t3_1{left:403px;top:202px;}
+#t4_1{left:65px;top:245px;}
+#t5_1{left:65px;top:261px;}
+#t6_1{left:65px;top:278px;}
+#t7_1{left:65px;top:295px;}
+#t8_1{left:319px;top:331px;}
+#t9_1{left:416px;top:371px;}
+#ta_1{left:368px;top:411px;}
+#tb_1{left:404px;top:451px;}
+#tc_1{left:282px;top:491px;}
+#td_1{left:65px;top:531px;}
+#te_1{left:166px;top:531px;}
+#tf_1{left:188px;top:531px;}
+#tg_1{left:65px;top:550px;}
+#th_1{left:65px;top:568px;}
+#ti_1{left:65px;top:608px;}
+#tj_1{left:65px;top:646px;}
+#tk_1{left:167px;top:646px;}
+#tl_1{left:189px;top:646px;}
+#tm_1{left:382px;top:646px;}
+#tn_1{left:394px;top:646px;}
+#to_1{left:65px;top:665px;}
+#tp_1{left:65px;top:704px;}
+#tq_1{left:162px;top:704px;}
+#tr_1{left:183px;top:704px;}
+#ts_1{left:368px;top:704px;}
+#tt_1{left:379px;top:704px;}
+#tu_1{left:65px;top:745px;}
+#tv_1{left:428px;top:746px;}
+#tw_1{left:65px;top:763px;}
+#tx_1{left:65px;top:801px;}
+#ty_1{left:85px;top:801px;}
+#tz_1{left:65px;top:839px;}
+#t10_1{left:83px;top:839px;}
+#t11_1{left:65px;top:877px;}
+#t12_1{left:85px;top:877px;}
+#t13_1{left:65px;top:915px;}
+#t14_1{left:65px;top:934px;}
+#t15_1{left:65px;top:974px;}
+#t16_1{left:65px;top:993px;}
+#t17_1{left:65px;top:1033px;}
+#t18_1{left:65px;top:1051px;}
+#t19_1{left:65px;top:1091px;}
+#t1a_1{left:85px;top:1091px;}
+#t1b_1{left:65px;top:1129px;}
+
+.s1_1{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s5_1{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Bold1;
+	color: rgb(0,0,0);
+}
+
+.s4_1{
+	FONT-SIZE: 49px;
+	FONT-FAMILY: ABCDEE-Verdana1;
+	color: rgb(0,0,0);
+}
+
+.s8_1{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic1;
+	color: rgb(0,0,0);
+}
+
+.s6_1{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic1;
+	color: rgb(0,0,0);
+}
+
+.s7_1{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana1;
+	color: rgb(0,0,0);
+}
+
+.s3_1{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana1;
+	color: rgb(0,0,0);
+}
+
+.s2_1{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-Verdana-Bold1;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts1" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Verdana1;
+	src :url("1/fonts/ABCDEE-Verdana.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Bold1;
+	src :url("1/fonts/ABCDEE-Verdana-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Italic1;
+	src :url("1/fonts/ABCDEE-Verdana-Italic.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_1" class="t s1_1">PODER JUDICIAL DE LA NACIÓN </div>
+<div id="t2_1" class="t s1_1">CÁMARA NACIONAL ELECTORAL </div>
+<div id="t3_1" class="t s2_1">Ley 19.945 </div>
+<div id="t4_1" class="t s3_1">Bs. As., 14.11.1972. </div>
+<div id="t5_1" class="t s3_1">Publicada: B.O. 19/12/1972. </div>
+<div id="t6_1" class="t s3_1">Texto ordenado: Decreto n° 2135/1983 (Bs. As. 18/08/83. B.O. 06/09/1983) </div>
+<div id="t7_1" class="t s4_1">*El texto incluye las últimas modificaciones incorporadas por Ley N° 27.120 (B.O. 08/01/2015)  </div>
+<div id="t8_1" class="t s5_1">CODIGO ELECTORAL NACIONAL </div>
+<div id="t9_1" class="t s5_1">TITULO I </div>
+<div id="ta_1" class="t s5_1">Del Cuerpo Electoral </div>
+<div id="tb_1" class="t s5_1">CAPITULO I </div>
+<div id="tc_1" class="t s6_1">De la calidad, derechos y deberes del elector </div>
+<div id="td_1" class="t s5_1">Artículo 1° </div>
+<div id="te_1" class="t s7_1">—</div>
+<div id="tf_1" class="t s7_1">Son electores los argentinos nativos y por opción, desde los dieciséis (16) años de </div>
+<div id="tg_1" class="t s7_1">edad, y los argentinos naturalizados, desde los dieciocho (18) años de edad, que no tengan ninguna </div>
+<div id="th_1" class="t s7_1">de las inhabilitaciones previstas en esta ley.</div>
+<div id="ti_1" class="t s8_1">(Artículo modificado por art. 3° de la Ley N° 26.774 B.O. 02/11/2012) </div>
+<div id="tj_1" class="t s5_1">Artículo 2° </div>
+<div id="tk_1" class="t s7_1">—</div>
+<div id="tl_1" class="t s6_1">Prueba de esa condición</div>
+<div id="tm_1" class="t s7_1">.</div>
+<div id="tn_1" class="t s7_1">La calidad de elector se prueba, a los fines del sufragio, </div>
+<div id="to_1" class="t s7_1">exclusivamente por su inclusión en el registro electoral. </div>
+<div id="tp_1" class="t s5_1">Artículo 3° </div>
+<div id="tq_1" class="t s7_1">—</div>
+<div id="tr_1" class="t s6_1">Quiénes están excluidos</div>
+<div id="ts_1" class="t s7_1">.</div>
+<div id="tt_1" class="t s7_1">Están excluidos del padrón electoral: </div>
+<div id="tu_1" class="t s7_1">a) Los dementes declarados tales en juicio; </div>
+<div id="tv_1" class="t s8_1">(Inciso modificado por art. 72 de la Ley N° 26.571 B.O. </div>
+<div id="tw_1" class="t s8_1">14/12/2009) </div>
+<div id="tx_1" class="t s3_1">b) </div>
+<div id="ty_1" class="t s8_1">(Inciso derogado por art. 73 de la Ley N° 26.571 B.O. 14/12/2009) </div>
+<div id="tz_1" class="t s3_1">c) </div>
+<div id="t10_1" class="t s8_1">(Inciso derogado por art. 1° de la Ley N° 24.904 B.O.18/12/1997. Vigencia: a partir de su sanción); </div>
+<div id="t11_1" class="t s3_1">d) </div>
+<div id="t12_1" class="t s8_1">(Inciso derogado por art. 3° de la Ley N° 25.858 B.O. 6/1/2004); </div>
+<div id="t13_1" class="t s7_1">e) Los condenados por delitos dolosos a pena privativa de la libertad, y, por sentencia ejecutoriada, </div>
+<div id="t14_1" class="t s7_1">por el término de la condena; </div>
+<div id="t15_1" class="t s7_1">f) Los condenados por faltas previstas en las leyes nacionales y provinciales de juegos prohibidos, </div>
+<div id="t16_1" class="t s7_1">por el término de tres años; en el caso de reincidencia, por seis; </div>
+<div id="t17_1" class="t s7_1">g) Los sancionados por la infracción de deserción calificada, por el doble término de la duración de la </div>
+<div id="t18_1" class="t s7_1">sanción; </div>
+<div id="t19_1" class="t s3_1">h) </div>
+<div id="t1a_1" class="t s8_1">(Inciso derogado por art. 3° de la Ley N° 25.858 B.O. 6/1/2004); </div>
+<div id="t1b_1" class="t s7_1">i) Los declarados rebeldes en causa penal, hasta que cese la rebeldía o se opere la prescripción; </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg1Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg1"><object width="909" height="1286" data="1/1.svg" type="image/svg+xml" id="pdf1" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld1" type="text/javascript">
+
+var isIE = false;
+var f1 = [['t1_1',1144],['t2_1',1166],['t3_1',417],['t4_1',571],['t5_1',795],['t6_1',2150],['t7_1',2369],['t8_1',1084],['t9_1',311],['ta_1',698],['tb_1',406],['tc_1',1380],['td_1',375],['tf_1',2623],['tg_1',3117],['th_1',1353],['ti_1',1954],['tj_1',377],['tl_1',767],['tn_1',1801],['to_1',1715],['tp_1',368],['tr_1',740],['tt_1',1136],['tu_1',1414],['tv_1',1667],['ty_1',1872],['t10_1',2789],['t12_1',1822],['t13_1',3118],['t14_1',913],['t15_1',3118],['t16_1',1989],['t17_1',3118],['t1a_1',1823],['t1b_1',2968]];
+function load1(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f1);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 48;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_1");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>

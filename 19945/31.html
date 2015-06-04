@@ -1,0 +1,288 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+
+<div id="jpedal" style="width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load31();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_31{left:312px;top:115px;}
+#t2_31{left:309px;top:136px;}
+#t3_31{left:65px;top:203px;}
+#t4_31{left:65px;top:221px;}
+#t5_31{left:65px;top:240px;}
+#t6_31{left:65px;top:258px;}
+#t7_31{left:65px;top:298px;}
+#t8_31{left:65px;top:337px;}
+#t9_31{left:179px;top:337px;}
+#ta_31{left:429px;top:337px;}
+#tb_31{left:65px;top:355px;}
+#tc_31{left:65px;top:374px;}
+#td_31{left:65px;top:392px;}
+#te_31{left:65px;top:411px;}
+#tf_31{left:65px;top:429px;}
+#tg_31{left:65px;top:448px;}
+#th_31{left:65px;top:466px;}
+#ti_31{left:65px;top:507px;}
+#tj_31{left:65px;top:523px;}
+#tk_31{left:65px;top:561px;}
+#tl_31{left:177px;top:563px;}
+#tm_31{left:402px;top:601px;}
+#tn_31{left:325px;top:641px;}
+#to_31{left:65px;top:681px;}
+#tp_31{left:179px;top:681px;}
+#tq_31{left:413px;top:681px;}
+#tr_31{left:65px;top:700px;}
+#ts_31{left:65px;top:718px;}
+#tt_31{left:65px;top:758px;}
+#tu_31{left:181px;top:758px;}
+#tv_31{left:479px;top:758px;}
+#tw_31{left:65px;top:777px;}
+#tx_31{left:65px;top:795px;}
+#ty_31{left:65px;top:835px;}
+#tz_31{left:398px;top:875px;}
+#t10_31{left:421px;top:915px;}
+#t11_31{left:65px;top:956px;}
+#t12_31{left:177px;top:956px;}
+#t13_31{left:432px;top:956px;}
+#t14_31{left:65px;top:974px;}
+#t15_31{left:65px;top:992px;}
+#t16_31{left:65px;top:1033px;}
+#t17_31{left:196px;top:1033px;}
+#t18_31{left:351px;top:1033px;}
+#t19_31{left:65px;top:1051px;}
+#t1a_31{left:65px;top:1070px;}
+#t1b_31{left:65px;top:1088px;}
+#t1c_31{left:65px;top:1107px;}
+
+.s1_31{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s5_31{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic31;
+	color: rgb(0,0,0);
+}
+
+.s4_31{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Bold31;
+	color: rgb(0,0,0);
+}
+
+.s3_31{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic31;
+	color: rgb(0,0,0);
+}
+
+.s2_31{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana31;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts31" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Verdana31;
+	src :url("31/fonts/ABCDEE-Verdana.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Bold31;
+	src :url("31/fonts/ABCDEE-Verdana-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Italic31;
+	src :url("31/fonts/ABCDEE-Verdana-Italic.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_31" class="t s1_31">PODER JUDICIAL DE LA NACIÓN </div>
+<div id="t2_31" class="t s1_31">CÁMARA NACIONAL ELECTORAL </div>
+<div id="t3_31" class="t s2_31">reglamentación que se dicte. Se dejará asentada esta circunstancia en el padrón de la mesa y en el </div>
+<div id="t4_31" class="t s2_31">acta de cierre de la misma, consignando los datos del elector y de la persona que lo asista. Ninguna </div>
+<div id="t5_31" class="t s2_31">persona, a excepción del presidente de mesa, podrá asistir a más de un elector en una misma </div>
+<div id="t6_31" class="t s2_31">elección. </div>
+<div id="t7_31" class="t s3_31">(Artículo modificado por art. 3° de la Ley N° 26.774 B.O. 02/11/2012) </div>
+<div id="t8_31" class="t s4_31">Artículo 95.- </div>
+<div id="t9_31" class="t s5_31">Constancia de emisión de voto. </div>
+<div id="ta_31" class="t s2_31">Acto continuo el presidente procederá a señalar en el </div>
+<div id="tb_31" class="t s2_31">padrón de electores de la mesa de votación que el elector emitió el sufragio, a la vista de los fiscales </div>
+<div id="tc_31" class="t s2_31">y del elector mismo. Asimismo se entregará al elector una constancia de emisión del voto que </div>
+<div id="td_31" class="t s2_31">contendrá impresos los siguientes datos: fecha y tipo de elección, nombre y apellido completos, </div>
+<div id="te_31" class="t s2_31">número de D.N.I. del elector y nomenclatura de la mesa, la que será firmada por el presidente en el </div>
+<div id="tf_31" class="t s2_31">lugar destinado al efecto. El formato de dicha constancia será establecido en la reglamentación. </div>
+<div id="tg_31" class="t s2_31">Dicha constancia será suficiente a los efectos previstos en los artículos 8°, 125 y 127 segundo </div>
+<div id="th_31" class="t s2_31">párrafo. </div>
+<div id="ti_31" class="t s3_31">(Artículo sustituido por art. 5° de la Ley N° 26.744 B.O. 11/06/2012 y modificado por art. 3° de la Ley N° </div>
+<div id="tj_31" class="t s3_31">26.774 B.O. 02/11/2012) </div>
+<div id="tk_31" class="t s4_31">Artículo 96.- </div>
+<div id="tl_31" class="t s3_31">(Artículo derogado por el art. 11 de la Ley N° 26.744 B.O. 11/06/2012)</div>
+<div id="tm_31" class="t s4_31">CAPITULO V </div>
+<div id="tn_31" class="t s5_31">Funcionamiento del cuarto oscuro </div>
+<div id="to_31" class="t s4_31">Artículo 97.- </div>
+<div id="tp_31" class="t s5_31">Inspección del cuarto oscuro.</div>
+<div id="tq_31" class="t s2_31">El presidente de la mesa examinará el cuarto oscuro, a </div>
+<div id="tr_31" class="t s2_31">pedido de los fiscales o cuando lo estime necesario a objeto de cerciorarse que funciona de acuerdo </div>
+<div id="ts_31" class="t s2_31">con lo previsto en el artículo 82, inciso 4.  </div>
+<div id="tt_31" class="t s4_31">Artículo 98.- </div>
+<div id="tu_31" class="t s5_31">Verificación de existencia de boletas.</div>
+<div id="tv_31" class="t s2_31">También cuidará de que en él existan en todo </div>
+<div id="tw_31" class="t s2_31">momento suficientes ejemplares de las boletas de todos los partidos, en forma que sea fácil para los </div>
+<div id="tx_31" class="t s2_31">electores distinguirlas y tomar una de ellas para emitir su voto.  </div>
+<div id="ty_31" class="t s2_31">No admitirá en el cuarto oscuro otras boletas que las aprobadas por la Junta Electoral.  </div>
+<div id="tz_31" class="t s4_31">CAPITULO VI </div>
+<div id="t10_31" class="t s5_31">Clausura </div>
+<div id="t11_31" class="t s4_31">Artículo 99.- </div>
+<div id="t12_31" class="t s5_31">Ininterrupción de las elecciones.</div>
+<div id="t13_31" class="t s2_31">Las elecciones no podrán ser interrumpidas y en caso </div>
+<div id="t14_31" class="t s2_31">de serlo por fuerza mayor se expresará en acta separada el tiempo que haya durado la interrupción </div>
+<div id="t15_31" class="t s2_31">y la causa de ella. </div>
+<div id="t16_31" class="t s4_31">Artículo 100.- </div>
+<div id="t17_31" class="t s5_31">Clausura del acto.</div>
+<div id="t18_31" class="t s2_31">El acto eleccionario finalizará a las dieciocho horas, en cuyo </div>
+<div id="t19_31" class="t s2_31">momento el presidente ordenará se clausure el acceso al comicio, pero continuará recibiendo el voto </div>
+<div id="t1a_31" class="t s2_31">de los electores presentes que aguardan turno. Concluida la recepción de estos sufragios, tachará </div>
+<div id="t1b_31" class="t s2_31">del padrón los nombres de los electores que no hayan comparecido y hará constar al pie el número </div>
+<div id="t1c_31" class="t s2_31">de los sufragantes y las protestas que hubieren formulado los fiscales. </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg31Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg31"><object width="909" height="1286" data="31/31.svg" type="image/svg+xml" id="pdf31" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld31" type="text/javascript">
+
+var isIE = false;
+var f31 = [['t1_31',1144],['t2_31',1166],['t3_31',3115],['t4_31',3115],['t5_31',3115],['t7_31',1954],['t8_31',430],['t9_31',974],['ta_31',1663],['tb_31',3114],['tc_31',3115],['td_31',3116],['te_31',3114],['tf_31',3115],['tg_31',3115],['ti_31',3118],['tj_31',709],['tk_31',427],['tl_31',1984],['tm_31',419],['tn_31',1039],['to_31',430],['tp_31',910],['tq_31',1726],['tr_31',3117],['ts_31',1291],['tt_31',434],['tu_31',1163],['tv_31',1463],['tw_31',3117],['tx_31',1976],['ty_31',2687],['tz_31',453],['t11_31',427],['t12_31',994],['t13_31',1651],['t14_31',3117],['t15_31',554],['t16_31',486],['t17_31',584],['t18_31',1975],['t19_31',3117],['t1a_31',3117],['t1b_31',3117],['t1c_31',2168]];
+function load31(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f31);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 49;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_31");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>

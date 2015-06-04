@@ -1,0 +1,329 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>26774 Page9</title>
+<link rel="stylesheet" type="text/css" href="assets/IDRViewer.css">
+<script type="text/javascript">
+var extLoaded = false;
+var intLoaded = false;
+function idrLoad() {
+	idrLoaded = true;
+	var bounds;
+	var heights = new Array(200,200,200,200,200,200,200,200,200,200,200,200,200);
+	IDRViewer.makeNavBar(13,9,935,1210,0,heights,'.jpg',bounds, true);
+}
+</script>
+<script src="assets/IDRViewer.js" type="text/javascript"></script>
+</head>
+
+<!-- Background pattern courtesy of http://subtlepatterns.com/grey-washed-wall/ -->
+<body style="background:url('assets/bg.png') repeat scroll 0 0 transparent;">
+
+<div id="left">
+<div id="leftNav">
+	<div id="btnThumbnails" onclick="IDRViewer.toggleOutlines(false)" title="Thumbnails" class="navBtn inactive"></div>
+	<div id="btnOutlines" onclick="IDRViewer.toggleOutlines(true)" title="Bookmarks" class="navBtn inactive"></div>
+</div>
+<div id="leftContent">
+	<div id="thumbnailPanel"></div>
+	<div id="outlinePanel"></div>
+</div>
+</div>
+
+<div id="main">
+
+<div id="mainNav">
+	<div id="btnSideToggle" onclick="IDRViewer.toggleThumbnails();" class="navBtn"><div title="Sidebar"></div></div>
+
+	<div id="btnPrev" title="Pagina anterior" onclick="IDRViewer.prev()" class="navBtn"></div>
+	<select id="goBtn" onchange="IDRViewer.goToPage(0)">
+
+	</select>
+	<span id="pgCount"></span>
+	<div id="btnNext" title="Pagina siguiente" onclick="IDRViewer.next()" class="navBtn"></div>
+
+	<div id="btnSelect" title="Seleccionar" onclick="IDRViewer.setSelectMode(0)" class="navBtn"></div>
+	<div id="btnMove" title="Pan" onclick="IDRViewer.setSelectMode(1)" class="navBtn"></div>
+
+	<div id="btnZoomOut" title="Zoom Alejar" onclick="IDRViewer.zoomOut()" class="navBtn"></div>
+	<select id="zoomBtn" onchange="IDRViewer.zoomUpdate()">
+		<option value="0">100%</option>
+		<option value="1">Tamano Real</option>
+		<option value="2">Ajustar ancho</option>
+		<option value="3">Ajustar altura</option>
+		<option value="4">Ajustar a la pagina</option>
+		<option value="5">Automatico</option>
+
+	</select>
+	<div id="btnZoomIn" title="Zoom Acercar" onclick="IDRViewer.zoomIn()" class="navBtn"></div>
+	<div id="btnFullscreen" title="Pantalla completa" onclick="IDRViewer.toggleFullScreen();" class="navBtn closed"></div>
+</div>
+
+<div id="mainContent">
+
+<div id="contentContainer">
+
+
+
+<div id="jpedal" style="position:relative; width: 935px; height: 1210px; overflow: hidden; margin: 0 auto; box-shadow: 0 2px 6px rgba(100, 100, 100, 0.5);">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load9();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_9{left:333px;top:128px;}
+#t2_9{left:331px;top:147px;}
+#t3_9{left:101px;top:207px;}
+#t4_9{left:101px;top:225px;}
+#t5_9{left:101px;top:242px;}
+#t6_9{left:101px;top:260px;}
+#t7_9{left:101px;top:295px;}
+#t8_9{left:101px;top:312px;}
+#t9_9{left:101px;top:329px;}
+#ta_9{left:101px;top:364px;}
+#tb_9{left:101px;top:382px;}
+#tc_9{left:101px;top:399px;}
+#td_9{left:101px;top:416px;}
+#te_9{left:101px;top:451px;}
+#tf_9{left:101px;top:469px;}
+#tg_9{left:101px;top:486px;}
+#th_9{left:101px;top:504px;}
+#ti_9{left:101px;top:538px;}
+#tj_9{left:193px;top:538px;}
+#tk_9{left:326px;top:538px;}
+#tl_9{left:101px;top:556px;}
+#tm_9{left:101px;top:573px;}
+#tn_9{left:101px;top:591px;}
+#to_9{left:101px;top:608px;}
+#tp_9{left:101px;top:626px;}
+#tq_9{left:101px;top:660px;}
+#tr_9{left:101px;top:678px;}
+#ts_9{left:101px;top:695px;}
+#tt_9{left:101px;top:713px;}
+#tu_9{left:101px;top:730px;}
+#tv_9{left:101px;top:747px;}
+#tw_9{left:101px;top:765px;}
+#tx_9{left:101px;top:800px;}
+#ty_9{left:194px;top:800px;}
+#tz_9{left:435px;top:800px;}
+#t10_9{left:101px;top:817px;}
+#t11_9{left:101px;top:835px;}
+#t12_9{left:101px;top:852px;}
+#t13_9{left:101px;top:869px;}
+#t14_9{left:101px;top:887px;}
+#t15_9{left:101px;top:904px;}
+#t16_9{left:101px;top:922px;}
+#t17_9{left:101px;top:957px;}
+#t18_9{left:208px;top:957px;}
+#t19_9{left:434px;top:957px;}
+#t1a_9{left:101px;top:974px;}
+#t1b_9{left:101px;top:991px;}
+#t1c_9{left:101px;top:1009px;}
+#t1d_9{left:101px;top:1026px;}
+#t1e_9{left:101px;top:1061px;}
+#t1f_9{left:101px;top:1078px;}
+
+.s1_9{
+	FONT-SIZE: 68px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s3_9{
+	FONT-SIZE: 57px;
+	FONT-FAMILY: Verdana, Geneva, sans-serif;
+	color: rgb(0,0,0);
+	FONT-STYLE: italic;
+}
+
+.s2_9{
+	FONT-SIZE: 57px;
+	FONT-FAMILY: Verdana, Geneva, sans-serif;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_9" class="t s1_9">PODER JUDICIAL DE LA NACIÓN </div>
+<div id="t2_9" class="t s1_9">CÁMARA NACIONAL ELECTORAL </div>
+<div id="t3_9" class="t s2_9">La fianza pecuniaria será de pesos ciento cincuenta ($ 150) de la que el presidente dará recibo. El </div>
+<div id="t4_9" class="t s2_9">importe de la fianza y copia del recibo será entregado al empleado del servicio oficial de correos </div>
+<div id="t5_9" class="t s2_9">juntamente con la documentación electoral una vez terminado el comicio y será remitido por éste a </div>
+<div id="t6_9" class="t s2_9">la Secretaría Electoral del distrito. </div>
+<div id="t7_9" class="t s2_9">La personal será otorgada por un vecino conocido y responsable que por escrito se comprometa a </div>
+<div id="t8_9" class="t s2_9">presentar al afianzado o a pagar aquella cantidad en el evento de que el impugnado no se </div>
+<div id="t9_9" class="t s2_9">presentare al juez electoral cuando sea citado por éste. </div>
+<div id="ta_9" class="t s2_9">El sobre con el voto del elector, juntamente con el formulario que contenga su impresión digital y </div>
+<div id="tb_9" class="t s2_9">demás referencias ya señaladas, así como el importe de la fianza pecuniaria o el instrumento escrito </div>
+<div id="tc_9" class="t s2_9">de la fianza personal, serán colocados en el sobre al que alude inicialmente el primer párrafo de este </div>
+<div id="td_9" class="t s2_9">artículo. </div>
+<div id="te_9" class="t s2_9">El elector que por orden del presidente de mesa fuere detenido por considerarse fundada la </div>
+<div id="tf_9" class="t s2_9">impugnación de su voto inmediatamente quedará a disposición de la Junta Electoral, y el presidente, </div>
+<div id="tg_9" class="t s2_9">al enviar los antecedentes, lo comunicará a ésta haciendo constar el lugar donde permanecerá </div>
+<div id="th_9" class="t s2_9">detenido. </div>
+<div id="ti_9" class="t s2_9">Artículo 94: </div>
+<div id="tj_9" class="t s3_9">Emisión del voto.</div>
+<div id="tk_9" class="t s2_9">Introducido en el cuarto oscuro y cerrada exteriormente la puerta, el </div>
+<div id="tl_9" class="t s2_9">elector colocará en el sobre su boleta de sufragio y volverá inmediatamente a la mesa. El sobre </div>
+<div id="tm_9" class="t s2_9">cerrado será depositado por el elector en la urna. El presidente por propia iniciativa o a pedido </div>
+<div id="tn_9" class="t s2_9">fundado de los fiscales, podrá ordenar se verifique si el sobre que trae el elector es el mismo que él </div>
+<div id="to_9" class="t s2_9">entregó. En caso de realizarse conjuntamente elecciones nacionales, provinciales y/o municipales, se </div>
+<div id="tp_9" class="t s2_9">utilizará un solo sobre para depositar todas las boletas. </div>
+<div id="tq_9" class="t s2_9">Los electores ciegos o con una discapacidad o condición física permanente o transitoria que impida, </div>
+<div id="tr_9" class="t s2_9">restrinja o dificulte el ejercicio del voto podrán sufragar asistidos por el presidente de mesa o una </div>
+<div id="ts_9" class="t s2_9">persona de su elección, que acredite debidamente su identidad, en los términos de la </div>
+<div id="tt_9" class="t s2_9">reglamentación que se dicte. Se dejará asentada esta circunstancia en el padrón de la mesa y en el </div>
+<div id="tu_9" class="t s2_9">acta de cierre de la misma, consignando los datos del elector y de la persona que lo asista. Ninguna </div>
+<div id="tv_9" class="t s2_9">persona, a excepción del presidente de mesa, podrá asistir a más de un elector en una misma </div>
+<div id="tw_9" class="t s2_9">elección. </div>
+<div id="tx_9" class="t s2_9">Artículo 95: </div>
+<div id="ty_9" class="t s3_9">Constancia de emisión de voto. </div>
+<div id="tz_9" class="t s2_9">Acto continuo el presidente procederá a señalar en el </div>
+<div id="t10_9" class="t s2_9">padrón de electores de la mesa de votación que el elector emitió el sufragio, a la vista de los fiscales </div>
+<div id="t11_9" class="t s2_9">y del elector mismo. Asimismo se entregará al elector una constancia de emisión del voto que </div>
+<div id="t12_9" class="t s2_9">contendrá impresos los siguientes datos: fecha y tipo de elección, nombre y apellido completos, </div>
+<div id="t13_9" class="t s2_9">número de D.N.I. del elector y nomenclatura de la mesa, la que será firmada por el presidente en el </div>
+<div id="t14_9" class="t s2_9">lugar destinado al efecto. El formato de dicha constancia será establecido en la reglamentación. </div>
+<div id="t15_9" class="t s2_9">Dicha constancia será suficiente a los efectos previstos en los artículos 8°, 125 y 127 segundo </div>
+<div id="t16_9" class="t s2_9">párrafo. </div>
+<div id="t17_9" class="t s2_9">Artículo 112: </div>
+<div id="t18_9" class="t s3_9">Procedimiento del escrutinio.</div>
+<div id="t19_9" class="t s2_9">Vencido el plazo del artículo 110, la Junta Electoral </div>
+<div id="t1a_9" class="t s2_9">Nacional realizará el escrutinio definitivo, el que deberá quedar concluido en el menor tiempo </div>
+<div id="t1b_9" class="t s2_9">posible. A tal efecto se habilitarán días y horas necesarios para que la tarea no tenga interrupción. </div>
+<div id="t1c_9" class="t s2_9">En el caso de la elección del Presidente y Vicepresidente de la Nación lo realizará en un plazo no </div>
+<div id="t1d_9" class="t s2_9">mayor de diez (10) días corridos. </div>
+<div id="t1e_9" class="t s2_9">El escrutinio definitivo se ajustará, en la consideración de cada mesa, al examen del acta respectiva </div>
+<div id="t1f_9" class="t s2_9">para verificar: </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg9Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg9"><object width="935" height="1210" data="09/9.svg" type="image/svg+xml" id="pdf9" style="width:935px; height:1210px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script type="text/javascript">
+var isIE = false;
+var f9 = [['t1_9',1077],['t2_9',1095],['t3_9',2934],['t4_9',2933],['t5_9',2934],['t6_9',982],['t7_9',2933],['t8_9',2934],['t9_9',1608],['ta_9',2934],['tb_9',2933],['tc_9',2934],['te_9',2934],['tf_9',2933],['tg_9',2934],['ti_9',342],['tj_9',507],['tk_9',2035],['tl_9',2933],['tm_9',2934],['tn_9',2933],['to_9',2934],['tp_9',1604],['tq_9',2933],['tr_9',2933],['ts_9',2933],['tt_9',2934],['tu_9',2934],['tv_9',2934],['tx_9',345],['ty_9',936],['tz_9',1597],['t10_9',2934],['t11_9',2934],['t12_9',2933],['t13_9',2933],['t14_9',2934],['t15_9',2934],['t17_9',391],['t18_9',870],['t19_9',1599],['t1a_9',2933],['t1b_9',2933],['t1c_9',2933],['t1d_9',965],['t1e_9',2934],['t1f_9',409]];
+function load9(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f9);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 52;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_9");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	if (extLoaded) { idrLoad(); } else { intLoaded = true; }
+</script>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>

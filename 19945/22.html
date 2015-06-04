@@ -1,0 +1,280 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+
+<div id="jpedal" style="width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load22();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_22{left:312px;top:115px;}
+#t2_22{left:309px;top:136px;}
+#t3_22{left:65px;top:203px;}
+#t4_22{left:65px;top:221px;}
+#t5_22{left:65px;top:240px;}
+#t6_22{left:65px;top:280px;}
+#t7_22{left:65px;top:298px;}
+#t8_22{left:65px;top:338px;}
+#t9_22{left:65px;top:357px;}
+#ta_22{left:65px;top:397px;}
+#tb_22{left:65px;top:435px;}
+#tc_22{left:179px;top:435px;}
+#td_22{left:349px;top:435px;}
+#te_22{left:65px;top:454px;}
+#tf_22{left:65px;top:472px;}
+#tg_22{left:65px;top:491px;}
+#th_22{left:65px;top:531px;}
+#ti_22{left:65px;top:549px;}
+#tj_22{left:65px;top:589px;}
+#tk_22{left:178px;top:589px;}
+#tl_22{left:452px;top:589px;}
+#tm_22{left:65px;top:608px;}
+#tn_22{left:65px;top:627px;}
+#to_22{left:65px;top:645px;}
+#tp_22{left:65px;top:664px;}
+#tq_22{left:65px;top:682px;}
+#tr_22{left:65px;top:722px;}
+#ts_22{left:183px;top:722px;}
+#tt_22{left:298px;top:722px;}
+#tu_22{left:442px;top:724px;}
+#tv_22{left:65px;top:741px;}
+#tw_22{left:65px;top:779px;}
+#tx_22{left:65px;top:797px;}
+#ty_22{left:65px;top:816px;}
+#tz_22{left:65px;top:834px;}
+#t10_22{left:65px;top:874px;}
+#t11_22{left:65px;top:893px;}
+#t12_22{left:65px;top:911px;}
+#t13_22{left:65px;top:952px;}
+#t14_22{left:65px;top:970px;}
+#t15_22{left:65px;top:1010px;}
+#t16_22{left:65px;top:1028px;}
+#t17_22{left:65px;top:1069px;}
+#t18_22{left:65px;top:1087px;}
+
+.s1_22{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s5_22{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic22;
+	color: rgb(0,0,0);
+}
+
+.s4_22{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Bold22;
+	color: rgb(0,0,0);
+}
+
+.s3_22{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic22;
+	color: rgb(0,0,0);
+}
+
+.s2_22{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana22;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts22" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Verdana22;
+	src :url("22/fonts/ABCDEE-Verdana.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Bold22;
+	src :url("22/fonts/ABCDEE-Verdana-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Italic22;
+	src :url("22/fonts/ABCDEE-Verdana-Italic.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_22" class="t s1_22">PODER JUDICIAL DE LA NACIÓN </div>
+<div id="t2_22" class="t s1_22">CÁMARA NACIONAL ELECTORAL </div>
+<div id="t3_22" class="t s2_22">provinciales, territoriales y municipales, no podrán encabezar grupos de electores durante la </div>
+<div id="t4_22" class="t s2_22">elección, ni hacer valer la influencia de sus cargos para coartar la libertad de sufragio ni realizar </div>
+<div id="t5_22" class="t s2_22">reuniones con el propósito de influir en los actos comiciales. </div>
+<div id="t6_22" class="t s2_22">Al personal retirado de las fuerzas armadas, cualquiera fuera su jerarquía, le está vedado asistir al </div>
+<div id="t7_22" class="t s2_22">acto electoral vistiendo su uniforme. </div>
+<div id="t8_22" class="t s2_22">El personal de las fuerzas armadas y de seguridad en actividad, tiene derecho a concurrir a los </div>
+<div id="t9_22" class="t s2_22">comicios de uniforme y portando sus armas reglamentarias. </div>
+<div id="ta_22" class="t s3_22">(Artículo modificado por art. 3° de la Ley N° 26.774 B.O. 02/11/2012) </div>
+<div id="tb_22" class="t s4_22">Artículo 69.- </div>
+<div id="tc_22" class="t s5_22">Custodia de la mesa.</div>
+<div id="td_22" class="t s2_22">Sin mengua de lo determinado en el primer párrafo del artículo </div>
+<div id="te_22" class="t s2_22">67, las autoridades respectivas dispondrán que los días de elecciones nacionales se pongan agentes </div>
+<div id="tf_22" class="t s2_22">de policía en el local donde se celebrarán y en número suficiente a las órdenes de cada uno de los </div>
+<div id="tg_22" class="t s2_22">presidentes de mesa, a objeto de asegurar la libertad y regularidad de la emisión del sufragio. </div>
+<div id="th_22" class="t s2_22">Este personal de resguardo sólo recibirá órdenes del funcionario que ejerza la presidencia de la </div>
+<div id="ti_22" class="t s2_22">mesa. </div>
+<div id="tj_22" class="t s4_22">Artículo 70.- </div>
+<div id="tk_22" class="t s5_22">Ausencia del personal de custodia.</div>
+<div id="tl_22" class="t s2_22">Si las autoridades locales no hubieren dispuesto la </div>
+<div id="tm_22" class="t s2_22">presencia de fuerzas policiales a los fines del artículo anterior, o si éstas no se hicieran presente, o si </div>
+<div id="tn_22" class="t s2_22">estándolo no cumplieran las órdenes del presidente de la mesa, éste lo hará saber telegráficamente </div>
+<div id="to_22" class="t s2_22">al juez electoral, quien deberá poner el hecho en conocimiento de las autoridades locales para que </div>
+<div id="tp_22" class="t s2_22">provean la policía correspondiente, y mientras tanto podrá ordenar la custodia de la mesa por </div>
+<div id="tq_22" class="t s2_22">fuerzas nacionales. </div>
+<div id="tr_22" class="t s4_22">Artículo 71.- </div>
+<div id="ts_22" class="t s5_22">Prohibiciones.</div>
+<div id="tt_22" class="t s2_22">Queda prohibido: </div>
+<div id="tu_22" class="t s3_22">(Título modificado por art. 4 de la Ley N° 25.610 B.O. </div>
+<div id="tv_22" class="t s3_22">08/07/2002) </div>
+<div id="tw_22" class="t s2_22">a) Admitir reuniones de electores o depósito de armas durante las horas de la elección a toda </div>
+<div id="tx_22" class="t s2_22">persona que en los centros urbanos habite una casa situada dentro de un radio de ochenta metros </div>
+<div id="ty_22" class="t s2_22">(80 m) alrededor de la mesa receptora. Si la finca fuese tomada a viva fuerza deberá darse aviso </div>
+<div id="tz_22" class="t s2_22">inmediato a la autoridad policial; </div>
+<div id="t10_22" class="t s2_22">b) Los espectáculos populares al aire libre o en recintos cerrados, fiestas teatrales, deportivas y toda </div>
+<div id="t11_22" class="t s2_22">clase de reuniones públicas que no se refieran al acto electoral, durante su desarrollo y hasta </div>
+<div id="t12_22" class="t s2_22">pasadas tres horas de ser clausurado; </div>
+<div id="t13_22" class="t s2_22">c) Tener abiertas las casas destinadas al expendio de cualquier clase de bebidas alcohólicas hasta </div>
+<div id="t14_22" class="t s2_22">transcurridas tres horas del cierre del comicio; </div>
+<div id="t15_22" class="t s2_22">d) Ofrecer o entregar a los electores boletas de sufragio dentro de un radio de ochenta metros (80 </div>
+<div id="t16_22" class="t s2_22">m.) de las mesas receptoras de votos, contados sobre la calzada, calle o camino; </div>
+<div id="t17_22" class="t s2_22">e) A los electores, la portación de armas, el uso de banderas, divisas u otros distintivos durante el </div>
+<div id="t18_22" class="t s2_22">día de la elección, doce horas antes y tres horas después de finalizada; </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg22Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg22"><object width="909" height="1286" data="22/22.svg" type="image/svg+xml" id="pdf22" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld22" type="text/javascript">
+
+var isIE = false;
+var f22 = [['t1_22',1144],['t2_22',1166],['t3_22',3115],['t4_22',3114],['t5_22',1850],['t6_22',3115],['t7_22',1120],['t8_22',3118],['t9_22',1850],['ta_22',1954],['tb_22',431],['tc_22',654],['td_22',1983],['te_22',3118],['tf_22',3117],['tg_22',2910],['th_22',3118],['tj_22',429],['tk_22',1071],['tl_22',1569],['tm_22',3117],['tn_22',3117],['to_22',3118],['tp_22',3116],['tq_22',588],['tr_22',439],['tt_22',545],['tu_22',1609],['tw_22',3118],['tx_22',3118],['ty_22',3118],['tz_22',1011],['t10_22',3118],['t11_22',3117],['t12_22',1175],['t13_22',3118],['t14_22',1436],['t15_22',3118],['t16_22',2506],['t17_22',3118],['t18_22',2196]];
+function load22(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f22);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 45;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_22");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>

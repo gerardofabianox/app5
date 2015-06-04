@@ -1,0 +1,302 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+
+<div id="jpedal" style="width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load2();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_2{left:312px;top:115px;}
+#t2_2{left:309px;top:136px;}
+#t3_2{left:65px;top:203px;}
+#t4_2{left:81px;top:203px;}
+#t5_2{left:65px;top:241px;}
+#t6_2{left:84px;top:241px;}
+#t7_2{left:65px;top:279px;}
+#t8_2{left:65px;top:319px;}
+#t9_2{left:65px;top:337px;}
+#ta_2{left:65px;top:378px;}
+#tb_2{left:224px;top:378px;}
+#tc_2{left:65px;top:396px;}
+#td_2{left:65px;top:415px;}
+#te_2{left:65px;top:455px;}
+#tf_2{left:65px;top:473px;}
+#tg_2{left:65px;top:492px;}
+#th_2{left:65px;top:510px;}
+#ti_2{left:65px;top:550px;}
+#tj_2{left:65px;top:569px;}
+#tk_2{left:65px;top:587px;}
+#tl_2{left:65px;top:627px;}
+#tm_2{left:65px;top:644px;}
+#tn_2{left:65px;top:661px;}
+#to_2{left:65px;top:699px;}
+#tp_2{left:164px;top:699px;}
+#tq_2{left:185px;top:699px;}
+#tr_2{left:482px;top:699px;}
+#ts_2{left:65px;top:717px;}
+#tt_2{left:65px;top:736px;}
+#tu_2{left:65px;top:776px;}
+#tv_2{left:65px;top:795px;}
+#tw_2{left:65px;top:813px;}
+#tx_2{left:65px;top:832px;}
+#ty_2{left:65px;top:850px;}
+#tz_2{left:65px;top:869px;}
+#t10_2{left:65px;top:909px;}
+#t11_2{left:65px;top:927px;}
+#t12_2{left:65px;top:967px;}
+#t13_2{left:167px;top:967px;}
+#t14_2{left:190px;top:967px;}
+#t15_2{left:310px;top:967px;}
+#t16_2{left:65px;top:986px;}
+#t17_2{left:65px;top:1004px;}
+#t18_2{left:65px;top:1045px;}
+#t19_2{left:166px;top:1045px;}
+#t1a_2{left:188px;top:1045px;}
+#t1b_2{left:372px;top:1045px;}
+#t1c_2{left:65px;top:1063px;}
+#t1d_2{left:65px;top:1082px;}
+#t1e_2{left:65px;top:1100px;}
+#t1f_2{left:65px;top:1119px;}
+#t1g_2{left:70px;top:1159px;}
+
+.s1_2{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s3_2{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic2;
+	color: rgb(0,0,0);
+}
+
+.s4_2{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana2;
+	color: rgb(0,0,0);
+}
+
+.s5_2{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Bold2;
+	color: rgb(0,0,0);
+}
+
+.s6_2{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic2;
+	color: rgb(0,0,0);
+}
+
+.s2_2{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana2;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts2" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Verdana2;
+	src :url("2/fonts/ABCDEE-Verdana.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Bold2;
+	src :url("2/fonts/ABCDEE-Verdana-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Italic2;
+	src :url("2/fonts/ABCDEE-Verdana-Italic.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_2" class="t s1_2">PODER JUDICIAL DE LA NACIÓN </div>
+<div id="t2_2" class="t s1_2">CÁMARA NACIONAL ELECTORAL </div>
+<div id="t3_2" class="t s2_2">j) </div>
+<div id="t4_2" class="t s3_2">(Inciso derogado por art. 3° de la Ley N° 25.858 B.O. 6/1/2004); </div>
+<div id="t5_2" class="t s2_2">k) </div>
+<div id="t6_2" class="t s3_2">(Inciso derogado por art. 3° de la Ley N° 25.858 B.O. 6/1/2004); </div>
+<div id="t7_2" class="t s4_2">l) Los inhabilitados según disposiciones de la Ley Orgánica de los Partidos Políticos; </div>
+<div id="t8_2" class="t s4_2">m) Los que en virtud de otras prescripciones legales y reglamentarias quedaren inhabilitados para el </div>
+<div id="t9_2" class="t s4_2">ejercicio de los derechos políticos. </div>
+<div id="ta_2" class="t s5_2">Artículo 3° bis.- </div>
+<div id="tb_2" class="t s4_2">Los procesados que se encuentren cumpliendo prisión preventiva, tendrán </div>
+<div id="tc_2" class="t s4_2">derecho a emitir su voto en todos los actos eleccionarios que se celebren durante el lapso en que se </div>
+<div id="td_2" class="t s4_2">encuentren detenidos. </div>
+<div id="te_2" class="t s4_2">A tal fin la Cámara Nacional Electoral confeccionará el Registro de Electores Privados de Libertad, </div>
+<div id="tf_2" class="t s4_2">que contendrá los datos de los procesados que se encuentren alojados en esos establecimientos de </div>
+<div id="tg_2" class="t s4_2">acuerdo con la información que deberán remitir los jueces competentes; asimismo habilitará mesas </div>
+<div id="th_2" class="t s4_2">de votación en cada uno de los establecimientos de detención y designará a sus autoridades. </div>
+<div id="ti_2" class="t s4_2">Los procesados que se encuentren en un distrito electoral diferente al que le corresponda podrán </div>
+<div id="tj_2" class="t s4_2">votar en el establecimiento en que se encuentren alojados y sus votos se adjudicarán al Distrito en </div>
+<div id="tk_2" class="t s4_2">el que estén empadronados. </div>
+<div id="tl_2" class="t s3_2">(Artículo incorporado por art. 4° de la Ley N° 25.858 B.O. 6/1/2004. Vigencia: a partir de su reglamentación </div>
+<div id="tm_2" class="t s3_2">por el Poder Ejecutivo nacional, la que deberá dictarse en el plazo máximo de veinticuatro (24) meses contados </div>
+<div id="tn_2" class="t s3_2">a partir de la publicación de la norma de referencia). </div>
+<div id="to_2" class="t s5_2">Artículo 4° </div>
+<div id="tp_2" class="t s4_2">—</div>
+<div id="tq_2" class="t s6_2">Forma y plazo de las inhabilitaciones.</div>
+<div id="tr_2" class="t s4_2">El tiempo de la inhabilitación se contará desde </div>
+<div id="ts_2" class="t s4_2">la fecha de la sentencia definitiva pasada en autoridad de cosa juzgada. La condena de ejecución </div>
+<div id="tt_2" class="t s4_2">condicional se computará a los efectos de la inhabilitación. </div>
+<div id="tu_2" class="t s4_2">Las inhabilitaciones se determinarán en forma sumaria por el juez electoral, de oficio, por denuncia </div>
+<div id="tv_2" class="t s4_2">de cualquier elector o por querella fiscal. La que fuere dispuesta por sentencia será asentada una </div>
+<div id="tw_2" class="t s4_2">vez que se haya tomado conocimiento de la misma. Los magistrados de la causa, cuando el fallo </div>
+<div id="tx_2" class="t s4_2">quede firme, lo comunicarán al Registro Nacional de las Personas y juez electoral respectivo, con </div>
+<div id="ty_2" class="t s4_2">remisión de copia de la parte resolutiva y la individualización del nombre, apellido, edad, fecha de </div>
+<div id="tz_2" class="t s4_2">nacimiento, domicilio, número y clase de documento cívico, y oficina enroladora del inhabilitado. </div>
+<div id="t10_2" class="t s4_2">El Registro Nacional de Reincidencia y Estadística Criminal y Carcelaria evacuará los informes que le </div>
+<div id="t11_2" class="t s4_2">soliciten los jueces electorales. </div>
+<div id="t12_2" class="t s5_2">Artículo 5° </div>
+<div id="t13_2" class="t s4_2">—</div>
+<div id="t14_2" class="t s6_2">Rehabilitación.</div>
+<div id="t15_2" class="t s4_2">La rehabilitación se decretará de oficio por el juez electoral, previa </div>
+<div id="t16_2" class="t s4_2">vista fiscal, siempre que la cesación de la causal inhabilitante surja de las constancias que se </div>
+<div id="t17_2" class="t s4_2">tuvieron al disponerla. De lo contrario, sólo podrá considerarse a petición del interesado. </div>
+<div id="t18_2" class="t s5_2">Artículo 6° </div>
+<div id="t19_2" class="t s4_2">—</div>
+<div id="t1a_2" class="t s6_2">Inmunidad del Elector.</div>
+<div id="t1b_2" class="t s4_2">Ninguna autoridad estará facultada para reducir a prisión al </div>
+<div id="t1c_2" class="t s4_2">elector desde veinticuatro (24) horas antes de la elección hasta la clausura del comicio, salvo el caso </div>
+<div id="t1d_2" class="t s4_2">de flagrante delito o cuando existiera orden emanada de juez competente. Fuera de estos supuestos </div>
+<div id="t1e_2" class="t s4_2">no se le estorbará en el tránsito desde su domicilio hasta el lugar donde aquél se halle instalado, ni </div>
+<div id="t1f_2" class="t s4_2">podrá ser molestado en el desempeño de sus funciones. </div>
+<div id="t1g_2" class="t s3_2">(Artículo modificado por art. 3° de la Ley N° 26.774 B.O. 02/11/2012) </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg2Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg2"><object width="909" height="1286" data="2/2.svg" type="image/svg+xml" id="pdf2" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld2" type="text/javascript">
+
+var isIE = false;
+var f2 = [['t1_2',1144],['t2_2',1166],['t4_2',1822],['t6_2',1822],['t7_2',2571],['t8_2',3117],['t9_2',1049],['ta_2',588],['tb_2',2484],['tc_2',3118],['td_2',687],['te_2',3118],['tf_2',3118],['tg_2',3117],['th_2',2869],['ti_2',3118],['tj_2',3117],['tk_2',874],['tl_2',3118],['tm_2',3117],['tn_2',1461],['to_2',371],['tq_2',1166],['tr_2',1449],['ts_2',3117],['tt_2',1805],['tu_2',3118],['tv_2',3118],['tw_2',3117],['tx_2',3117],['ty_2',3117],['tz_2',2979],['t10_2',3118],['t11_2',949],['t12_2',377],['t15_2',2139],['t16_2',3118],['t17_2',2737],['t18_2',374],['t1a_2',710],['t1b_2',1888],['t1c_2',3114],['t1d_2',3114],['t1e_2',3115],['t1f_2',1730],['t1g_2',1954]];
+function load2(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f2);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 53;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_2");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>

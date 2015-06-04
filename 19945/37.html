@@ -1,0 +1,288 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+
+<div id="jpedal" style="width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load37();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_37{left:312px;top:115px;}
+#t2_37{left:309px;top:136px;}
+#t3_37{left:65px;top:203px;}
+#t4_37{left:200px;top:203px;}
+#t5_37{left:550px;top:203px;}
+#t6_37{left:65px;top:221px;}
+#t7_37{left:65px;top:261px;}
+#t8_37{left:65px;top:280px;}
+#t9_37{left:65px;top:320px;}
+#ta_37{left:65px;top:338px;}
+#tb_37{left:65px;top:378px;}
+#tc_37{left:65px;top:397px;}
+#td_37{left:65px;top:416px;}
+#te_37{left:65px;top:456px;}
+#tf_37{left:192px;top:456px;}
+#tg_37{left:464px;top:456px;}
+#th_37{left:65px;top:474px;}
+#ti_37{left:65px;top:514px;}
+#tj_37{left:65px;top:532px;}
+#tk_37{left:65px;top:573px;}
+#tl_37{left:65px;top:591px;}
+#tm_37{left:65px;top:610px;}
+#tn_37{left:65px;top:650px;}
+#to_37{left:192px;top:650px;}
+#tp_37{left:460px;top:650px;}
+#tq_37{left:65px;top:668px;}
+#tr_37{left:65px;top:687px;}
+#ts_37{left:65px;top:705px;}
+#tt_37{left:65px;top:745px;}
+#tu_37{left:65px;top:764px;}
+#tv_37{left:65px;top:804px;}
+#tw_37{left:195px;top:804px;}
+#tx_37{left:479px;top:804px;}
+#ty_37{left:65px;top:823px;}
+#tz_37{left:65px;top:841px;}
+#t10_37{left:65px;top:881px;}
+#t11_37{left:65px;top:899px;}
+#t12_37{left:65px;top:940px;}
+#t13_37{left:193px;top:940px;}
+#t14_37{left:749px;top:940px;}
+#t15_37{left:65px;top:958px;}
+#t16_37{left:65px;top:977px;}
+#t17_37{left:65px;top:995px;}
+#t18_37{left:65px;top:1014px;}
+#t19_37{left:65px;top:1054px;}
+#t1a_37{left:198px;top:1054px;}
+#t1b_37{left:361px;top:1054px;}
+#t1c_37{left:65px;top:1072px;}
+#t1d_37{left:65px;top:1112px;}
+#t1e_37{left:65px;top:1131px;}
+#t1f_37{left:65px;top:1149px;}
+
+.s1_37{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s3_37{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic37;
+	color: rgb(0,0,0);
+}
+
+.s4_37{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana37;
+	color: rgb(0,0,0);
+}
+
+.s2_37{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Bold37;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts37" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Verdana37;
+	src :url("37/fonts/ABCDEE-Verdana.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Bold37;
+	src :url("37/fonts/ABCDEE-Verdana-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Italic37;
+	src :url("37/fonts/ABCDEE-Verdana-Italic.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_37" class="t s1_37">PODER JUDICIAL DE LA NACIÓN </div>
+<div id="t2_37" class="t s1_37">CÁMARA NACIONAL ELECTORAL </div>
+<div id="t3_37" class="t s2_37">Artículo 114.- </div>
+<div id="t4_37" class="t s3_37">Declaración de nulidad. Cuándo procede.</div>
+<div id="t5_37" class="t s4_37">La Junta declarará nula la elección </div>
+<div id="t6_37" class="t s4_37">realizada en una mesa, aunque no medie petición de partido, cuando: </div>
+<div id="t7_37" class="t s4_37">1. No hubiere acta de elección de la mesa o certificado de escrutinio firmado por las autoridades del </div>
+<div id="t8_37" class="t s4_37">comicio y dos fiscales, por lo menos. </div>
+<div id="t9_37" class="t s4_37">2. Hubiera sido maliciosamente alterada el acta o, a falta de ella, el certificado de escrutinio no </div>
+<div id="ta_37" class="t s4_37">contare con los recaudos mínimos preestablecidos. </div>
+<div id="tb_37" class="t s4_37">3. El número de sufragantes consignados en el acta o, en su defecto, en el certificado de escrutinio, </div>
+<div id="tc_37" class="t s4_37">difiriera en cinco sobres o más del número de sobres utilizados y remitidos por el presidente de </div>
+<div id="td_37" class="t s4_37">mesa. </div>
+<div id="te_37" class="t s2_37">Artículo 115.- </div>
+<div id="tf_37" class="t s3_37">Comprobación de irregularidades.</div>
+<div id="tg_37" class="t s4_37">A petición de los apoderados de los partidos, la </div>
+<div id="th_37" class="t s4_37">Junta podrá anular la elección practicada en una mesa, cuando: </div>
+<div id="ti_37" class="t s4_37">1. Se compruebe que la apertura tardía o la clausura anticipada del comicio privó maliciosamente a </div>
+<div id="tj_37" class="t s4_37">electores de emitir su voto. </div>
+<div id="tk_37" class="t s4_37">2. No aparezca la firma del presidente en el acta de apertura o de clausura o, en su caso, en el </div>
+<div id="tl_37" class="t s4_37">certificado de escrutinio, y no se hubieren cumplimentado tampoco las demás formalidades </div>
+<div id="tm_37" class="t s4_37">prescriptas por esta ley. </div>
+<div id="tn_37" class="t s2_37">Artículo 116.- </div>
+<div id="to_37" class="t s3_37">Convocatoria a complementarias.</div>
+<div id="tp_37" class="t s4_37">Si no se efectuó la elección en alguna o algunas </div>
+<div id="tq_37" class="t s4_37">mesas, o se hubiese anulado, la Junta podrá requerir del Poder Ejecutivo Nacional que convoque a </div>
+<div id="tr_37" class="t s4_37">los electores respectivos a elecciones complementarias, salvo el supuesto previsto en el artículo </div>
+<div id="ts_37" class="t s4_37">siguiente. </div>
+<div id="tt_37" class="t s4_37">Para que el Poder Ejecutivo pueda disponer tal convocatoria será indispensable que un partido </div>
+<div id="tu_37" class="t s4_37">político actuante lo solicite dentro de los tres días de sancionada la nulidad o fracasada la elección. </div>
+<div id="tv_37" class="t s2_37">Artículo 117.- </div>
+<div id="tw_37" class="t s3_37">Efectos de la anulación de mesas.</div>
+<div id="tx_37" class="t s4_37">Se considerará que no existió elección en un </div>
+<div id="ty_37" class="t s4_37">distrito cuando la mitad del total de sus mesas fueran anuladas por la Junta. Esta declaración se </div>
+<div id="tz_37" class="t s4_37">comunicará al Poder Ejecutivo que corresponda y a las Cámaras Legislativas de la Nación. </div>
+<div id="t10_37" class="t s4_37">Declarada la nulidad se procederá a una nueva convocatoria con sujeción a las disposiciones de este </div>
+<div id="t11_37" class="t s4_37">Código. </div>
+<div id="t12_37" class="t s2_37">Artículo 118.- </div>
+<div id="t13_37" class="t s3_37">Recuento de sufragios por errores u omisiones en la documentación.</div>
+<div id="t14_37" class="t s4_37">En casos de </div>
+<div id="t15_37" class="t s4_37">evidentes errores de hecho sobre los resultados del escrutinio consignados en la documentación de </div>
+<div id="t16_37" class="t s4_37">la mesa, o en el supuesto de no existir esta documentación específica, la Junta Electoral Nacional </div>
+<div id="t17_37" class="t s4_37">podrá no anular el acto comicial, avocándose a realizar íntegramente el escrutinio con los sobres y </div>
+<div id="t18_37" class="t s4_37">votos remitidos por el presidente de mesa. </div>
+<div id="t19_37" class="t s2_37">Artículo 119.- </div>
+<div id="t1a_37" class="t s3_37">Votos impugnados.</div>
+<div id="t1b_37" class="t s4_37">Procedimiento. En el examen de los votos impugnados se </div>
+<div id="t1c_37" class="t s4_37">procederá de la siguiente manera: </div>
+<div id="t1d_37" class="t s4_37">De los sobres se retirará el formulario previsto en el artículo 92 y se enviará al juez electoral para </div>
+<div id="t1e_37" class="t s4_37">que, después de cotejar la impresión digital y demás datos con los existentes en la ficha del elector </div>
+<div id="t1f_37" class="t s4_37">cuyo voto ha sido impugnado, informe sobre la identidad del mismo. Si ésta no resulta probada, el </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg37Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg37"><object width="909" height="1286" data="37/37.svg" type="image/svg+xml" id="pdf37" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld37" type="text/javascript">
+
+var isIE = false;
+var f37 = [['t1_37',1144],['t2_37',1166],['t3_37',494],['t4_37',1354],['t5_37',1178],['t6_37',2159],['t7_37',3118],['t8_37',1129],['t9_37',3118],['ta_37',1566],['tb_37',3118],['tc_37',3118],['te_37',479],['tf_37',1055],['tg_37',1522],['th_37',1970],['ti_37',3118],['tj_37',844],['tk_37',3118],['tl_37',3118],['tm_37',744],['tn_37',478],['to_37',1042],['tp_37',1540],['tq_37',3118],['tr_37',3117],['tt_37',3118],['tu_37',3047],['tv_37',484],['tw_37',1104],['tx_37',1461],['ty_37',3118],['tz_37',2774],['t10_37',3118],['t12_37',479],['t13_37',2193],['t14_37',382],['t15_37',3118],['t16_37',3118],['t17_37',3117],['t18_37',1320],['t19_37',491],['t1a_37',609],['t1b_37',1935],['t1c_37',1060],['t1d_37',3118],['t1e_37',3118],['t1f_37',3117]];
+function load37(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f37);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 52;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_37");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>

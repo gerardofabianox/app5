@@ -1,0 +1,312 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title> 24.007 Res Ext</title>
+<link rel="stylesheet" type="text/css" href="assets/IDRViewer.css">
+<script type="text/javascript">
+var extLoaded = false;
+var intLoaded = false;
+function idrLoad() {
+	idrLoaded = true;
+	var bounds;
+	var heights = new Array(200);
+	IDRViewer.makeNavBar(1,1,935,1210,0,heights,'.jpg',bounds, true);
+}
+</script>
+<script src="assets/IDRViewer.js" type="text/javascript"></script>
+</head>
+
+<!-- Background pattern courtesy of http://subtlepatterns.com/grey-washed-wall/ -->
+<body style="background:url('assets/bg.png') repeat scroll 0 0 transparent;">
+
+<div id="left">
+<div id="leftNav">
+	<div id="btnThumbnails" onclick="IDRViewer.toggleOutlines(false)" title="Thumbnails" class="navBtn inactive"></div>
+	<div id="btnOutlines" onclick="IDRViewer.toggleOutlines(true)" title="Bookmarks" class="navBtn inactive"></div>
+</div>
+<div id="leftContent">
+	<div id="thumbnailPanel"></div>
+	<div id="outlinePanel"></div>
+</div>
+</div>
+
+<div id="main">
+
+<div id="mainNav">
+	<div id="btnSideToggle" onclick="IDRViewer.toggleThumbnails();" class="navBtn"><div title="Sidebar"></div></div>
+
+	<div id="btnPrev" title="Pagina anterior" onclick="IDRViewer.prev()" class="navBtn"></div>
+	<select id="goBtn" onchange="IDRViewer.goToPage(0)">
+
+	</select>
+	<span id="pgCount"></span>
+	<div id="btnNext" title="Pagina siguiente" onclick="IDRViewer.next()" class="navBtn"></div>
+
+	<div id="btnSelect" title="Seleccionar" onclick="IDRViewer.setSelectMode(0)" class="navBtn"></div>
+	<div id="btnMove" title="Pan" onclick="IDRViewer.setSelectMode(1)" class="navBtn"></div>
+
+	<div id="btnZoomOut" title="Zoom Alejar" onclick="IDRViewer.zoomOut()" class="navBtn"></div>
+	<select id="zoomBtn" onchange="IDRViewer.zoomUpdate()">
+		<option value="0">100%</option>
+		<option value="1">Tamano Real</option>
+		<option value="2">Ajustar ancho</option>
+		<option value="3">Ajustar altura</option>
+		<option value="4">Ajustar a la pagina</option>
+		<option value="5">Automatico</option>
+
+	</select>
+	<div id="btnZoomIn" title="Zoom Acercar" onclick="IDRViewer.zoomIn()" class="navBtn"></div>
+	<div id="btnFullscreen" title="Pantalla completa" onclick="IDRViewer.toggleFullScreen();" class="navBtn closed"></div>
+</div>
+
+<div id="mainContent">
+
+<div id="contentContainer">
+
+
+
+<div id="jpedal" style="position:relative; width: 935px; height: 1210px; overflow: hidden; margin: 0 auto; box-shadow: 0 2px 6px rgba(100, 100, 100, 0.5);">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load1();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_1{left:333px;top:128px;}
+#t2_1{left:331px;top:147px;}
+#t3_1{left:418px;top:215px;}
+#t4_1{left:240px;top:248px;}
+#t5_1{left:101px;top:311px;}
+#t6_1{left:233px;top:311px;}
+#t7_1{left:101px;top:329px;}
+#t8_1{left:101px;top:346px;}
+#t9_1{left:101px;top:364px;}
+#ta_1{left:101px;top:395px;}
+#tb_1{left:230px;top:395px;}
+#tc_1{left:101px;top:413px;}
+#td_1{left:384px;top:413px;}
+#te_1{left:101px;top:430px;}
+#tf_1{left:101px;top:448px;}
+#tg_1{left:101px;top:479px;}
+#th_1{left:238px;top:479px;}
+#ti_1{left:101px;top:497px;}
+#tj_1{left:101px;top:514px;}
+#tk_1{left:101px;top:532px;}
+#tl_1{left:101px;top:563px;}
+#tm_1{left:101px;top:581px;}
+#tn_1{left:101px;top:598px;}
+#to_1{left:464px;top:598px;}
+#tp_1{left:487px;top:598px;}
+#tq_1{left:542px;top:598px;}
+#tr_1{left:101px;top:630px;}
+#ts_1{left:101px;top:647px;}
+#tt_1{left:101px;top:679px;}
+#tu_1{left:237px;top:679px;}
+#tv_1{left:101px;top:697px;}
+#tw_1{left:101px;top:728px;}
+#tx_1{left:235px;top:728px;}
+#ty_1{left:101px;top:746px;}
+#tz_1{left:101px;top:763px;}
+#t10_1{left:101px;top:781px;}
+#t11_1{left:101px;top:812px;}
+#t12_1{left:229px;top:812px;}
+#t13_1{left:476px;top:812px;}
+
+.s1_1{
+	FONT-SIZE: 68px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s4_1{
+	FONT-SIZE: 57px;
+	FONT-FAMILY: Verdana, Geneva, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s3_1{
+	FONT-SIZE: 57px;
+	FONT-FAMILY: Verdana, Geneva, sans-serif;
+	color: rgb(0,0,0);
+	FONT-WEIGHT: bold;
+}
+
+.s2_1{
+	FONT-SIZE: 63px;
+	FONT-FAMILY: Verdana, Geneva, sans-serif;
+	color: rgb(0,0,0);
+	FONT-WEIGHT: bold;
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_1" class="t s1_1">PODER JUDICIAL DE LA NACIÓN </div>
+<div id="t2_1" class="t s1_1">CÁMARA NACIONAL ELECTORAL </div>
+<div id="t3_1" class="t s2_1">Ley 24.007 </div>
+<div id="t4_1" class="t s3_1">REGISTRO DE ELECTORES RESIDENTES EN EL EXTERIOR </div>
+<div id="t5_1" class="t s3_1">ARTÍCULO 1° –</div>
+<div id="t6_1" class="t s4_1">Los ciudadanos argentinos que, residiendo en forma efectiva y permanente fuera </div>
+<div id="t7_1" class="t s4_1">del territorio de la República Argentina, sean electores nacionales de acuerdo a lo dispuesto en el </div>
+<div id="t8_1" class="t s4_1">Código Electoral Nacional y se inscriban en el Registro de Electores Residentes en el Exterior </div>
+<div id="t9_1" class="t s4_1">establecido en el artículo siguiente, podrán votar en las elecciones nacionales. </div>
+<div id="ta_1" class="t s3_1">ARTÍCULO 2° –</div>
+<div id="tb_1" class="t s4_1">Créase el Registro de Electores Residentes en el Exterior. La inscripción se hará en </div>
+<div id="tc_1" class="t s4_1">la forma y plazos que establezca </div>
+<div id="td_1" class="t s4_1">la reglamentación, en las representaciones diplomáticas o </div>
+<div id="te_1" class="t s4_1">consulares argentinas existentes en el país de residencia del elector, las que a esos efectos </div>
+<div id="tf_1" class="t s4_1">quedarán subordinadas a la Cámara Nacional Electoral. </div>
+<div id="tg_1" class="t s3_1">ARTÍCULO 3° – </div>
+<div id="th_1" class="t s4_1">Los ciudadanos que de acuerdo a lo establecido en el artículo 1º optasen por </div>
+<div id="ti_1" class="t s4_1">inscribirse en el Registro de Electores Residentes en el Exterior deberán acreditar su último domicilio </div>
+<div id="tj_1" class="t s4_1">en la República Argentina, para poder ser incorporados o ratificados en el Padrón Electoral del </div>
+<div id="tk_1" class="t s4_1">distrito correspondiente al cual, oportunamente, se adjudicarán los votos emitidos. </div>
+<div id="tl_1" class="t s4_1">En el supuesto que los electores no pudiesen acreditar el último domicilio en la República Argentina, </div>
+<div id="tm_1" class="t s4_1">se considerará como último domicilio el del lugar de nacimiento en dicho país. En caso de </div>
+<div id="tn_1" class="t s4_1">imposibilidad de acreditarlo se tomará en cuenta </div>
+<div id="to_1" class="t s4_1">el </div>
+<div id="tp_1" class="t s4_1">último </div>
+<div id="tq_1" class="t s4_1">domicilio de los padres. </div>
+<div id="tr_1" class="t s4_1">En cada representación diplomática o consular receptora de votos se efectuará el escrutinio </div>
+<div id="ts_1" class="t s4_1">pertinente de acuerdo a las disposiciones del Código Electoral Nacional. </div>
+<div id="tt_1" class="t s3_1">ARTÍCULO 4° –</div>
+<div id="tu_1" class="t s4_1">Esta ley queda incorporada al Código Electoral Nacional que será de aplicación </div>
+<div id="tv_1" class="t s4_1">supletoria en todo lo no previsto en ella. </div>
+<div id="tw_1" class="t s3_1">ARTÍCULO 5° –</div>
+<div id="tx_1" class="t s4_1">El Poder Ejecutivo nacional dictará la reglamentación de la presente ley, la que </div>
+<div id="ty_1" class="t s4_1">deberá prever las facilidades necesarias para asegurar un trámite sencillo, rápido y gratuito a </div>
+<div id="tz_1" class="t s4_1">quienes deseen acogerse a sus prescripciones, tanto en cuanto a la inscripción en el Registro de </div>
+<div id="t10_1" class="t s4_1">Electores Residentes en el Exterior como en cuanto al acto de emisión del sufragio. </div>
+<div id="t11_1" class="t s3_1">ARTÍCULO 6° –</div>
+<div id="t12_1" class="t s4_1">Comuníquese, al Poder Ejecutivo </div>
+<div id="t13_1" class="t s4_1">Nacional.</div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg1Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg1"><object width="935" height="1210" data="index/1.svg" type="image/svg+xml" id="pdf1" style="width:935px; height:1210px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script type="text/javascript">
+var isIE = false;
+var f1 = [['t1_1',1077],['t2_1',1095],['t3_1',392],['t4_1',1822],['t5_1',501],['t6_1',2406],['t7_1',2933],['t8_1',2933],['t9_1',2265],['ta_1',493],['tb_1',2418],['tc_1',1049],['td_1',1801],['te_1',2933],['tf_1',1602],['tg_1',515],['th_1',2386],['ti_1',2933],['tj_1',2933],['tk_1',2407],['tl_1',2934],['tm_1',2934],['tn_1',1411],['tq_1',681],['tr_1',2933],['ts_1',2070],['tt_1',511],['tu_1',2390],['tv_1',1171],['tw_1',508],['tx_1',2396],['ty_1',2933],['tz_1',2934],['t10_1',2413],['t11_1',490],['t12_1',950]];
+function load1(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f1);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 40;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_1");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	if (extLoaded) { idrLoad(); } else { intLoaded = true; }
+</script>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>

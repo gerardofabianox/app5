@@ -1,0 +1,282 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+
+<div id="jpedal" style="width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load48();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_48{left:312px;top:115px;}
+#t2_48{left:309px;top:136px;}
+#t3_48{left:65px;top:203px;}
+#t4_48{left:195px;top:203px;}
+#t5_48{left:65px;top:221px;}
+#t6_48{left:65px;top:261px;}
+#t7_48{left:538px;top:261px;}
+#t8_48{left:65px;top:299px;}
+#t9_48{left:195px;top:299px;}
+#ta_48{left:65px;top:318px;}
+#tb_48{left:65px;top:336px;}
+#tc_48{left:65px;top:376px;}
+#td_48{left:65px;top:416px;}
+#te_48{left:65px;top:456px;}
+#tf_48{left:65px;top:496px;}
+#tg_48{left:65px;top:536px;}
+#th_48{left:65px;top:576px;}
+#ti_48{left:65px;top:616px;}
+#tj_48{left:65px;top:656px;}
+#tk_48{left:538px;top:656px;}
+#tl_48{left:65px;top:694px;}
+#tm_48{left:191px;top:694px;}
+#tn_48{left:65px;top:713px;}
+#to_48{left:65px;top:731px;}
+#tp_48{left:65px;top:772px;}
+#tq_48{left:65px;top:790px;}
+#tr_48{left:65px;top:808px;}
+#ts_48{left:65px;top:848px;}
+#tt_48{left:538px;top:848px;}
+#tu_48{left:413px;top:887px;}
+#tv_48{left:481px;top:887px;}
+#tw_48{left:319px;top:926px;}
+#tx_48{left:190px;top:967px;}
+#ty_48{left:448px;top:968px;}
+#tz_48{left:596px;top:968px;}
+#t10_48{left:65px;top:1007px;}
+#t11_48{left:214px;top:1007px;}
+#t12_48{left:380px;top:1007px;}
+#t13_48{left:65px;top:1025px;}
+#t14_48{left:65px;top:1065px;}
+#t15_48{left:65px;top:1084px;}
+#t16_48{left:65px;top:1102px;}
+
+.s1_48{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s3_48{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana48;
+	color: rgb(0,0,0);
+}
+
+.s4_48{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic48;
+	color: rgb(0,0,0);
+}
+
+.s6_48{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic48;
+	color: rgb(0,0,0);
+}
+
+.s5_48{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana48;
+	color: rgb(0,0,0);
+}
+
+.s2_48{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Bold48;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts48" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Verdana48;
+	src :url("48/fonts/ABCDEE-Verdana.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Bold48;
+	src :url("48/fonts/ABCDEE-Verdana-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Italic48;
+	src :url("48/fonts/ABCDEE-Verdana-Italic.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_48" class="t s1_48">PODER JUDICIAL DE LA NACIÓN </div>
+<div id="t2_48" class="t s1_48">CÁMARA NACIONAL ELECTORAL </div>
+<div id="t3_48" class="t s2_48">Artículo 162.- </div>
+<div id="t4_48" class="t s3_48">Se proclamarán Diputados Nacionales a quienes resulten elegidos con arreglo al </div>
+<div id="t5_48" class="t s3_48">sistema adoptado en el presente capítulo. </div>
+<div id="t6_48" class="t s4_48">(Artículo sustituido por art. 2 de la Ley N° 24.444 B.O. 19/01/1995)</div>
+<div id="t7_48" class="t s5_48">. </div>
+<div id="t8_48" class="t s2_48">Artículo 163.- </div>
+<div id="t9_48" class="t s3_48">En las convocatorias de cada distrito electoral se fijará el número de Diputados </div>
+<div id="ta_48" class="t s3_48">Nacionales, titulares y suplentes. A estos fines se establecerá el número de suplentes que a </div>
+<div id="tb_48" class="t s3_48">continuación se expresa: </div>
+<div id="tc_48" class="t s3_48">Cuando se elijan 2 titulares: 2 suplentes </div>
+<div id="td_48" class="t s3_48">Cuando se elijan de 3 a 5 titulares: 3 suplentes </div>
+<div id="te_48" class="t s3_48">Cuando se elijan 6 y 7 titulares: 4 suplentes </div>
+<div id="tf_48" class="t s3_48">Cuando se elijan 8 titulares: 5 suplentes </div>
+<div id="tg_48" class="t s3_48">Cuando se elijan 9 y 10 titulares: 6 suplentes </div>
+<div id="th_48" class="t s3_48">Cuando se elijan de 11 a 20 titulares: 8 suplentes </div>
+<div id="ti_48" class="t s3_48">Cuando se elijan 21 titulares o más: 10 suplentes. </div>
+<div id="tj_48" class="t s4_48">(Artículo sustituido por art. 2 de la Ley N° 24.444 B.O. 19/01/1995)</div>
+<div id="tk_48" class="t s5_48">. </div>
+<div id="tl_48" class="t s2_48">Artículo 164.- </div>
+<div id="tm_48" class="t s3_48">En caso de muerte, renuncia, separación, inhabilidad o incapacidad permanente de </div>
+<div id="tn_48" class="t s3_48">un Diputado Nacional lo sustituirán quienes figuren en la lista como candidatos titulares según el </div>
+<div id="to_48" class="t s3_48">orden establecido. </div>
+<div id="tp_48" class="t s3_48">Una vez que ésta se hubiere agotado ocuparán los cargos vacantes los suplentes que sigan de </div>
+<div id="tq_48" class="t s3_48">conformidad con la prelación consignada en la lista respectiva. En todos los casos los reemplazantes </div>
+<div id="tr_48" class="t s3_48">se desempeñarán hasta que finalice el mandato que le hubiere correspondido al titular. </div>
+<div id="ts_48" class="t s4_48">(Artículo sustituido por art. 2 de la Ley N° 24.444 B.O. 19/01/1995)</div>
+<div id="tt_48" class="t s5_48">. </div>
+<div id="tu_48" class="t s3_48">Capítulo</div>
+<div id="tv_48" class="t s3_48">IV </div>
+<div id="tw_48" class="t s6_48">De los parlamentarios del Mercosur </div>
+<div id="tx_48" class="t s6_48">(Capítulo incorporado por art. 7° </div>
+<div id="ty_48" class="t s4_48">de la Ley N° 27.120 </div>
+<div id="tz_48" class="t s4_48">B.O. 08/01/2015) </div>
+<div id="t10_48" class="t s2_48">Artículo 164 bis: </div>
+<div id="t11_48" class="t s6_48">Sistema de elección.</div>
+<div id="t12_48" class="t s3_48">Los parlamentarios del Mercosur se elegirán por un sistema </div>
+<div id="t13_48" class="t s3_48">mixto: </div>
+<div id="t14_48" class="t s3_48">a) Veinticuatro (24) parlamentarios serán elegidos en forma directa por distrito regional: un </div>
+<div id="t15_48" class="t s3_48">parlamentario por cada una de las 23 provincias y un parlamentario por la Ciudad Autónoma de </div>
+<div id="t16_48" class="t s3_48">Buenos Aires;  </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg48Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg48"><object width="909" height="1286" data="48/48.svg" type="image/svg+xml" id="pdf48" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld48" type="text/javascript">
+
+var isIE = false;
+var f48 = [['t1_48',1144],['t2_48',1166],['t3_48',484],['t4_48',2599],['t5_48',1288],['t6_48',1892],['t8_48',484],['t9_48',2599],['ta_48',3118],['tb_48',767],['tc_48',1245],['td_48',1460],['te_48',1363],['tf_48',1245],['tg_48',1402],['th_48',1537],['ti_48',1553],['tj_48',1892],['tl_48',476],['tm_48',2615],['tn_48',3117],['to_48',564],['tp_48',3118],['tq_48',3118],['tr_48',2690],['ts_48',1892],['tw_48',1086],['tx_48',1009],['ty_48',554],['tz_48',495],['t10_48',570],['t11_48',637],['t12_48',1858],['t14_48',3118],['t15_48',3115],['t16_48',448]];
+function load48(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f48);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 43;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_48");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>

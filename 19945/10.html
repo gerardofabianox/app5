@@ -1,0 +1,300 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+
+<div id="jpedal" style="width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load10();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_10{left:312px;top:115px;}
+#t2_10{left:309px;top:136px;}
+#t3_10{left:65px;top:203px;}
+#t4_10{left:182px;top:203px;}
+#t5_10{left:65px;top:221px;}
+#t6_10{left:65px;top:240px;}
+#t7_10{left:65px;top:259px;}
+#t8_10{left:65px;top:277px;}
+#t9_10{left:65px;top:317px;}
+#ta_10{left:65px;top:336px;}
+#tb_10{left:65px;top:354px;}
+#tc_10{left:65px;top:373px;}
+#td_10{left:65px;top:413px;}
+#te_10{left:65px;top:431px;}
+#tf_10{left:65px;top:450px;}
+#tg_10{left:65px;top:490px;}
+#th_10{left:65px;top:528px;}
+#ti_10{left:146px;top:528px;}
+#tj_10{left:195px;top:528px;}
+#tk_10{left:336px;top:528px;}
+#tl_10{left:425px;top:528px;}
+#tm_10{left:466px;top:528px;}
+#tn_10{left:564px;top:528px;}
+#to_10{left:597px;top:528px;}
+#tp_10{left:714px;top:528px;}
+#tq_10{left:779px;top:528px;}
+#tr_10{left:65px;top:547px;}
+#ts_10{left:277px;top:547px;}
+#tt_10{left:65px;top:565px;}
+#tu_10{left:65px;top:584px;}
+#tv_10{left:65px;top:602px;}
+#tw_10{left:65px;top:621px;}
+#tx_10{left:65px;top:639px;}
+#ty_10{left:65px;top:679px;}
+#tz_10{left:65px;top:698px;}
+#t10_10{left:65px;top:738px;}
+#t11_10{left:65px;top:756px;}
+#t12_10{left:65px;top:797px;}
+#t13_10{left:178px;top:797px;}
+#t14_10{left:436px;top:797px;}
+#t15_10{left:65px;top:815px;}
+#t16_10{left:65px;top:834px;}
+#t17_10{left:65px;top:852px;}
+#t18_10{left:65px;top:871px;}
+#t19_10{left:65px;top:911px;}
+#t1a_10{left:178px;top:911px;}
+#t1b_10{left:446px;top:911px;}
+#t1c_10{left:65px;top:929px;}
+#t1d_10{left:65px;top:948px;}
+#t1e_10{left:412px;top:988px;}
+#t1f_10{left:243px;top:1028px;}
+#t1g_10{left:338px;top:1068px;}
+#t1h_10{left:404px;top:1107px;}
+#t1i_10{left:268px;top:1147px;}
+
+.s1_10{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s3_10{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic10;
+	color: rgb(0,0,0);
+}
+
+.s4_10{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana10;
+	color: rgb(0,0,0);
+}
+
+.s5_10{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic10;
+	color: rgb(0,0,0);
+}
+
+.s2_10{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Bold10;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts10" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Verdana10;
+	src :url("10/fonts/ABCDEE-Verdana.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Bold10;
+	src :url("10/fonts/ABCDEE-Verdana-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Italic10;
+	src :url("10/fonts/ABCDEE-Verdana-Italic.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_10" class="t s1_10">PODER JUDICIAL DE LA NACIÓN </div>
+<div id="t2_10" class="t s1_10">CÁMARA NACIONAL ELECTORAL </div>
+<div id="t3_10" class="t s2_10">Artículo 35.- </div>
+<div id="t4_10" class="t s3_10">Comunicación de autoridades civiles y militares respecto de electores inhabilitados. </div>
+<div id="t5_10" class="t s4_10">Las autoridades civiles y militares deberán formalizar, noventa (90) días antes de cada elección </div>
+<div id="t6_10" class="t s4_10">mediante comunicación a los jueces electorales la referencia de los electores inhabilitados en virtud </div>
+<div id="t7_10" class="t s4_10">de las prescripciones del artículo 3° y que se hallasen bajo sus órdenes o custodia o inscriptos en los </div>
+<div id="t8_10" class="t s4_10">registros a su cargo. </div>
+<div id="t9_10" class="t s4_10">El incumplimiento de las obligaciones determinadas en el presente artículo, pasados treinta (30) días </div>
+<div id="ta_10" class="t s4_10">del plazo fijado en ellos y sin necesidad de requerimiento alguno, hará incurrir a los funcionarios </div>
+<div id="tb_10" class="t s4_10">responsables en falta grave administrativa. Los jueces electorales comunicarán el hecho a los </div>
+<div id="tc_10" class="t s4_10">respectivos superiores jerárquicos a los fines que corresponda. </div>
+<div id="td_10" class="t s4_10">Si las autoridades que se mencionan aquí no tuviesen bajo sus órdenes o custodia a electores </div>
+<div id="te_10" class="t s4_10">comprendidos en la prescripción del artículo 3°, igualmente lo harán saber a los jueces pertinentes </div>
+<div id="tf_10" class="t s4_10">en el plazo a que alude el primero de ellos. </div>
+<div id="tg_10" class="t s5_10">(Artículo modificado por art. 3° de la Ley N° 26.774 B.O. 02/11/2012) </div>
+<div id="th_10" class="t s2_10">Artículo </div>
+<div id="ti_10" class="t s2_10">36.- </div>
+<div id="tj_10" class="t s3_10">Inhabilitaciones, </div>
+<div id="tk_10" class="t s3_10">ausencias </div>
+<div id="tl_10" class="t s3_10">con </div>
+<div id="tm_10" class="t s3_10">presunción </div>
+<div id="tn_10" class="t s3_10">de </div>
+<div id="to_10" class="t s3_10">fallecimiento, </div>
+<div id="tp_10" class="t s3_10">delitos </div>
+<div id="tq_10" class="t s3_10">y faltas </div>
+<div id="tr_10" class="t s3_10">electorales. Comunicación. </div>
+<div id="ts_10" class="t s4_10">Todos los jueces de la República, dentro de los cinco días desde la fecha </div>
+<div id="tt_10" class="t s4_10">en que las sentencias que dicten pasen en autoridad de cosa juzgada, deben comunicar al Registro </div>
+<div id="tu_10" class="t s4_10">Nacional de las Personas y al juez electoral de distrito el nombre, apellido, número de documento </div>
+<div id="tv_10" class="t s4_10">cívico, clase y domicilio de los electores inhabilitados por algunas de las causales previstas en el </div>
+<div id="tw_10" class="t s4_10">artículo 3, como así también cursar copia autenticada de la parte dispositiva de tales sentencias, en </div>
+<div id="tx_10" class="t s4_10">igual forma que se hace al Registro Nacional de Reincidencia y Estadística Criminal y Carcelaria. </div>
+<div id="ty_10" class="t s4_10">Los mismos requisitos deberán cumplir los magistrados que decreten ausencias con presunción de </div>
+<div id="tz_10" class="t s4_10">fallecimiento. </div>
+<div id="t10_10" class="t s4_10">Los jueces electorales comunicarán a la Cámara Nacional Electoral, en igual plazo y forma, las </div>
+<div id="t11_10" class="t s4_10">sanciones impuestas en materia de delitos y faltas electorales. </div>
+<div id="t12_10" class="t s2_10">Artículo 37.- </div>
+<div id="t13_10" class="t s3_10">Tacha de electores inhabilitados.</div>
+<div id="t14_10" class="t s4_10">Los jueces electorales dispondrán que sean tachados </div>
+<div id="t15_10" class="t s4_10">con una línea roja los electores comprendidos en el artículo 3 en los ejemplares de los padrones que </div>
+<div id="t16_10" class="t s4_10">se remitan a los presidentes de comicio y en uno de los que se entregan a cada partido político </div>
+<div id="t17_10" class="t s4_10">agregando además en la columna de observaciones la palabra "inhabilitado" y el artículo o inciso de </div>
+<div id="t18_10" class="t s4_10">la Ley que establezcan la causa de inhabilidad. </div>
+<div id="t19_10" class="t s2_10">Artículo 38.- </div>
+<div id="t1a_10" class="t s3_10">Copias para los partidos políticos. </div>
+<div id="t1b_10" class="t s4_10">Los jueces electorales también entregarán copia de </div>
+<div id="t1c_10" class="t s4_10">las nóminas que mencionan los artículos 30 y 36 a los representantes de los partidos políticos, los </div>
+<div id="t1d_10" class="t s4_10">que podrán denunciar por escrito las comisiones, errores o anomalías que observaren. </div>
+<div id="t1e_10" class="t s2_10">TITULO II </div>
+<div id="t1f_10" class="t s2_10">Divisiones Territoriales. Agrupación de Electores.  </div>
+<div id="t1g_10" class="t s2_10">Jueces y Juntas Electorales </div>
+<div id="t1h_10" class="t s2_10">CAPITULO I </div>
+<div id="t1i_10" class="t s3_10">Divisiones territoriales y agrupación de electores </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg10Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg10"><object width="909" height="1286" data="10/10.svg" type="image/svg+xml" id="pdf10" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld10" type="text/javascript">
+
+var isIE = false;
+var f10 = [['t1_10',1144],['t2_10',1166],['t3_10',437],['t4_10',2649],['t5_10',3114],['t6_10',3114],['t7_10',3114],['t8_10',632],['t9_10',3115],['ta_10',3116],['tb_10',3115],['tc_10',1938],['td_10',3116],['te_10',3115],['tf_10',1328],['tg_10',1954],['tq_10',263],['tr_10',824],['ts_10',2268],['tt_10',3118],['tu_10',3117],['tv_10',3116],['tw_10',3116],['tx_10',2958],['ty_10',3118],['t10_10',3118],['t11_10',1929],['t12_10',428],['t13_10',1010],['t14_10',1635],['t15_10',3117],['t16_10',3117],['t17_10',3117],['t18_10',1441],['t19_10',429],['t1a_10',1043],['t1b_10',1596],['t1c_10',3117],['t1d_10',2664],['t1e_10',344],['t1f_10',1714],['t1g_10',937],['t1h_10',406],['t1i_10',1497]];
+function load10(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f10);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 55;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_10");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+
+<div id="jpedal" style="width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load27();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_27{left:312px;top:115px;}
+#t2_27{left:309px;top:136px;}
+#t3_27{left:65px;top:203px;}
+#t4_27{left:65px;top:221px;}
+#t5_27{left:65px;top:240px;}
+#t6_27{left:65px;top:259px;}
+#t7_27{left:65px;top:277px;}
+#t8_27{left:65px;top:317px;}
+#t9_27{left:65px;top:336px;}
+#ta_27{left:65px;top:354px;}
+#tb_27{left:65px;top:394px;}
+#tc_27{left:65px;top:432px;}
+#td_27{left:65px;top:451px;}
+#te_27{left:65px;top:491px;}
+#tf_27{left:65px;top:531px;}
+#tg_27{left:65px;top:549px;}
+#th_27{left:65px;top:568px;}
+#ti_27{left:65px;top:586px;}
+#tj_27{left:65px;top:627px;}
+#tk_27{left:65px;top:645px;}
+#tl_27{left:65px;top:685px;}
+#tm_27{left:65px;top:703px;}
+#tn_27{left:65px;top:744px;}
+#to_27{left:65px;top:762px;}
+#tp_27{left:65px;top:781px;}
+#tq_27{left:65px;top:821px;}
+#tr_27{left:186px;top:821px;}
+#ts_27{left:344px;top:821px;}
+#tt_27{left:65px;top:839px;}
+#tu_27{left:65px;top:858px;}
+#tv_27{left:65px;top:898px;}
+#tw_27{left:65px;top:916px;}
+#tx_27{left:65px;top:956px;}
+#ty_27{left:65px;top:975px;}
+#tz_27{left:65px;top:993px;}
+#t10_27{left:398px;top:1033px;}
+#t11_27{left:377px;top:1073px;}
+#t12_27{left:65px;top:1113px;}
+#t13_27{left:178px;top:1113px;}
+#t14_27{left:298px;top:1113px;}
+#t15_27{left:65px;top:1132px;}
+
+.s1_27{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s5_27{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic27;
+	color: rgb(0,0,0);
+}
+
+.s4_27{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Bold27;
+	color: rgb(0,0,0);
+}
+
+.s3_27{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic27;
+	color: rgb(0,0,0);
+}
+
+.s2_27{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana27;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts27" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Verdana27;
+	src :url("27/fonts/ABCDEE-Verdana.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Bold27;
+	src :url("27/fonts/ABCDEE-Verdana-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Italic27;
+	src :url("27/fonts/ABCDEE-Verdana-Italic.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_27" class="t s1_27">PODER JUDICIAL DE LA NACIÓN </div>
+<div id="t2_27" class="t s1_27">CÁMARA NACIONAL ELECTORAL </div>
+<div id="t3_27" class="t s2_27">5. A depositar, en el cuarto oscuro los mazos de boletas oficiales de los partidos remitidos por la </div>
+<div id="t4_27" class="t s2_27">junta o que le entregaren los fiscales acreditados ante la mesa, confrontando en presencia de éstos </div>
+<div id="t5_27" class="t s2_27">cada una de las colecciones de boletas con los modelos que le han sido enviados, asegurándose en </div>
+<div id="t6_27" class="t s2_27">esta forma que no hay alteración alguna en la nómina de los candidatos, ni deficiencias de otras </div>
+<div id="t7_27" class="t s2_27">clases en aquéllas, ordenándolas por número de menor a mayor y de izquierda a derecha. </div>
+<div id="t8_27" class="t s2_27">Queda prohibido colocar en el cuarto oscuro carteles, inscripciones, insignias, indicaciones o </div>
+<div id="t9_27" class="t s2_27">imágenes que la ley no autorice expresamente, ni elemento alguno que implique una sugerencia a la </div>
+<div id="ta_27" class="t s2_27">voluntad del elector fuera de las boletas aprobadas por la junta electoral. </div>
+<div id="tb_27" class="t s3_27">(Inciso modificado por art. 100 de la Ley N° 26.571 B.O. 14/12/2009) </div>
+<div id="tc_27" class="t s2_27">6. A poner en lugar bien visible, a la entrada de la mesa uno de los ejemplares del padrón de </div>
+<div id="td_27" class="t s2_27">electores con su firma para que sea consultado por los electores sin dificultad. </div>
+<div id="te_27" class="t s2_27">Este registro será suscripto por los fiscales que lo deseen. </div>
+<div id="tf_27" class="t s2_27">7. A colocar, también en el acceso a la mesa un cartel que consignará las disposiciones del Cap. IV </div>
+<div id="tg_27" class="t s2_27">de este Título, en caracteres destacables de manera que los electores puedan enterarse de su </div>
+<div id="th_27" class="t s2_27">contenido antes de entrar para ser identificados. Junto a dicho cartel se fijará otro que contendrá las </div>
+<div id="ti_27" class="t s2_27">prescripciones de los artículos 139, 140, 141, 142 y 145. </div>
+<div id="tj_27" class="t s2_27">8. A poner sobre la mesa los otros dos ejemplares del padrón electoral a los efectos establecidos en </div>
+<div id="tk_27" class="t s2_27">el capítulo siguiente. </div>
+<div id="tl_27" class="t s2_27">Las constancias que habrán de remitirse a la Junta se asentarán en uno solo de los ejemplares de </div>
+<div id="tm_27" class="t s2_27">los tres que reciban los presidentes de mesa. </div>
+<div id="tn_27" class="t s2_27">9. A verificar la identidad y los poderes de los fiscales de los partidos políticos que hubieren asistido. </div>
+<div id="to_27" class="t s2_27">Aquéllos que no se encontraren presentes en el momento de apertura del acto electoral serán </div>
+<div id="tp_27" class="t s2_27">reconocidos al tiempo que lleguen, sin retrotraer ninguna de las operaciones. </div>
+<div id="tq_27" class="t s4_27">Artículo 83.- </div>
+<div id="tr_27" class="t s5_27">Apertura del acto.</div>
+<div id="ts_27" class="t s2_27">Adoptadas todas estas medidas, a la hora ocho en punto el </div>
+<div id="tt_27" class="t s2_27">presidente declarará abierto el acto electoral y labrará el acta pertinente llenando los claros del </div>
+<div id="tu_27" class="t s2_27">formulario impreso en los padrones correspondientes a la mesa. </div>
+<div id="tv_27" class="t s2_27">Los juzgados electorales de cada distrito harán imprimir en el lugar que corresponda del pliego del </div>
+<div id="tw_27" class="t s2_27">padrón, un formulario de acta de apertura y cierre del comicio que redactarán a tal efecto. </div>
+<div id="tx_27" class="t s2_27">Será suscripta por el presidente, los suplentes y los fiscales de los partidos. Si alguno de éstos no </div>
+<div id="ty_27" class="t s2_27">estuviere presente, o no hubiere fiscales nombrados o se negaren a firmar, el presidente consignará </div>
+<div id="tz_27" class="t s2_27">tal circunstancia, testificada por dos electores presentes, que firmarán juntamente con él. </div>
+<div id="t10_27" class="t s4_27">CAPITULO IV </div>
+<div id="t11_27" class="t s5_27">Emisión del sufragio </div>
+<div id="t12_27" class="t s4_27">Artículo 84.- </div>
+<div id="t13_27" class="t s5_27">Procedimiento.</div>
+<div id="t14_27" class="t s2_27">Una vez abierto el acto de electores se apersonarán al presidente, por </div>
+<div id="t15_27" class="t s2_27">orden de llegada, exhibiendo su documento cívico. </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg27Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg27"><object width="909" height="1286" data="27/27.svg" type="image/svg+xml" id="pdf27" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld27" type="text/javascript">
+
+var isIE = false;
+var f27 = [['t1_27',1144],['t2_27',1166],['t3_27',3118],['t4_27',3118],['t5_27',3117],['t6_27',3117],['t7_27',2783],['t8_27',3118],['t9_27',3118],['ta_27',2260],['tb_27',1948],['tc_27',3118],['td_27',2413],['te_27',1786],['tf_27',3118],['tg_27',3118],['th_27',3118],['ti_27',1759],['tj_27',3118],['tk_27',635],['tl_27',3118],['tm_27',1393],['tn_27',3118],['to_27',3117],['tp_27',2382],['tq_27',445],['tr_27',590],['ts_27',2004],['tt_27',3118],['tu_27',1980],['tv_27',3118],['tw_27',2795],['tx_27',3118],['ty_27',3117],['tz_27',2771],['t10_27',453],['t11_27',620],['t12_27',429],['t14_27',2185],['t15_27',1559]];
+function load27(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f27);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 42;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_27");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>

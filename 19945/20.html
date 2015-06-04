@@ -1,0 +1,303 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+
+<div id="jpedal" style="width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load20();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_20{left:312px;top:115px;}
+#t2_20{left:309px;top:136px;}
+#t3_20{left:65px;top:203px;}
+#t4_20{left:167px;top:203px;}
+#t5_20{left:192px;top:203px;}
+#t6_20{left:211px;top:203px;}
+#t7_20{left:523px;top:203px;}
+#t8_20{left:65px;top:221px;}
+#t9_20{left:65px;top:240px;}
+#ta_20{left:65px;top:258px;}
+#tb_20{left:65px;top:298px;}
+#tc_20{left:65px;top:317px;}
+#td_20{left:65px;top:336px;}
+#te_20{left:65px;top:354px;}
+#tf_20{left:65px;top:373px;}
+#tg_20{left:65px;top:391px;}
+#th_20{left:65px;top:410px;}
+#ti_20{left:65px;top:450px;}
+#tj_20{left:65px;top:488px;}
+#tk_20{left:176px;top:488px;}
+#tl_20{left:232px;top:488px;}
+#tm_20{left:256px;top:488px;}
+#tn_20{left:571px;top:488px;}
+#to_20{left:65px;top:507px;}
+#tp_20{left:65px;top:525px;}
+#tq_20{left:65px;top:565px;}
+#tr_20{left:65px;top:584px;}
+#ts_20{left:65px;top:602px;}
+#tt_20{left:65px;top:621px;}
+#tu_20{left:65px;top:639px;}
+#tv_20{left:65px;top:679px;}
+#tw_20{left:402px;top:717px;}
+#tx_20{left:291px;top:757px;}
+#ty_20{left:65px;top:797px;}
+#tz_20{left:178px;top:797px;}
+#t10_20{left:285px;top:797px;}
+#t11_20{left:65px;top:816px;}
+#t12_20{left:65px;top:834px;}
+#t13_20{left:65px;top:874px;}
+#t14_20{left:65px;top:893px;}
+#t15_20{left:65px;top:933px;}
+#t16_20{left:180px;top:933px;}
+#t17_20{left:439px;top:933px;}
+#t18_20{left:65px;top:952px;}
+#t19_20{left:65px;top:970px;}
+#t1a_20{left:65px;top:1010px;}
+#t1b_20{left:65px;top:1029px;}
+#t1c_20{left:65px;top:1047px;}
+#t1d_20{left:65px;top:1087px;}
+#t1e_20{left:65px;top:1106px;}
+
+.s1_20{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s5_20{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana20;
+	color: rgb(0,0,0);
+}
+
+.s3_20{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-BoldItalic20;
+	color: rgb(0,0,0);
+}
+
+.s6_20{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic20;
+	color: rgb(0,0,0);
+}
+
+.s4_20{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic20;
+	color: rgb(0,0,0);
+}
+
+.s2_20{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Bold20;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts20" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Verdana20;
+	src :url("20/fonts/ABCDEE-Verdana.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-BoldItalic20;
+	src :url("20/fonts/ABCDEE-Verdana-BoldItalic.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Bold20;
+	src :url("20/fonts/ABCDEE-Verdana-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Italic20;
+	src :url("20/fonts/ABCDEE-Verdana-Italic.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_20" class="t s1_20">PODER JUDICIAL DE LA NACIÓN </div>
+<div id="t2_20" class="t s1_20">CÁMARA NACIONAL ELECTORAL </div>
+<div id="t3_20" class="t s2_20">Artículo 64 </div>
+<div id="t4_20" class="t s3_20">ter</div>
+<div id="t5_20" class="t s2_20">.- </div>
+<div id="t6_20" class="t s4_20">Publicidad en medios de comunicación.</div>
+<div id="t7_20" class="t s5_20">Queda prohibida la emisión y publicación </div>
+<div id="t8_20" class="t s5_20">de avisos publicitarios en medios televisivos, radiales y gráficos con el fin de promover la captación </div>
+<div id="t9_20" class="t s5_20">del sufragio para candidatos a cargos públicos electivos antes de los veinticinco (25) días previos a </div>
+<div id="ta_20" class="t s5_20">la fecha fijada para el comicio. </div>
+<div id="tb_20" class="t s5_20">La prohibición comprenderá la propaganda paga de las imágenes y de los nombres de los candidatos </div>
+<div id="tc_20" class="t s5_20">a cargos electivos nacionales, ejecutivos y legislativos, en los medios masivos de comunicación </div>
+<div id="td_20" class="t s5_20">(televisión, radio e Internet), vía pública, medios gráficos, telefonía móvil y fija, publicidad estática </div>
+<div id="te_20" class="t s5_20">en espectáculos deportivos o de cualquier naturaleza, así como también la publicidad alusiva a los </div>
+<div id="tf_20" class="t s5_20">partidos políticos y a sus acciones, antes de los veinticinco (25) días previos a la fecha fijada para el </div>
+<div id="tg_20" class="t s5_20">comicio. El juzgado federal con competencia electoral podrá disponer el cese automático del aviso </div>
+<div id="th_20" class="t s5_20">cursado cuando éste estuviese fuera de los tiempos y atribuciones regulados por la ley. </div>
+<div id="ti_20" class="t s6_20">(Artículo modificado por art. 92 de la Ley N° 26.571 B.O. 14/12/2009) </div>
+<div id="tj_20" class="t s2_20">Artículo 64 </div>
+<div id="tk_20" class="t s3_20">quater</div>
+<div id="tl_20" class="t s2_20">.- </div>
+<div id="tm_20" class="t s4_20">Publicidad de los actos de gobierno. </div>
+<div id="tn_20" class="t s5_20">Durante la campaña electoral, la </div>
+<div id="to_20" class="t s5_20">publicidad de los actos de gobierno no podrá contener elementos que promuevan; expresamente la </div>
+<div id="tp_20" class="t s5_20">captación del sufragio a favor de ninguno de los candidatos a cargos públicos electivos nacionales. </div>
+<div id="tq_20" class="t s5_20">Queda prohibido durante los quince (15) días anteriores a la fecha fijada para la celebración de las </div>
+<div id="tr_20" class="t s5_20">primarias, abiertas simultáneas y obligatorias y la elección general, la realización de actos </div>
+<div id="ts_20" class="t s5_20">inaugurales de obras públicas, el lanzamiento o promoción de planes, proyectos o programas de </div>
+<div id="tt_20" class="t s5_20">alcance colectivo y, en general, la realización de todo acto de gobierno que pueda promover la </div>
+<div id="tu_20" class="t s5_20">captación del sufragio a favor de cualquiera de los candidatos a cargos públicos electivos nacionales. </div>
+<div id="tv_20" class="t s6_20">(Artículo modificado por art. 93 de la Ley N° 26.571 B.O. 14/12/2009) </div>
+<div id="tw_20" class="t s2_20">CAPITULO V </div>
+<div id="tx_20" class="t s4_20">Distribución de equipos y útiles electorales </div>
+<div id="ty_20" class="t s2_20">Artículo 65.- </div>
+<div id="tz_20" class="t s4_20">Su provisión.</div>
+<div id="t10_20" class="t s5_20">El Poder Ejecutivo adoptará las providencias que fueran necesarias para </div>
+<div id="t11_20" class="t s5_20">remitir con la debida antelación a las Juntas Electorales las urnas, formularios, sobres, papeles </div>
+<div id="t12_20" class="t s5_20">especiales y sellos que éstas deban hacer llegar a los presidentes de comicio. </div>
+<div id="t13_20" class="t s5_20">Dichos elementos serán provistos por el Ministerio del Interior y distribuidos por intermedio del </div>
+<div id="t14_20" class="t s5_20">servicio oficial de Correos. </div>
+<div id="t15_20" class="t s2_20">Artículo 66.- </div>
+<div id="t16_20" class="t s4_20">Nómina de documentos y útiles.</div>
+<div id="t17_20" class="t s5_20">La Junta Electoral entregará a la oficina superior de </div>
+<div id="t18_20" class="t s5_20">correos que exista en el asiento de la misma, con destino al presidente de cada mesa, los siguientes </div>
+<div id="t19_20" class="t s5_20">documentos y útiles: </div>
+<div id="t1a_20" class="t s5_20">1. Tres ejemplares de los padrones electorales especiales para la mesa que irán colocados dentro de </div>
+<div id="t1b_20" class="t s5_20">un sobre, y que, además de la dirección de la mesa, tendrá una atestación notable que diga: </div>
+<div id="t1c_20" class="t s5_20">"Ejemplares del Padrón Electoral". </div>
+<div id="t1d_20" class="t s5_20">2. Una urna que deberá hallarse identificada con un número, para determinar su lugar de destino, </div>
+<div id="t1e_20" class="t s5_20">de lo cual llevará registro la Junta. </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg20Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg20"><object width="909" height="1286" data="20/20.svg" type="image/svg+xml" id="pdf20" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld20" type="text/javascript">
+
+var isIE = false;
+var f20 = [['t1_20',1144],['t2_20',1166],['t3_20',381],['t6_20',1220],['t7_20',1286],['t8_20',3118],['t9_20',3117],['ta_20',940],['tb_20',3118],['tc_20',3118],['td_20',3117],['te_20',3117],['tf_20',3116],['tg_20',3116],['th_20',2697],['ti_20',1959],['tj_20',398],['tm_20',1214],['tn_20',1094],['to_20',3118],['tp_20',3035],['tq_20',3118],['tr_20',3118],['ts_20',3118],['tt_20',3118],['tu_20',3105],['tv_20',1959],['tw_20',419],['tx_20',1313],['ty_20',429],['tz_20',404],['t10_20',2238],['t11_20',3118],['t12_20',2385],['t13_20',3118],['t14_20',808],['t15_20',432],['t16_20',1008],['t17_20',1624],['t18_20',3117],['t19_20',644],['t1a_20',3118],['t1b_20',3117],['t1c_20',1053],['t1d_20',3118],['t1e_20',1065]];
+function load20(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f20);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 51;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_20");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+
+<div id="jpedal" style="width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load46();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_46{left:312px;top:115px;}
+#t2_46{left:309px;top:136px;}
+#t3_46{left:65px;top:203px;}
+#t4_46{left:193px;top:203px;}
+#t5_46{left:65px;top:221px;}
+#t6_46{left:65px;top:261px;}
+#t7_46{left:538px;top:261px;}
+#t8_46{left:65px;top:299px;}
+#t9_46{left:190px;top:299px;}
+#ta_46{left:65px;top:318px;}
+#tb_46{left:65px;top:336px;}
+#tc_46{left:65px;top:376px;}
+#td_46{left:538px;top:376px;}
+#te_46{left:65px;top:415px;}
+#tf_46{left:193px;top:415px;}
+#tg_46{left:65px;top:433px;}
+#th_46{left:65px;top:473px;}
+#ti_46{left:538px;top:473px;}
+#tj_46{left:65px;top:511px;}
+#tk_46{left:193px;top:511px;}
+#tl_46{left:65px;top:530px;}
+#tm_46{left:65px;top:548px;}
+#tn_46{left:65px;top:588px;}
+#to_46{left:65px;top:607px;}
+#tp_46{left:65px;top:625px;}
+#tq_46{left:65px;top:665px;}
+#tr_46{left:538px;top:665px;}
+#ts_46{left:65px;top:704px;}
+#tt_46{left:192px;top:704px;}
+#tu_46{left:65px;top:722px;}
+#tv_46{left:65px;top:762px;}
+#tw_46{left:65px;top:781px;}
+#tx_46{left:65px;top:799px;}
+#ty_46{left:65px;top:839px;}
+#tz_46{left:538px;top:839px;}
+#t10_46{left:405px;top:877px;}
+#t11_46{left:318px;top:915px;}
+#t12_46{left:65px;top:954px;}
+#t13_46{left:189px;top:954px;}
+#t14_46{left:65px;top:972px;}
+#t15_46{left:65px;top:991px;}
+#t16_46{left:65px;top:1030px;}
+#t17_46{left:65px;top:1070px;}
+#t18_46{left:65px;top:1109px;}
+#t19_46{left:188px;top:1109px;}
+#t1a_46{left:65px;top:1127px;}
+
+.s1_46{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s3_46{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana46;
+	color: rgb(0,0,0);
+}
+
+.s6_46{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana-Bold46;
+	color: rgb(0,0,0);
+}
+
+.s4_46{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic46;
+	color: rgb(0,0,0);
+}
+
+.s5_46{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana46;
+	color: rgb(0,0,0);
+}
+
+.s2_46{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Bold46;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts46" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Verdana46;
+	src :url("46/fonts/ABCDEE-Verdana.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Bold46;
+	src :url("46/fonts/ABCDEE-Verdana-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Italic46;
+	src :url("46/fonts/ABCDEE-Verdana-Italic.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_46" class="t s1_46">PODER JUDICIAL DE LA NACIÓN </div>
+<div id="t2_46" class="t s1_46">CÁMARA NACIONAL ELECTORAL </div>
+<div id="t3_46" class="t s2_46">Artículo 151.- </div>
+<div id="t4_46" class="t s3_46">En la segunda vuelta participarán solamente las dos fórmulas más votadas en la </div>
+<div id="t5_46" class="t s3_46">primera, resultando electa la que obtenga mayor número de votos afirmativos válidamente emitidos. </div>
+<div id="t6_46" class="t s4_46">(Artículo sustituido por art. 2 de la Ley N° 24.444 B.O. 19/01/1995)</div>
+<div id="t7_46" class="t s5_46">. </div>
+<div id="t8_46" class="t s2_46">Artículo 152.- </div>
+<div id="t9_46" class="t s3_46">Dentro del quinto día de proclamados las dos fórmulas más votadas, éstas deberán </div>
+<div id="ta_46" class="t s3_46">ratificar por escrito ante la Junta Electoral Nacional de la Capital Federal su decisión de presentarse </div>
+<div id="tb_46" class="t s3_46">a la segunda vuelta. Si una de ellas no lo hiciera, será proclamada electa la otra. </div>
+<div id="tc_46" class="t s4_46">(Artículo sustituido por art. 2 de la Ley N° 24.444 B.O. 19/01/1995)</div>
+<div id="td_46" class="t s5_46">. </div>
+<div id="te_46" class="t s2_46">Artículo 153.- </div>
+<div id="tf_46" class="t s3_46">En caso de muerte o renuncia de cualquiera de los candidatos de la fórmula que </div>
+<div id="tg_46" class="t s3_46">haya sido proclamado electa, se aplicará lo dispuesto en el artículo 88 de la Constitución Nacional. </div>
+<div id="th_46" class="t s4_46">(Artículo sustituido por art. 2 de la Ley N° 24.444 B.O. 19/01/1995)</div>
+<div id="ti_46" class="t s5_46">. </div>
+<div id="tj_46" class="t s2_46">Artículo 154.- </div>
+<div id="tk_46" class="t s3_46">En caso de muerte de los dos candidatos de cualquiera de las dos fórmulas más </div>
+<div id="tl_46" class="t s3_46">votadas en la primera vuelta electoral y antes de producirse la segunda, se convocará a una nueva </div>
+<div id="tm_46" class="t s3_46">elección. </div>
+<div id="tn_46" class="t s3_46">En caso de muerte de uno de los candidatos de cualquiera de las dos fórmulas más votadas en la </div>
+<div id="to_46" class="t s3_46">primera vuelta electoral, el partido político o alianza electoral que represente, deberá cubrir la </div>
+<div id="tp_46" class="t s3_46">vacancia en el término de siete (7) días corridos, a los efectos de concurrir a la segunda vuelta. </div>
+<div id="tq_46" class="t s4_46">(Artículo sustituido por art. 2 de la Ley N° 24.444 B.O. 19/01/1995)</div>
+<div id="tr_46" class="t s5_46">. </div>
+<div id="ts_46" class="t s2_46">Artículo 155.- </div>
+<div id="tt_46" class="t s3_46">En caso de renuncia de los dos candidatos de cualquiera de las dos fórmulas más </div>
+<div id="tu_46" class="t s3_46">votadas en la primera vuelta, se proclamará electa a la otra. </div>
+<div id="tv_46" class="t s3_46">En caso de renuncia de uno de los candidatos de cualquiera de las dos fórmulas más votadas en la </div>
+<div id="tw_46" class="t s3_46">primera vuelta electoral, no podrá cubrirse la vacante producida. Para el caso que la renuncia sea </div>
+<div id="tx_46" class="t s3_46">del candidato a Presidente, ocupará su lugar el candidato a Vicepresidente. </div>
+<div id="ty_46" class="t s4_46">(Artículo sustituido por art. 2 de la Ley N° 24.444 B.O. 19/01/1995)</div>
+<div id="tz_46" class="t s5_46">. </div>
+<div id="t10_46" class="t s6_46">CAPITULO II </div>
+<div id="t11_46" class="t s4_46">De la elección de Senadores Nacionales </div>
+<div id="t12_46" class="t s2_46">Artículo 156.- </div>
+<div id="t13_46" class="t s3_46">Los Senadores Nacionales por las provincias y la Ciudad de Buenos Aires se elegirán </div>
+<div id="t14_46" class="t s3_46">en forma directa por el pueblo de las mismas que se considerarán a este fin como distritos </div>
+<div id="t15_46" class="t s3_46">electorales. </div>
+<div id="t16_46" class="t s3_46">Cada elector votará por una lista oficializada con dos candidatos titulares y dos suplentes. </div>
+<div id="t17_46" class="t s4_46">(Artículo sustituido por art. 1° de la Ley N° 25.658 B.O. 16/10/2002). </div>
+<div id="t18_46" class="t s2_46">Artículo 157.- </div>
+<div id="t19_46" class="t s3_46">El escrutinio de cada elección se practicará por lista sin tomar en cuenta las tachas o </div>
+<div id="t1a_46" class="t s3_46">sustituciones que hubiere efectuado el votante. </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg46Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg46"><object width="909" height="1286" data="46/46.svg" type="image/svg+xml" id="pdf46" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld46" type="text/javascript">
+
+var isIE = false;
+var f46 = [['t1_46',1144],['t2_46',1166],['t3_46',481],['t4_46',2605],['t5_46',3117],['t6_46',1892],['t8_46',474],['t9_46',2618],['ta_46',3118],['tb_46',2493],['tc_46',1892],['te_46',480],['tf_46',2606],['tg_46',3033],['th_46',1892],['tj_46',481],['tk_46',2605],['tl_46',3118],['tn_46',3118],['to_46',3118],['tp_46',2951],['tq_46',1892],['ts_46',478],['tt_46',2611],['tu_46',1868],['tv_46',3118],['tw_46',3118],['tx_46',2317],['ty_46',1892],['t10_46',396],['t11_46',1094],['t12_46',473],['t13_46',2622],['t14_46',3118],['t16_46',2772],['t17_46',1943],['t18_46',471],['t19_46',2624],['t1a_46',1460]];
+function load46(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f46);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 47;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_46");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>

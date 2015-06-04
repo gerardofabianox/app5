@@ -1,0 +1,290 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+
+<div id="jpedal" style="width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load23();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }
+        }
+
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_23{left:312px;top:115px;}
+#t2_23{left:309px;top:136px;}
+#t3_23{left:65px;top:203px;}
+#t4_23{left:65px;top:221px;}
+#t5_23{left:786px;top:223px;}
+#t6_23{left:798px;top:223px;}
+#t7_23{left:65px;top:240px;}
+#t8_23{left:65px;top:278px;}
+#t9_23{left:65px;top:297px;}
+#ta_23{left:65px;top:315px;}
+#tb_23{left:65px;top:334px;}
+#tc_23{left:65px;top:352px;}
+#td_23{left:65px;top:392px;}
+#te_23{left:65px;top:411px;}
+#tf_23{left:556px;top:412px;}
+#tg_23{left:567px;top:412px;}
+#th_23{left:65px;top:429px;}
+#ti_23{left:400px;top:467px;}
+#tj_23{left:353px;top:507px;}
+#tk_23{left:65px;top:548px;}
+#tl_23{left:184px;top:548px;}
+#tm_23{left:388px;top:548px;}
+#tn_23{left:65px;top:566px;}
+#to_23{left:65px;top:585px;}
+#tp_23{left:65px;top:603px;}
+#tq_23{left:65px;top:622px;}
+#tr_23{left:65px;top:662px;}
+#ts_23{left:65px;top:680px;}
+#tt_23{left:65px;top:699px;}
+#tu_23{left:65px;top:739px;}
+#tv_23{left:65px;top:757px;}
+#tw_23{left:65px;top:776px;}
+#tx_23{left:65px;top:816px;}
+#ty_23{left:65px;top:834px;}
+#tz_23{left:65px;top:874px;}
+#t10_23{left:65px;top:893px;}
+#t11_23{left:65px;top:912px;}
+#t12_23{left:65px;top:930px;}
+#t13_23{left:65px;top:949px;}
+#t14_23{left:65px;top:989px;}
+#t15_23{left:65px;top:1027px;}
+#t16_23{left:177px;top:1027px;}
+#t17_23{left:267px;top:1027px;}
+#t18_23{left:65px;top:1067px;}
+#t19_23{left:65px;top:1107px;}
+#t1a_23{left:65px;top:1147px;}
+
+.s1_23{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	color: rgb(0,0,0);
+}
+
+.s6_23{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic23;
+	color: rgb(0,0,0);
+}
+
+.s3_23{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana23;
+	color: rgb(0,0,0);
+}
+
+.s5_23{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana-Bold23;
+	color: rgb(0,0,0);
+}
+
+.s4_23{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Verdana-Italic23;
+	color: rgb(0,0,0);
+}
+
+.s2_23{
+	FONT-SIZE: 60px;
+	FONT-FAMILY: ABCDEE-Verdana23;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts23" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Verdana23;
+	src :url("23/fonts/ABCDEE-Verdana.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Bold23;
+	src :url("23/fonts/ABCDEE-Verdana-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Verdana-Italic23;
+	src :url("23/fonts/ABCDEE-Verdana-Italic.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_23" class="t s1_23">PODER JUDICIAL DE LA NACIÓN </div>
+<div id="t2_23" class="t s1_23">CÁMARA NACIONAL ELECTORAL </div>
+<div id="t3_23" class="t s2_23">f) Realizar actos públicos de proselitismo y publicar y difundir encuestas y sondeos preelectorales, </div>
+<div id="t4_23" class="t s2_23">desde cuarenta y ocho horas antes de la iniciación del comicio y hasta el cierre del mismo</div>
+<div id="t5_23" class="t s3_23">. </div>
+<div id="t6_23" class="t s4_23">(Inciso </div>
+<div id="t7_23" class="t s4_23">modificado por art. 4 de la Ley N° 25.610 B.O. 08/07/2002) </div>
+<div id="t8_23" class="t s2_23">g) La apertura de organismos partidarios dentro de un radio de ochenta metros (80 m.) del lugar en </div>
+<div id="t9_23" class="t s2_23">que se instalen mesas receptoras de votos. La Junta Electoral Nacional o cualquiera de sus </div>
+<div id="ta_23" class="t s2_23">miembros podrá disponer el cierre transitorio de los locales que estuvieren en infracción a lo </div>
+<div id="tb_23" class="t s2_23">dispuesto precedentemente. No se instalarán mesas receptoras a menos de ochenta metros (80 m.) </div>
+<div id="tc_23" class="t s2_23">de la sede en que se encuentre el domicilio legal de los partidos nacionales o de distrito. </div>
+<div id="td_23" class="t s2_23">h) Publicar o difundir encuestas y proyecciones sobre el resultado de la elección durante la </div>
+<div id="te_23" class="t s2_23">realización del comicio y hasta tres horas después de su cierre</div>
+<div id="tf_23" class="t s3_23">. </div>
+<div id="tg_23" class="t s4_23">(Inciso incorporado por art. 4 de la Ley </div>
+<div id="th_23" class="t s4_23">N° 25.610 B.O. 08/07/2002) </div>
+<div id="ti_23" class="t s5_23">CAPITULO II </div>
+<div id="tj_23" class="t s6_23">Mesas receptoras de votos </div>
+<div id="tk_23" class="t s5_23">Artículo 72.- </div>
+<div id="tl_23" class="t s6_23">Autoridades de la mesa. </div>
+<div id="tm_23" class="t s2_23">Para la designación de las autoridades de mesa se dará </div>
+<div id="tn_23" class="t s2_23">prioridad a los electores que resulten de una selección aleatoria por medios informáticos en la cual </div>
+<div id="to_23" class="t s2_23">se debe tener en cuenta su grado de instrucción y edad, a los electores que hayan sido capacitados </div>
+<div id="tp_23" class="t s2_23">a tal efecto y a continuación a los inscriptos en el Registro Público de Postulantes a Autoridades de </div>
+<div id="tq_23" class="t s2_23">Mesa. </div>
+<div id="tr_23" class="t s2_23">Cada mesa electoral tendrá como única autoridad un funcionario que actuará con el título de </div>
+<div id="ts_23" class="t s2_23">presidente. Se designará también un suplente, que auxiliará al presidente y lo reemplazará en los </div>
+<div id="tt_23" class="t s2_23">casos que esta ley determina. </div>
+<div id="tu_23" class="t s2_23">En caso de tratarse de la elección de Presidente y Vicepresidente de la Nación, las autoridades de </div>
+<div id="tv_23" class="t s2_23">mesa designadas para la primera vuelta cumplirán también esa función en caso de llevarse a cabo la </div>
+<div id="tw_23" class="t s2_23">segunda vuelta. </div>
+<div id="tx_23" class="t s2_23">Los electores que hayan cumplido funciones como autoridades de mesa recibirán una compensación </div>
+<div id="ty_23" class="t s2_23">consistente en una suma fija en concepto de viático. </div>
+<div id="tz_23" class="t s2_23">Sesenta (60) días antes de la fecha fijada para el comicio, el Ministerio del Interior y Transporte </div>
+<div id="t10_23" class="t s2_23">determinará la suma que se liquidará en concepto del viático, estableciendo el procedimiento para </div>
+<div id="t11_23" class="t s2_23">su pago que se efectuará dentro de los sesenta (60) días de realizado el comicio, informando de la </div>
+<div id="t12_23" class="t s2_23">resolución al juez federal con competencia electoral de cada distrito. Si se realizara segunda vuelta </div>
+<div id="t13_23" class="t s2_23">se sumarán ambas compensaciones y se cancelarán dentro de un mismo plazo. </div>
+<div id="t14_23" class="t s4_23">(Artículo modificado por art. 3° de la Ley N° 26.774 B.O. 02/11/2012) </div>
+<div id="t15_23" class="t s5_23">Artículo 73.- </div>
+<div id="t16_23" class="t s6_23">Requisitos. </div>
+<div id="t17_23" class="t s2_23">Los presidentes y suplentes deberán reunir las calidades siguientes: </div>
+<div id="t18_23" class="t s2_23">1. Ser elector hábil. </div>
+<div id="t19_23" class="t s2_23">2. Tener entre dieciocho (18) y setenta (70) años de edad. </div>
+<div id="t1a_23" class="t s2_23">3. Residir en la sección electoral donde deba desempeñarse. </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg23Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg23"><object width="909" height="1286" data="23/23.svg" type="image/svg+xml" id="pdf23" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld23" type="text/javascript">
+
+var isIE = false;
+var f23 = [['t1_23',1144],['t2_23',1166],['t3_23',3118],['t4_23',2884],['t7_23',1670],['t8_23',3118],['t9_23',3118],['ta_23',3117],['tb_23',3117],['tc_23',2726],['td_23',3118],['te_23',1960],['tg_23',1112],['th_23',800],['ti_23',439],['tj_23',818],['tk_23',440],['tl_23',782],['tm_23',1824],['tn_23',3115],['to_23',3117],['tp_23',3114],['tr_23',3115],['ts_23',3115],['tt_23',921],['tu_23',3115],['tv_23',3116],['tw_23',491],['tx_23',3115],['ty_23',1618],['tz_23',3116],['t10_23',3114],['t11_23',3114],['t12_23',3114],['t13_23',2452],['t14_23',1954],['t15_23',427],['t17_23',2098],['t18_23',608],['t19_23',1819],['t1a_23',1862]];
+function load23(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f23);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 47;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_23");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+<a href="../index.html" title="Volver al Inicio"><img border="0" width="50" height="51" src="../images/volver.png" style="position: fixed; bottom: 205px; right: 0px;" /></a></body>
+</html>
